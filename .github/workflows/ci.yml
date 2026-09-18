@@ -1,0 +1,30 @@
+name: CI
+
+# Lint the theme on every pull request and on main.
+#
+# This workflow never contacts the Shopify store: theme-check reads the files in
+# the repo and nothing else. There is deliberately no deploy workflow — deploys
+# run from the devbox brand cell with `bin/wb draft`, and publishing to live is a
+# manual action in Shopify admin. That keeps store credentials out of GitHub.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  theme-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # fail-level is 'crash' because the theme we inherited ships 2 pre-existing
+      # ValidSchemaTranslations errors (sections/featured-product.liquid). Offences
+      # are still printed. Tighten this to 'error' once those are fixed, so new
+      # errors cannot land unnoticed.
+      - name: theme-check
+        run: npx --yes @shopify/cli@4 theme check --path theme --fail-level crash
