@@ -39,6 +39,9 @@ bin/wb verify            # proves auth works and lists the store's themes
 bin/wb pull              # live theme -> theme/   (read-only on Shopify)
 ```
 
+The baseline pull is already committed, and `main` is pushed to
+`git@github.com:mrehb/wishbone_shopify.git`.
+
 ## Daily workflow
 
 ```bash

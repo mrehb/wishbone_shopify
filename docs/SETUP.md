@@ -39,43 +39,23 @@ were pasted into a chat session, so they exist in that transcript too.
 
 ---
 
-## 2. GitHub: a repository and its deploy key  (≈3 minutes)
+## 2. GitHub: repository and deploy key — DONE (2026-09-18)
 
-House rule on this box: one deploy key per repository, kept in `~/.claude/ssh/`
-(bind-mounted, survives a container rebuild) and selected by the repo's own
-`.git/config`. The key for this project already exists:
+- Repository: **`git@github.com:mrehb/wishbone_shopify.git`** (note the underscore).
+- Key: `~/.claude/ssh/mrehb__wishbone_shopify.key`, selected by this repo's
+  `core.sshCommand`. Public key also in `docs/deploy-key.pub`.
+- `main` is pushed and tracking `origin/main`.
 
-- private: `~/.claude/ssh/mrehb__wishbone-shopify.key`
-- public:  printed below and in `docs/deploy-key.pub`
+Deploy keys are per repository by design: this cell cannot reach any other repo, and no
+other cell can reach this one. `ERROR: Repository not found.` means the key is not on that
+repo (or the repo name is wrong) — `ssh -i <key> -T git@github.com` answers with the repo
+the key actually belongs to, which is how the `wishbone-shopify` / `wishbone_shopify`
+naming mismatch was found.
 
-Steps:
-
-1. Create an empty repository on GitHub: **`mrehb/wishbone-shopify`** (private, no README).
-2. Repo → **Settings → Deploy keys → Add deploy key**
-   - Title: `devbox brand cell`
-   - Key: the contents of `docs/deploy-key.pub`
-   - ✅ **Allow write access**
-3. Back on devbox:
-
-   ```bash
-   cd /workspace/wishbone
-   git push -u origin main
-   ```
-
-If you would rather host it under a different owner (e.g. the `GT-Workspace` org) or a
-different repo name, say so — it is a one-line change:
-
-```bash
-cd /workspace/wishbone
-git remote set-url origin git@github.com:<owner>/<repo>.git
-mv ~/.claude/ssh/mrehb__wishbone-shopify.key  ~/.claude/ssh/<owner>__<repo>.key
-mv ~/.claude/ssh/mrehb__wishbone-shopify.key.pub ~/.claude/ssh/<owner>__<repo>.key.pub
-git config core.sshCommand "ssh -i /home/dev/.claude/ssh/<owner>__<repo>.key -o IdentitiesOnly=yes -o UserKnownHostsFile=/home/dev/.claude/ssh/known_hosts -o StrictHostKeyChecking=accept-new"
-```
-
-`ERROR: Repository not found.` on push means the key is not on that repo yet (or the
-repo does not exist). That is the per-repo isolation working, not a bug — do not swap in
-another cell's key.
+CI (`.github/workflows/ci.yml`) runs theme-check on pull requests and on `main`. It never
+contacts the store, and no Shopify credentials are stored in GitHub — deploys run from
+devbox. A deploy key cannot read the Actions API, so check the run's result in the GitHub
+UI.
 
 ---
 
