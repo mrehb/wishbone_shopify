@@ -22,3 +22,6 @@ Thumbs.db
 *.log
 *.tmp
 .claude/settings.local.json
+
+# Minted 24h access token cache (scripts/token.mjs)
+.shopify-token.json

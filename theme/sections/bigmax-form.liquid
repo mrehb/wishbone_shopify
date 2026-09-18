@@ -1,0 +1,108 @@
+{% comment %}
+  BIG MAX Form — embeds a self-hosted form (bigmax-forms app) via iframe.
+
+  Install: Shopify admin → Online Store → Themes → Edit code → Sections →
+  Add a new section named "bigmax-form" and paste this file. Then in the theme
+  editor: Add section → "BIG MAX Form" → choose the form.
+
+  The iframe auto-resizes to the form's height (via postMessage), so there is
+  never an inner scrollbar.
+{% endcomment %}
+
+{%- assign app_origin = section.settings.app_origin | default: 'https://forms.bigmaxgolf.com' -%}
+{%- assign frame_id = 'bmf-' | append: section.id -%}
+
+<div class="bigmax-form" style="max-width: {{ section.settings.max_width }}px; margin: 0 auto;">
+  {%- if section.settings.heading != blank -%}
+    <h2 class="bigmax-form__heading">{{ section.settings.heading | escape }}</h2>
+  {%- endif -%}
+
+  <iframe
+    id="{{ frame_id }}"
+    src="{{ app_origin }}/{{ section.settings.form_slug }}?lang={{ request.locale.iso_code | slice: 0, 2 }}"
+    title="{{ section.settings.heading | default: 'BIG MAX form' | escape }}"
+    loading="lazy"
+    scrolling="no"
+    style="width: 100%; min-height: {{ section.settings.min_height }}px; border: 0; overflow: hidden;">
+  </iframe>
+</div>
+
+<script>
+  (function () {
+    var origin = {{ app_origin | json }};
+    var frame = document.getElementById({{ frame_id | json }});
+    if (!frame) return;
+    window.addEventListener('message', function (e) {
+      if (e.origin !== origin || !e.data || typeof e.data !== 'object') return;
+      if (e.data.type === 'bmf:height' && e.data.height) {
+        frame.style.height = e.data.height + 'px';
+      }
+      if (e.data.type === 'bmf:submitted') {
+        // Optional: track a conversion / scroll the form into view.
+        try { frame.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (_) {}
+        if (window.dataLayer) {
+          window.dataLayer.push({ event: 'bigmax_form_submitted', form: e.data.form });
+        }
+      }
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "BIG MAX Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (optional)"
+    },
+    {
+      "type": "select",
+      "id": "form_slug",
+      "label": "Form",
+      "default": "bigmax-eu-contact",
+      "options": [
+        { "value": "bigmax-eu-contact", "label": "Contact BIG MAX Europe" },
+        { "value": "bigmax-usa-contact", "label": "Contact BIG MAX USA" },
+        { "value": "bigmax-uk-contact", "label": "Contact BIG MAX UK" },
+        { "value": "zoomgolf-contact", "label": "Contact Zoom Golf" },
+        { "value": "wishbone-contact", "label": "Contact Wishbone Golf" },
+        { "value": "eu-press", "label": "Press (EU)" },
+        { "value": "bigmax-usa-order-return", "label": "BigMax USA Order Return" },
+        { "value": "bigmax-eu-travel-cover-personalization", "label": "BigMax EU Travel Cover Personalization" },
+        { "value": "product-survey-eu", "label": "Product Survey" },
+        { "value": "ogv-umfrage", "label": "ÖGV Team Bag Umfrage" }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "app_origin",
+      "label": "App origin",
+      "info": "Base URL of the bigmax-forms app. Leave as default unless it moves.",
+      "default": "https://forms.bigmaxgolf.com"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "label": "Initial height",
+      "min": 200,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 400,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 680
+    }
+  ],
+  "presets": [{ "name": "BIG MAX Form" }]
+}
+{% endschema %}

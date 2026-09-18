@@ -30,11 +30,13 @@ wishbone/
 
 See [`docs/SETUP.md`](docs/SETUP.md). Short version:
 
+Credentials are already in place (Dev Dashboard app, client-credentials grant — see
+[`docs/SETUP.md`](docs/SETUP.md)). Tokens last 24h and `scripts/token.mjs` mints and
+caches them automatically, so there is nothing to refresh by hand.
+
 ```bash
-cp .env.example .env     # then paste the Theme Access token into .env
 bin/wb verify            # proves auth works and lists the store's themes
 bin/wb pull              # live theme -> theme/   (read-only on Shopify)
-git add theme && git commit -m "Baseline: live theme at $(date +%F)"
 ```
 
 ## Daily workflow

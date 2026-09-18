@@ -45,10 +45,10 @@ fi
 
 SHOP="${SHOP:-}"
 [ -n "$SHOP" ] || die "SHOP is not set in .env"
-TOKEN="${SHOPIFY_CLI_THEME_TOKEN:-}"
-case "$TOKEN" in
-  ""|*xxxx*) die "SHOPIFY_CLI_THEME_TOKEN is not set in .env — see docs/SETUP.md step 1" ;;
-esac
+
+# The app's tokens last 24h, so resolve (and cache) one per command run.
+TOKEN="$(node "$ROOT/scripts/token.mjs")" || die "could not get an access token — see docs/SETUP.md"
+[ -n "$TOKEN" ] || die "empty access token — see docs/SETUP.md"
 export SHOPIFY_CLI_THEME_TOKEN="$TOKEN"
 
 sh_cli() { shopify "$@" --store "$SHOP"; }
@@ -63,7 +63,10 @@ case "$cmd" in
     echo "Store:      $SHOP"
     echo "Theme dir:  $THEME_DIR"
     echo "CLI:        $(shopify version 2>/dev/null | tr -d '\n')"
-    echo "Token:      ${TOKEN:0:8}…(${#TOKEN} chars)"
+    echo "Token:      ${TOKEN:0:10}…(${#TOKEN} chars)"
+    if [ -f "$ROOT/.shopify-token.json" ]; then
+      node -e 'const c=require("'"$ROOT"'/.shopify-token.json");const m=Math.round((c.expires_at-Date.now())/60000);console.log("Scopes:     "+(c.scope||"?"));console.log("Expires:    in "+m+" min (auto-renewed from CLIENT_ID/CLIENT_SECRET)")'
+    fi
     echo
     echo "Themes on the store:"
     sh_cli theme list

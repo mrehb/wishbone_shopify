@@ -5,39 +5,37 @@ the project, tooling, guardrails and Git config are already in place on devbox.
 
 ---
 
-## 1. Shopify: a Theme Access token  (≈3 minutes)
+## 1. Shopify: app credentials — DONE (2026-09-18)
 
-The devbox container is headless, so the Shopify CLI's browser login cannot be used.
-The supported headless credential for theme work is a **Theme Access** password.
+The store is reached with a **Dev Dashboard app** using the OAuth client-credentials
+grant, the same pattern as the BIG MAX US/UK stores. The owner supplied the credentials
+on 2026-09-18 and they are in `/workspace/wishbone/.env` (mode 0600, git-ignored):
 
-1. Shopify admin for **Wishbone** → **Settings → Apps and sales channels → Shopify App Store**
-   → install the free **Theme Access** app (by Shopify).
-2. Open Theme Access → **Create password**.
-   - Email: your address (the token is mailed there).
-   - Name it `devbox brand cell` so it can be revoked on its own later.
-3. The mail contains a password starting with `shptka_`. Paste it into
-   `/workspace/wishbone/.env`:
+```
+SHOP=k500sw-e1.myshopify.com
+CLIENT_ID=…
+CLIENT_SECRET=shpss_…
+```
 
-   ```
-   SHOPIFY_CLI_THEME_TOKEN=shptka_…
-   ```
+Granted scopes, read back from Shopify: `write_themes`, `write_theme_code`,
+`write_legal_policies`. Themes only — the app cannot see orders, customers or products.
+If this project later needs catalog or metafield scripts, add scopes to the app in the
+Shopify Dev Dashboard (or create a second app) rather than reusing this one blindly.
 
-4. Prove it works:
+Access tokens from this grant live **24 hours**. `scripts/token.mjs` mints one on demand,
+caches it in `.shopify-token.json` (0600, git-ignored) and refreshes it 5 minutes before
+expiry, so nothing long-lived is stored and no command ever needs a manual refresh.
+`bin/wb` calls it for you; `node scripts/token.mjs --force` mints a fresh one.
 
-   ```bash
-   cd /workspace/wishbone && bin/wb verify
-   ```
+Proof it works:
 
-   That lists every theme in the store with its ID and role, and prints the live theme ID.
-   It changes nothing on the store.
+```bash
+cd /workspace/wishbone && bin/wb verify
+```
 
-A Theme Access token can read and write **themes only** — it cannot touch orders,
-customers or products. That is deliberate: it is the smallest credential that does the job.
-If this project later needs catalog or metafield scripts, create a separate custom app
-(Settings → Apps → Develop apps) and put its `shpat_` token in `ADMIN_API_TOKEN`.
-
-**Revoking:** delete the password in the Theme Access app. Do that if the box is ever
-lost or sold.
+**Rotating:** regenerate the client secret in the Shopify Dev Dashboard and replace
+`CLIENT_SECRET` in `.env`. Worth doing if the box is ever lost — and note these values
+were pasted into a chat session, so they exist in that transcript too.
 
 ---
 

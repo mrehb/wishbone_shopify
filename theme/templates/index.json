@@ -1,0 +1,142 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Electric Wishbone EON",
+            "heading_size": "h2"
+          }
+        },
+        "text_QdKFMF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A full powered, simple ‘no nonsense’ electric cart.</p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://products/wishbone-eon",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_QdKFMF",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/eon.jpg",
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "text_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_mmMjFz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Xe9NJe": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE ARE WISHBONE",
+            "heading_size": "h2"
+          }
+        },
+        "text_prXm76": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Birthed in Britain, Wishbone Golf merges exquisite design with unwavering quality. Our Wishbone Trolley — crafted from ultra-light aircraft-grade aluminum — frees you from bulk. Effortless folding, magnetic attachments, and sealed bearings keep you rolling smoothly. Focus on your game; Wishbone Golf will handle the rest.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Xe9NJe",
+        "text_prXm76"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_UewGNC": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_KrqRRz": {
+          "type": "heading",
+          "settings": {
+            "heading": "The Manual Wishbone ONE",
+            "heading_size": "h2"
+          }
+        },
+        "text_Hx4PkE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wishbone One 3 Wheel Golf Trolley</p>",
+            "text_style": "body"
+          }
+        },
+        "button_jcfrw9": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": "shopify://products/wishbone-one-best-seller",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_KrqRRz",
+        "text_Hx4PkE",
+        "button_jcfrw9"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/CW_05200.png",
+        "height": "adapt",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "rich_text_mmMjFz",
+    "image_with_text_UewGNC"
+  ]
+}
