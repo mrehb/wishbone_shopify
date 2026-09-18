@@ -1,0 +1,42 @@
+/* Wishbone Golf brand tokens — derived from the live Shopify theme, 2026-09-19.
+   Source of truth: docs/brand/BRAND_KIT.md. Keep in step with tokens.json. */
+:root {
+  /* Colour — the brights (volt, cyan) carry INK type only; never white type, never as type on white. */
+  --wb-ink: #1F1F21;
+  --wb-white: #FFFFFF;
+  --wb-volt: #E3FC02;
+  --wb-cyan: #00FCED;
+  --wb-logo-lime: #C8D645; /* monogram as shipped — conflicts with volt, decision pending */
+
+  /* Type */
+  --wb-font-heading: 'Oswald', 'Arial Narrow', sans-serif;
+  --wb-font-body: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --wb-weight-heading: 500;
+  --wb-weight-body: 500;
+  --wb-weight-bold: 700;
+
+  --wb-size-display: 72.8px;
+  --wb-size-h1: 56px;
+  --wb-size-h1-mobile: 42px;
+  --wb-size-h2: 33.6px;
+  --wb-size-h2-mobile: 28px;
+  --wb-size-h3: 25.2px;
+  --wb-size-h4: 21px;
+  --wb-size-h5: 18.2px;
+  --wb-size-body: 15px;
+  --wb-size-caption: 11px;
+  --wb-tracking-caption: 0.13rem;
+  --wb-tracking-eyebrow: 0.16rem;
+
+  /* Geometry — square, hairline, flat */
+  --wb-radius: 0;
+  --wb-radius-pill: 40px;
+  --wb-border-width: 1px;
+  --wb-border-opacity: 0.55;
+  --wb-shadow: none;
+
+  /* Space */
+  --wb-page-width: 1600px;
+  --wb-space-section: 52px;
+  --wb-grid-gap: 40px;
+}

@@ -1,0 +1,7 @@
+/* Wishbone Golf design system — global entry.
+   Derived from the live Shopify theme (k500sw-e1.myshopify.com) on 2026-09-19. */
+@import url('tokens/typography.css');
+@import url('tokens/colors.css');
+@import url('tokens/geometry.css');
+@import url('tokens/layout.css');
+@import url('tokens/base.css');

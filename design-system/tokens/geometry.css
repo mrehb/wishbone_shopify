@@ -1,0 +1,8 @@
+:root{
+/* The signature trait: SQUARE. Radius 0 on every surface. */
+--radius:0;--radius-pill:40px;
+--border-width:1px;--border-opacity:0.55;
+/* The brand has no shadows — every theme surface ships shadow opacity 0. */
+--shadow:none;--shadow-card:none;
+--motion-duration:400ms;--motion-ease:cubic-bezier(.16,.84,.44,1);
+}

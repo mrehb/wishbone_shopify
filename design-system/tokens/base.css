@@ -1,0 +1,11 @@
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-page);color:var(--text-body);
+  font-family:var(--font-body);font-weight:var(--weight-body);font-size:var(--size-body);line-height:1.6}
+h1,h2,h3,h4,h5{font-family:var(--font-heading);font-weight:var(--weight-heading);
+  text-transform:uppercase;letter-spacing:var(--tracking-heading);margin:0;line-height:1.05}
+h1{font-size:var(--size-h1)} h2{font-size:var(--size-h2)} h3{font-size:var(--size-h3)}
+h4{font-size:var(--size-h4)} h5{font-size:var(--size-h5)}
+@media (max-width:749px){h1{font-size:var(--size-h1-mobile)}h2{font-size:var(--size-h2-mobile)}}
+a{color:var(--accent)}
+.eyebrow{font-size:var(--size-caption);letter-spacing:var(--tracking-eyebrow);text-transform:uppercase;color:var(--text-muted)}
+.muted{color:var(--text-muted)}

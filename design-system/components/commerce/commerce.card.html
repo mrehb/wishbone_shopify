@@ -1,0 +1,20 @@
+<!-- @dsCard group="Components" viewport="700x330" name="Commerce" subtitle="ProductCard — grid, badge, sold out" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head><body style="margin:0;background:var(--color-ink)">
+<div id="root"></div>
+<script>window.__dsReady = new Promise(function(res){var t0=Date.now();(function poll(){if(window.WishboneGolfDesignSystem_4d0e77){res(true)}else if(Date.now()-t0>8000){document.getElementById('root').innerHTML='<div style="padding:24px;font-family:sans-serif;font-size:13px;color:#fff">Design-system bundle not loaded yet (_ds_bundle.js). Reload the page.</div>';res(false)}else{setTimeout(poll,100)}})()});</script>
+<script type="text/babel" data-ds-deferred="true">
+const ns = window.WishboneGolfDesignSystem_4d0e77 || {}; const { ProductCard } = ns;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{padding:'22px 24px', display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'var(--grid-gap)'}}>
+    <ProductCard title="Wishbone EON" type="Electric trolley" price="799,00 €" badge="bestseller" />
+    <ProductCard title="Wishbone THREE" type="Manual trolley" price="249,00 €" />
+    <ProductCard title="Fast Charger (NEO & EON)" type="Spare part" price="99,90 €" soldOut />
+  </div>
+);
+</script>
+</body></html>

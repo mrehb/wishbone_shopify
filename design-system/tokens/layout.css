@@ -1,0 +1,7 @@
+:root{
+--page-width:1600px;--page-gutter:24px;
+--space-section:52px;--grid-gap:40px;
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:40px;--space-8:52px;
+/* Theme breakpoints */
+--bp-sm:480px;--bp-md:750px;--bp-lg:990px;--bp-xl:1400px;
+}

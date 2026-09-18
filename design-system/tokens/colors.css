@@ -1,0 +1,12 @@
+:root{
+/* Core palette — read from the live theme's colour schemes, 2026-09-19 */
+--color-ink:#1f1f21;--color-white:#ffffff;--color-volt:#e3fc02;--color-cyan:#00fced;
+/* Logo accent as shipped. Conflicts with volt — decision pending, see readme. */
+--color-logo-lime:#c8d645;
+/* Semantic aliases */
+--text-body:var(--color-white);--text-inverse:var(--color-ink);--text-muted:rgb(255 255 255 / 0.62);
+--surface-page:var(--color-ink);--surface-card:var(--color-ink);--surface-panel:#26262a;
+--accent:var(--color-volt);--accent-cta:var(--color-volt);
+--color-border:rgb(255 255 255 / 0.55);--color-border-soft:rgb(255 255 255 / 0.1);
+--color-error:#ff6b6b;--overlay-media:rgb(0 0 0 / 0.35);
+}
