@@ -1,0 +1,18 @@
+{
+  "name": "wishbone-shopify",
+  "version": "1.0.0",
+  "description": "Wishbone Golf (wishbone.golf) Shopify theme and store tooling",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20.0.0" },
+  "scripts": {
+    "verify": "bin/wb verify",
+    "list": "bin/wb list",
+    "pull": "bin/wb pull",
+    "dev": "bin/wb dev",
+    "draft": "bin/wb draft",
+    "check": "bin/wb check"
+  },
+  "author": "Wishbone Golf",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,12 @@
+# Shopify CLI environments. Secrets live in .env, never here.
+# Used by `shopify theme <cmd> -e live`; bin/wb passes the store explicitly and
+# does not need these, but they make raw CLI calls convenient.
+
+[environments.live]
+store = "k500sw-e1.myshopify.com"
+theme = "187794981188"
+path = "./theme"
+
+[environments.dev]
+store = "k500sw-e1.myshopify.com"
+path = "./theme"

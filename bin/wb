@@ -1,0 +1,122 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------------------------
+# wb — the only entry point for Wishbone theme work.
+#
+# Wraps the Shopify CLI so that every command is pinned to the Wishbone store,
+# authenticated from .env, and pointed at ./theme. No subcommand here can write
+# to or publish the live theme.
+#
+#   wb verify            credentials + connectivity check (read-only)
+#   wb list              themes in the store with IDs and roles
+#   wb pull [theme-id]   Shopify -> theme/   (default: the LIVE theme)
+#   wb dev               hot-reloading development theme -> http://devbox:9292
+#   wb draft [name]      theme/ -> a NEW unpublished theme
+#   wb push <theme-id>   theme/ -> an existing NON-LIVE theme
+#   wb check             theme-check lint
+#   wb open [theme-id]   print the preview URL
+#   wb cli <args...>     raw Shopify CLI with store + auth applied
+# ---------------------------------------------------------------------------
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT"
+
+THEME_DIR="$ROOT/theme"
+PORT="${WB_PORT:-9292}"
+
+die() { echo "wb: $*" >&2; exit 1; }
+
+# --- credentials ------------------------------------------------------------
+if [ -f "$ROOT/.env" ]; then
+  set -a; . "$ROOT/.env"; set +a
+else
+  die ".env not found. Run: cp .env.example .env   (then see docs/SETUP.md)"
+fi
+
+SHOP="${SHOP:-}"
+[ -n "$SHOP" ] || die "SHOP is not set in .env"
+TOKEN="${SHOPIFY_CLI_THEME_TOKEN:-}"
+case "$TOKEN" in
+  ""|*xxxx*) die "SHOPIFY_CLI_THEME_TOKEN is not set in .env — see docs/SETUP.md step 1" ;;
+esac
+export SHOPIFY_CLI_THEME_TOKEN="$TOKEN"
+
+sh_cli() { shopify "$@" --store "$SHOP"; }
+
+live_theme_id() {
+  shopify theme list --store "$SHOP" --role live --json 2>/dev/null \
+    | node -e 'let d="";process.stdin.on("data",c=>d+=c).on("end",()=>{try{const a=JSON.parse(d);process.stdout.write(String((a[0]&&a[0].id)||""))}catch(e){}})'
+}
+
+cmd="${1:-help}"; shift || true
+
+case "$cmd" in
+  verify)
+    echo "Store:      $SHOP"
+    echo "Theme dir:  $THEME_DIR"
+    echo "CLI:        $(shopify version 2>/dev/null | tr -d '\n')"
+    echo "Token:      ${TOKEN:0:8}…(${#TOKEN} chars)"
+    echo
+    echo "Themes on the store:"
+    sh_cli theme list
+    echo
+    echo "Live theme ID: $(live_theme_id)"
+    ;;
+
+  list)
+    sh_cli theme list "$@"
+    ;;
+
+  pull)
+    mkdir -p "$THEME_DIR"
+    if [ $# -gt 0 ]; then
+      echo "Pulling theme $1 -> theme/"
+      sh_cli theme pull --path "$THEME_DIR" --theme "$1"
+    else
+      echo "Pulling the LIVE theme -> theme/   (read-only on Shopify)"
+      sh_cli theme pull --path "$THEME_DIR" --live
+    fi
+    ;;
+
+  dev)
+    echo "Development theme -> http://devbox:$PORT  (not visible to shoppers)"
+    sh_cli theme dev --path "$THEME_DIR" --host 0.0.0.0 --port "$PORT" "$@"
+    ;;
+
+  draft)
+    name="${1:-Wishbone draft $(date +%Y-%m-%d\ %H:%M)}"
+    echo "Creating a NEW unpublished theme: $name"
+    sh_cli theme push --path "$THEME_DIR" --unpublished --theme "$name"
+    ;;
+
+  push)
+    [ $# -ge 1 ] || die "usage: wb push <theme-id>   (use 'wb draft' to create a new theme)"
+    target="$1"
+    live="$(live_theme_id)"
+    if [ -n "$live" ] && [ "$target" = "$live" ]; then
+      die "REFUSED: theme $target is the LIVE theme. Push to a draft, verify, then publish in Shopify admin."
+    fi
+    echo "Pushing theme/ -> theme $target (live theme is $live, untouched)"
+    sh_cli theme push --path "$THEME_DIR" --theme "$target"
+    ;;
+
+  check)
+    shopify theme check --path "$THEME_DIR" "$@"
+    ;;
+
+  open)
+    if [ $# -gt 0 ]; then sh_cli theme open --theme "$1"; else sh_cli theme open --live; fi
+    ;;
+
+  cli)
+    sh_cli "$@"
+    ;;
+
+  help|--help|-h)
+    sed -n '3,20p' "$0" | sed 's/^# \{0,1\}//'
+    ;;
+
+  *)
+    die "unknown command '$cmd'. Try: wb help"
+    ;;
+esac

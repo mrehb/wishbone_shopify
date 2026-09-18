@@ -1,0 +1,24 @@
+# Credentials — never commit
+.env
+.env.local
+.env.*.local
+
+# Dependencies / build
+node_modules/
+dist/
+
+# Shopify CLI state
+.shopify/
+.theme-check-cache
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs and scratch
+*.log
+*.tmp
+.claude/settings.local.json

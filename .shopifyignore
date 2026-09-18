@@ -1,0 +1,17 @@
+# Never upload repo scaffolding to a Shopify theme.
+.git
+.github
+.gitignore
+.env
+.env.*
+.shopifyignore
+.claude
+bin
+docs
+scripts
+tasks
+node_modules
+package.json
+package-lock.json
+shopify.theme.toml
+*.md
