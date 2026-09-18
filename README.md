@@ -58,14 +58,11 @@ Then: review the draft's preview URL → publish in Shopify admin by hand → re
 `bin/wb dev` uploads a *development* theme (invisible to shoppers, expired by Shopify when
 idle) and serves it at http://devbox:9292.
 
-> **Known limitation (verified 2026-09-18):** the upload works, but the local preview at
-> `:9292` returns **401** with our Dev Dashboard app token — the CLI's storefront proxy
-> wants a Theme Access password, not an Admin API token. Until one exists, preview a
-> development theme through Shopify instead:
-> `https://k500sw-e1.myshopify.com/admin/themes/<id>/editor`.
-> To get `:9292` working, install the free **Theme Access** app in Shopify admin, create a
-> password and put it in `.env` as `SHOPIFY_CLI_THEME_TOKEN` — `scripts/token.mjs` already
-> prefers it over the client credentials when present, so nothing else changes.
+> Authenticated with the store's **Theme Access** password (`shptka_…`, registered to
+> mr@ehb.digital). That matters: the CLI's storefront proxy only works with a Theme Access
+> token — with the Dev Dashboard app's Admin token the upload succeeds but `:9292` returns
+> 401. `scripts/token.mjs` prefers the Theme Access password and falls back to the client
+> credentials.
 
 ## Safety
 

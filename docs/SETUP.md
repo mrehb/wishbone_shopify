@@ -22,7 +22,13 @@ Granted scopes, read back from Shopify: `write_themes`, `write_theme_code`,
 If this project later needs catalog or metafield scripts, add scopes to the app in the
 Shopify Dev Dashboard (or create a second app) rather than reusing this one blindly.
 
-Access tokens from this grant live **24 hours**. `scripts/token.mjs` mints one on demand,
+Since 2026-09-18 the **Theme Access** app is also installed and its password
+(`SHOPIFY_CLI_THEME_TOKEN`, registered to mr@ehb.digital) is what `bin/wb` actually uses —
+the client credentials stay as the fallback. Both work for pull/push/list/check, but only
+the Theme Access password makes `bin/wb dev`'s preview on `:9292` work. Revoke it in the
+Theme Access app if this box is ever lost.
+
+Access tokens from the client-credentials grant live **24 hours**. `scripts/token.mjs` mints one on demand,
 caches it in `.shopify-token.json` (0600, git-ignored) and refreshes it 5 minutes before
 expiry, so nothing long-lived is stored and no command ever needs a manual refresh.
 `bin/wb` calls it for you; `node scripts/token.mjs --force` mints a fresh one.
