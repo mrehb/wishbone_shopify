@@ -1,12 +1,22 @@
 :root{
-/* Core palette — read from the live theme's colour schemes, 2026-09-19 */
---color-ink:#1f1f21;--color-white:#ffffff;--color-volt:#e3fc02;--color-cyan:#00fced;
-/* Logo accent as shipped. Conflicts with volt — decision pending, see readme. */
---color-logo-lime:#c8d645;
-/* Semantic aliases */
---text-body:var(--color-white);--text-inverse:var(--color-ink);--text-muted:rgb(255 255 255 / 0.62);
---surface-page:var(--color-ink);--surface-card:var(--color-ink);--surface-panel:#26262a;
---accent:var(--color-volt);--accent-cta:var(--color-volt);
---color-border:rgb(255 255 255 / 0.55);--color-border-soft:rgb(255 255 255 / 0.1);
---color-error:#ff6b6b;--overlay-media:rgb(0 0 0 / 0.35);
+/* --- Ground. Warm near-black, not neutral grey. The brand lives here. --- */
+--color-carbon:#0f1014;      /* page */
+--color-card:#16171b;        /* panels, cards */
+--color-raised:#1e2026;      /* inputs, wells, hover surfaces */
+/* --- Accent. One colour. Volt is the brand's only chromatic signal. --- */
+--color-volt:#e3fc02;
+/* --- Type --- */
+--color-white:#fafafa;--color-muted:#8e9298;
+/* --- Light. A lighting value for photography and washes — never a UI fill. --- */
+--color-light-warm:#f2d2ab;
+/* --- Signal. Errors only. Never decorative, never a second accent. --- */
+--color-error:#ff6b6b;
+/* --- Semantic aliases --- */
+--text-body:var(--color-white);--text-inverse:var(--color-carbon);--text-muted:var(--color-muted);
+--surface-page:var(--color-carbon);--surface-card:var(--color-card);--surface-raised:var(--color-raised);
+--accent:var(--color-volt);--accent-ink:var(--color-carbon);
+--color-border:rgb(255 255 255 / 0.08);      /* cards, dividers */
+--color-border-strong:rgb(255 255 255 / 0.24); /* inputs, selectable things */
+--dot-on:rgb(250 250 250 / 0.92);--dot-off:rgb(250 250 250 / 0.16);
+--wash-warm:radial-gradient(120% 80% at 12% 0%, rgb(242 210 171 / 0.16), transparent 60%);
 }

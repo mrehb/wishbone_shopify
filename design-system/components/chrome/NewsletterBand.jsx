@@ -2,23 +2,23 @@ import React from 'react';
 import { Button } from '../core/Button.jsx';
 import { Input } from '../core/Input.jsx';
 
-// Full-width band. Volt variant is the one place the brand shouts — ink type only.
-export function NewsletterBand({ heading = 'Join the Wishbone list', tone = 'ink', style }) {
-  const onVolt = tone === 'volt';
+// A soft panel rather than a full-bleed band — v2 is built from objects on a ground.
+export function NewsletterBand({ heading = 'Telemetry, not marketing', style }) {
   return (
     <section style={{
-      background: onVolt ? 'var(--color-volt)' : 'var(--color-ink)',
-      color: onVolt ? 'var(--color-ink)' : 'var(--color-white)',
-      borderTop: onVolt ? 'none' : '1px solid var(--color-border-soft)',
-      padding: 'var(--space-section) 24px', ...style,
+      background: 'var(--surface-card)', border: '1px solid var(--color-border)',
+      borderRadius: 'var(--radius-card)', padding: '32px 30px', ...style,
     }}>
-      <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 500, textTransform: 'uppercase', fontSize: 25, margin: 0 }}>{heading}</h3>
-      <p style={{ margin: '10px 0 18px', maxWidth: '48ch', fontSize: 14 }}>
-        New models, spare-part restocks and nothing else. Unsubscribe in one click.
+      <div style={{ fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+        <b style={{ color: 'var(--color-volt)', fontWeight: 400 }}>05</b>&nbsp;&nbsp;The list
+      </div>
+      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: 23, margin: '14px 0 8px', letterSpacing: '-0.01em' }}>{heading}</h3>
+      <p style={{ margin: '0 0 20px', maxWidth: '46ch', color: 'var(--text-muted)', fontSize: 14 }}>
+        New models, spare-part restocks and firmware notes. Nothing else. Unsubscribe in one click.
       </p>
-      <div style={{ display: 'flex', maxWidth: 480 }}>
-        <Input placeholder="Email address" style={{ flex: 1 }} />
-        <Button variant={onVolt ? 'invert' : 'primary'} style={{ alignSelf: 'flex-end' }}>Sign up</Button>
+      <div style={{ display: 'flex', gap: 10, alignItems: 'flex-end', flexWrap: 'wrap' }}>
+        <Input label="Email address" placeholder="you@example.com" style={{ flex: '1 1 240px' }} />
+        <Button>Sign up</Button>
       </div>
     </section>
   );

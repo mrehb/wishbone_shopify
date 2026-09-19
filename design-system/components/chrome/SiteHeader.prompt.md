@@ -1,7 +1,8 @@
 # SiteHeader
 
-Wordmark left at 200px, nav in tracked 13px caps, cart count as words not an icon badge. Ink
-background with a hairline bottom border — no blur, no shadow, no sticky shrink animation.
+Two rows: a mono status line with a volt dot (*All systems operational* — borrowed from
+instrumentation, and true of a shop that is open), then the wordmark, mono nav and a cart count
+padded to two digits in volt.
 
-The live store's nav is deliberately short (all products, spare parts, contact). Keep it under
-five items; a trolley range this size does not need a mega-menu.
+Keep the nav under five items. The status line is the one place the brand is allowed a wink; it
+must still say something true — stock, shipping window, opening state.

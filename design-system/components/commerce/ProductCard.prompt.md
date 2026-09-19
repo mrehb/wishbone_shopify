@@ -1,9 +1,11 @@
 # ProductCard
 
-Square image, square card, text left. Hairline border at 10 % — cards separate by edge, not by
-shadow or lift.
+Soft card (20px), inset media well (16px) with a 10px margin so the image sits *inside* the object
+rather than bleeding to its edge. Title in Space Grotesk, type and price in the telemetry face —
+a price is a reading, not prose.
 
-Titles keep the catalogue's own naming: **Wishbone EON**, and spare parts in full as
-*Fast Charger (NEO & EON)* — the parenthesised model is how customers find the right part, so it
-is never trimmed for layout. Prices carry the locale format (`799,00 €`). Sold-out cards drop to
-55 % opacity and replace the price with the words; they are never hidden from the grid.
+The media well accepts a photograph **or** a `DotMatrix` silhouette; the dotted treatment is
+strongest on the range overview, where five dotted trolleys read as one instrument panel.
+
+Titles keep the catalogue's naming, including spare parts in full — *Fast Charger (NEO & EON)*.
+That parenthesis is how customers find the right part and is never trimmed for layout.

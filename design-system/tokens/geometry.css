@@ -1,8 +1,9 @@
 :root{
-/* The signature trait: SQUARE. Radius 0 on every surface. */
---radius:0;--radius-pill:40px;
---border-width:1px;--border-opacity:0.55;
-/* The brand has no shadows — every theme surface ships shadow opacity 0. */
---shadow:none;--shadow-card:none;
---motion-duration:400ms;--motion-ease:cubic-bezier(.16,.84,.44,1);
+/* v2 inverts v1: the brand was square, it is now soft. Cards read as objects. */
+--radius-card:20px;--radius-control:10px;--radius-media:16px;--radius-pill:999px;--radius-chip:8px;
+--border-width:1px;
+/* Still no drop shadows. Depth comes from the warm wash and surface steps. */
+--shadow:none;
+--dot-size:5px;--dot-gap:3px;   /* the signature device */
+--motion-fast:180ms;--motion:320ms;--motion-slow:600ms;--ease:cubic-bezier(.16,.84,.44,1);
 }

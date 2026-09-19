@@ -1,12 +1,11 @@
 # Button
 
-Oswald 500, uppercase, square (radius 0), no shadow, no hover lift. One primary action per view.
+Space Grotesk 500, 10px radius, no shadow. Three variants and no more: **primary** (volt fill,
+carbon label — one per view), **ghost** (hairline outline for everything secondary), **quiet**
+(text only, for tertiary links inside panels).
 
-- **primary** — volt fill, ink label. The action you want taken.
-- **secondary** — transparent with a 1px volt hairline. Everything else.
-- **white** — white fill, ink label. Use on photography where volt would fight the image.
-- **invert** — ink fill, volt label. Only on a volt or cyan panel.
+Volt always carries carbon type; white on volt measures 1.15:1 and is unreadable. Labels are
+sentence case and verb-first — *Add to cart*, *Configure your EON*. Disabled drops to 35 % and the
+label states the reason (*Sold out*), never a greyed-out *Add to cart*.
 
-Labels are sentence case and verb-first: *Add to cart*, *Learn more*, *Buy the EON*. Never
-white type on volt — it measures 1.15:1 and is unreadable. Disabled is 40 % opacity, and the
-label changes to the reason (*Sold out*), not a greyed-out *Add to cart*.
+Changed in v2: radius 0 → 10px, Oswald uppercase → Space Grotesk sentence case.

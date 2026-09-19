@@ -1,14 +1,14 @@
-<!-- @dsCard group="Geometry" viewport="700x200" name="Spacing & layout" subtitle="1600px · 52px sections · 40px gutters" -->
+<!-- @dsCard group="Geometry" viewport="700x220" name="Spacing & layout" subtitle="1440px · 72px sections · 20px gutters" -->
 <!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"></head><body style="margin:0;padding:24px">
-<div style="border:1px dashed var(--color-border-soft);padding:12px;position:relative">
-  <div style="font-size:11px" class="muted">page width 1600px · gutter 24px</div>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-top:12px">
-    <div style="height:54px;background:var(--surface-panel)"></div>
-    <div style="height:54px;background:var(--surface-panel)"></div>
-    <div style="height:54px;background:var(--surface-panel)"></div>
+<div style="border:1px dashed var(--color-border);border-radius:var(--radius-card);padding:16px">
+  <span class="label">PAGE 1440PX · GUTTER 24PX</span>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:14px">
+    <div style="height:56px;background:var(--surface-card);border:1px solid var(--color-border);border-radius:var(--radius-card)"></div>
+    <div style="height:56px;background:var(--surface-card);border:1px solid var(--color-border);border-radius:var(--radius-card)"></div>
+    <div style="height:56px;background:var(--surface-card);border:1px solid var(--color-border);border-radius:var(--radius-card)"></div>
   </div>
-  <div style="font-size:11px;margin-top:10px" class="muted">grid gutters 40 × 40px</div>
-  <div style="height:52px;border-left:2px solid var(--color-volt);margin-top:12px;padding-left:10px;font-size:11px;display:flex;align-items:center" class="muted">section spacing 52px</div>
+  <div class="label" style="margin-top:12px">GRID GAP 20PX — TIGHTER THAN V1'S 40, SO PANELS READ AS ONE INSTRUMENT CLUSTER</div>
 </div>
-<p class="muted" style="font-size:12.5px;margin:14px 0 0">Breakpoints 480 / 750 / 990 / 1400px. Text is left-aligned by default — the theme's card text alignment is left everywhere.</p>
+<p class="muted" style="font-size:12.5px;margin-top:14px">Page narrows 1600 → <b style="color:#fafafa">1440px</b> and sections breathe wider (52 → <b style="color:#fafafa">72px</b>):
+cards sit closer together, groups sit further apart. Breakpoints unchanged — 480 / 750 / 990 / 1400.</p>
 </body></html>

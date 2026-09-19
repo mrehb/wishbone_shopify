@@ -1,7 +1,7 @@
 import * as React from 'react';
 export interface ButtonProps {
-  /** primary = volt fill with ink label · secondary = volt hairline · white = white fill · invert = ink fill on a volt/cyan panel */
-  variant?: 'primary' | 'secondary' | 'white' | 'invert';
+  /** primary = volt fill, carbon label · ghost = hairline outline · quiet = text only */
+  variant?: 'primary' | 'ghost' | 'quiet';
   size?: 'md' | 'lg';
   disabled?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;

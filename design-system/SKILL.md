@@ -1,15 +1,17 @@
 ---
 name: wishbone-design
-description: Use this skill to generate well-branded interfaces and assets for Wishbone Golf (wishbone.golf), either for production or throwaway prototypes/mocks. Contains the brand's colours, type, geometry, logo assets, voice rules and UI kit components, all derived from the live Shopify store.
+description: Use this skill to generate well-branded interfaces and assets for Wishbone Golf (wishbone.golf), either for production or throwaway prototypes/mocks. Contains the v2 "Telemetry" brand system — carbon ground, volt accent, dot-matrix data device, Space Grotesk/Figtree/Share Tech Mono — plus logo assets, voice rules and UI kit components.
 user-invocable: true
 ---
 
 Read `readme.md` in this skill first, then explore the other files.
 
-Wishbone is **dark-first**: ink `#1f1f21` is the ground, volt `#e3fc02` is the only action colour,
-and the brights carry ink type only — white on volt is unreadable (1.15:1). Geometry is square
-(radius 0, pills at 40 the one exception), borders are hairlines, and **nothing casts a shadow**.
-Type is Oswald 500 uppercase headings over Figtree 500 body.
+Wishbone v2 is **instrumentation on carbon**: `#0f1014` ground with a warm top-left wash, volt
+`#e3fc02` as the single accent (always carrying carbon type — white on volt is unreadable at
+1.15:1), soft geometry (20px cards, 10px controls), and **no shadows**. Three faces: Space Grotesk
+says what a thing is, Figtree explains it, Share Tech Mono reports a value. The signature device is
+the **dot matrix** — quantities, charts and product silhouettes drawn as dot grids. Panels are
+numbered 01, 02, 03. If a value is unknown, print `—`; never invent a spec.
 
 If creating visual artifacts (slides, mocks, throwaway prototypes), copy assets out and produce
 static HTML. If working on production code, that production code is the Shopify theme at

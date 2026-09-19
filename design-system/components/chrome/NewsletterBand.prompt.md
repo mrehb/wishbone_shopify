@@ -1,8 +1,7 @@
 # NewsletterBand
 
-Full-bleed band, 52px vertical padding. Two tones: ink (default) and volt for the single loud
-moment in a journey. On volt everything is ink type — the button inverts to an ink fill with a
-volt label.
+A numbered panel like every other block in v2 — the full-bleed coloured band is gone, because the
+page is now objects sitting on a ground.
 
-Say what the list actually sends. "New models, spare-part restocks and nothing else" is on
-brand; "Join our community for exclusive offers!" is not.
+Say what the list actually sends. *"New models, spare-part restocks and firmware notes. Nothing
+else."* is on brand; *"Join our community for exclusive offers!"* is not.
