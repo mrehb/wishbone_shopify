@@ -1,11 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+/* Wishbone v4 — type. Manrope for everything; DotGothic16 for the eyebrow only. */
 :root{
-/* ONE family. DotGothic16 is a 16px dot-matrix bitmap face: the reference's voice, exactly.
-   It sets labels, values, headings and the short copy this brand writes. No second face. */
---font:'DotGothic16','VT323',ui-monospace,SFMono-Regular,Menlo,monospace;
-/* Sizes are multiples of the 16px bitmap grid so the dots stay crisp. */
---fs-label:12px;--fs-body:16px;--fs-lead:20px;--fs-h:32px;--fs-readout:48px;--fs-display:64px;--fs-hero:96px;
---lh-label:1.2;--lh-body:1.55;--lh-tight:1.0;
---track-label:0.14em;--track-display:0.02em;
---case-label:uppercase;
+  --font:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-dot:'DotGothic16',ui-monospace,monospace;
+  --fs-label:12px;   /* eyebrow, nav, buttons, table heads */
+  --fs-body:15px;    /* copy */
+  --fs-lead:18px;    /* intro copy, product names */
+  --fs-h:28px;       /* section headline, small */
+  --fs-display:40px; /* section headline */
+  --fs-hero:56px;    /* the hero */
+  --fs-stat:44px;    /* the number in a stat */
+  --w-display:300;   /* headlines and stats are light */
+  --w-body:400;
+  --w-ui:500;        /* buttons, nav, labels */
+  --w-strong:600;    /* the price */
+  --track-label:.16em;
+  --track-display:.02em;
+  --lh-display:1.08;
+  --lh-body:1.6;
 }

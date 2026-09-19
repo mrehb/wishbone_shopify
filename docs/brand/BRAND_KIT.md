@@ -1,5 +1,77 @@
 # Wishbone Golf — Brand Kit
 
+**Version 4.0 "Studio" — 19 September 2026.** Supersedes v3.0, v2.0 and v1.0 of the same day.
+
+The owner reviewed v3 and asked for a change of direction against a new reference — a white,
+product-led page with a light geometric sans, hairlines, one dark band and a lime button used
+once: "too many dots, everything a bit too dark, I don't want the dotted font in every aspect."
+
+---
+
+## 0. The direction
+
+One fact decides it: **the store photographs every product on pure white.** A dark site fights every
+photograph; a white one lets them sit. v4 is white.
+
+| | v4 |
+|---|---|
+| Ground | paper `#FFFFFF` alternating with mist `#F4F4F5`; ink `#0F1014` at most once per page |
+| Type | **Manrope** — 300 caps for headlines, 400 body, 500 labels, 600 for the price |
+| The dot accent | **DotGothic16 for the numbered eyebrow only**; dot silhouettes for parts without a photo |
+| Accent | **Lime `#A8FF4A`** — a surface on paper (one button per view, tag, 2px rule); text only on ink |
+| Line | the hairline `#E4E4E7` |
+| Geometry | radius 0, no shadows; depth is a band change |
+| Layout | full-bleed bands on a 1200px / 12-column container, two-half bands split 5 : 7 |
+
+## 1. Colour
+
+| token | value | use |
+|---|---|---|
+| paper | `#FFFFFF` | the page |
+| mist | `#F4F4F5` | alternate band; the frame behind every product photo |
+| ink | `#0F1014` | text; the one dark band |
+| grey | `#6B7075` | secondary text (5.0:1) |
+| hairline | `#E4E4E7` | tables, stats, fields, footer |
+| lime | `#A8FF4A` | the accent — hue 89°, the hardware's green (settled in v3) |
+
+Ink on paper 18.6:1 · ink on lime 15.5:1 · lime on ink 15.5:1 · **lime on paper 1.2:1 — never as
+text.** No red: an error is a 2px lime line under the field and a plain sentence.
+
+## 2. Type
+
+Manrope (Google Fonts, OFL). Hero 56 / display 40 / small 28 at weight 300, upper case, 2% tracking,
+one statement per line each ending in a full stop. Body 15/1.6. Label 12 caps, 0.16em, weight 500.
+Price weight 600. **DotGothic16** at 12px, smoothing off, for the eyebrow `01  THE LINEUP` and
+nothing else.
+
+## 3. Bands
+
+96px padding (56 mobile, 40 for strips). Paper and mist alternate; consecutive paper bands are
+divided by a hairline; the ink band appears once, for the technology feature. Text 5 columns,
+image 7. One lime button per view: the purchase.
+
+## 4. Photography
+
+The store's white-studio shots, in a mist frame, `mix-blend-mode: multiply` so the object sits on
+the band. No text over photographs, no dark backdrops, no retouched green. Fifteen parts and the NEO
+have no photograph and draw their model's dot silhouette until they do.
+
+## 5. Components
+
+Primitives: Eyebrow, Display, Button (lime / ink / outline / text), Stat + StatRow, Field
+(underline), Tag, Price, Dots, Silhouette + Photo. Sections: Hero, Stats, Lineup, Feature (paper /
+mist / ink), Trust, Inquiry, Buy, Specs, Compare, Parts, Faq. Chrome: Header, Footer. All in
+`design-system/components`, all built on the real catalogue.
+
+## 6. Open
+
+Fold size and weight unmeasured; photographs for fifteen parts and the NEO; SVG masters; ™ vs ®;
+"aluminum" → "aluminium"; vendor "My Store"; the theme still runs v1.
+
+---
+
+# Appendix — v3.0 "Instrument" (superseded)
+
 **Version 3.0 "Instrument" — 19 September 2026.** Supersedes v2.0 and v1.0 of the same day.
 
 The owner reviewed v2 and rejected it as not consistent enough. v3 is a from-scratch rebuild from

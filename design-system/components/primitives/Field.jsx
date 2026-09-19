@@ -1,19 +1,18 @@
-import React from 'react';
+import React, { useId } from 'react';
 
-// Text input as a pill. Same shape as everything else that can be pressed.
-export function Field({ label, placeholder, value, error, type = 'text', onChange, style }) {
-  const id = label ? 'f-' + label.replace(/\W+/g, '-').toLowerCase() : undefined;
+// An underlined field, as in the reference's inquiry form. Label above in 12px caps; the line
+// is the hairline and turns ink on focus. Error is a lime line plus a plain instruction. No red.
+export function Field({ label, type = 'text', value, placeholder, error, multiline = false, onChange, style }) {
+  const id = useId();
+  const [focus, setFocus] = React.useState(false);
+  const line = error ? '2px solid var(--lime)' : focus ? '1px solid currentColor' : '1px solid var(--hair)';
+  const common = { id, value, placeholder, onChange: onChange && ((e) => onChange(e.target.value)), onFocus: () => setFocus(true), onBlur: () => setFocus(false),
+    style: { width: '100%', border: 0, borderBottom: line, background: 'transparent', padding: '10px 0', outline: 'none', borderRadius: 0, fontSize: 'var(--fs-body)', resize: 'vertical' } };
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 8, ...style }}>
-      {label && <label htmlFor={id} className="label">{label}</label>}
-      <input id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} aria-invalid={!!error}
-        style={{
-          fontFamily: 'var(--font)', fontSize: 'var(--fs-body)', color: 'var(--white)', background: 'transparent',
-          padding: '13px 18px', borderRadius: 'var(--r-pill)', outline: 'none',
-          border: `1px solid ${error ? 'var(--lime)' : 'rgb(255 255 255 / .28)'}`,
-        }} />
-      {error && <span style={{ fontSize: 'var(--fs-label)', letterSpacing: '0.06em', color: 'var(--white)' }}>
-        <span className="lime">▸ </span>{error}</span>}
+    <div style={{ display: 'grid', gap: 4, ...style }}>
+      <label htmlFor={id} className="label grey">{label}</label>
+      {multiline ? <textarea rows={3} {...common} /> : <input type={type} {...common} />}
+      {error && <div style={{ fontSize: 13, marginTop: 4 }}><span aria-hidden="true" style={{ display: 'inline-block', width: 8, height: 8, background: 'var(--lime)', marginRight: 8 }} />{error}</div>}
     </div>
   );
 }

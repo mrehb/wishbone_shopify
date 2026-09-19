@@ -1,14 +1,10 @@
-<!-- @dsCard group="Foundations" viewport="700x250" name="Dots" subtitle="6px dot, 3px gap — the only graphic" -->
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"></head><body style="margin:0;padding:24px">
-<div style="display:flex;gap:36px;align-items:flex-end;flex-wrap:wrap"><canvas id="a"></canvas><canvas id="b"></canvas><canvas id="c"></canvas><canvas id="d"></canvas></div>
-<p class="grey" style="font-size:var(--fs-label);letter-spacing:.06em;margin-top:16px">bars · ring · line · steps. White = signal, dim = empty grid, lime = the value that matters. Silhouettes are sampled from real photographs. Never a background pattern.</p>
-<script>
-const S=6,G=3,st=S+G,L='#a8ff4a';
-function draw(id,grid,cols,rows,hot){const c=document.getElementById(id),d=devicePixelRatio||1,w=cols*st-G,h=rows*st-G;c.width=w*d;c.height=h*d;c.style.width=w+'px';c.style.height=h+'px';const x=c.getContext('2d');x.scale(d,d);
- grid.forEach((v,i)=>{if(v<=0)return;x.beginPath();x.arc((i%cols)*st+S/2,Math.floor(i/cols)*st+S/2,S/2,0,6.283);x.fillStyle=hot.includes(i)?L:v>=.99?'#fafafa':'rgba(250,250,250,'+(0.22+v*.78)+')';x.fill()})}
-const lv=[1,.9,.8,.65,.5,.4,.3,.2],rows=8,g1=[],h1=[];for(let r=0;r<rows;r++)for(let c=0;c<lv.length;c++){const f=(rows-r)/rows<=lv[c]+1e-9;g1.push(f?1:.18);if(f&&lv[c]>=1&&r===0)h1.push(r*lv.length+c)}draw('a',g1,lv.length,rows,h1);
-const R=7,n=R*2+1,g2=[],h2=[];for(let r=0;r<n;r++)for(let c=0;c<n;c++){const dx=c-R,dy=r-R,dd=Math.hypot(dx,dy),on=Math.abs(dd-R)<.7;g2.push(on?1:0);if(on){const a=(Math.atan2(dy,dx)+Math.PI/2+6.283)%6.283;if(a/6.283<=.66)h2.push(r*n+c)}}draw('b',g2,n,n,h2);
-const pts=[.2,.35,.3,.5,.6,.55,.8,1,.7,.6,.65,.5],rw=10,g3=new Array(pts.length*rw).fill(0),h3=[];let pk=0;pts.forEach((p,i)=>{if(p>pts[pk])pk=i});pts.forEach((p,c)=>{const r=Math.round((1-p)*(rw-1));g3[r*pts.length+c]=1;if(c===pk)h3.push(r*pts.length+c)});draw('c',g3,pts.length,rw,h3);
-const N=4,K=2,cc=N*4-3,g4=new Array(cc).fill(.22),h4=[];for(let i=0;i<N;i++){g4[i*4]=1;if(i<K)h4.push(i*4)}draw('d',g4,cc,1,h4);
-</script>
+<!-- @dsCard group="Foundations" viewport="960x420" name="The dot accent" subtitle="DotGothic16 eyebrows and silhouettes — nothing else" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{padding:32px}.sw{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.sw div{height:96px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font-size:12px;border:1px solid var(--hair)}.sw .v{font-family:var(--font-dot);letter-spacing:.1em}table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:10px 0;border-bottom:1px solid var(--hair);vertical-align:top}th{font-weight:500}.k{display:grid;gap:24px}</style></head><body>
+<div class="k"><div class="eyebrow"><b>05</b>The dot accent</div>
+<p style="max-width:64ch">The dot-matrix voice was the part of v3 worth keeping, and it is kept in two places only.</p>
+<table><tr><th>where</th><th>what</th><th>not</th></tr>
+<tr><td>the eyebrow</td><td>DotGothic16, 12px, one numbered label above each headline</td><td>headings, body, prices, buttons, nav, stats</td></tr>
+<tr><td>the silhouette</td><td>5px ink dots on a 2px pitch, standing in for a missing product photo</td><td>charts, gauges, dividers, textures, backgrounds, icons, logos</td></tr></table>
+<div style="display:flex;gap:32px;align-items:center"><span class="eyebrow"><b>01</b>The lineup</span><span class="eyebrow"><b>02</b>Spare parts</span><span class="eyebrow"><b>03</b>Battery</span></div>
+<p class="grey" style="font-size:14px;max-width:64ch">A page has six or seven eyebrows and, until photography is complete, a handful of silhouettes in the parts grid. That is the whole dot budget.</p></div>
 </body></html>

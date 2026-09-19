@@ -1,0 +1,30 @@
+<!-- @dsCard group="Pages" viewport="1200x900" name="Product and parts" subtitle="Buy · Specs · Compare · Parts · Faq" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head><body><div id="root"></div>
+<script>window.__dsReady = new Promise(function(res){var t0=Date.now();(function poll(){if(window.WishboneGolfDesignSystem_4d0e77){res(true)}else if(Date.now()-t0>8000){document.getElementById("root").innerHTML="<div style=\"padding:24px;font-family:monospace;font-size:13px\">Design-system bundle not loaded yet (_ds_bundle.js). Reload the page.</div>";res(false)}else{setTimeout(poll,100)}})()});</script>
+<script type="text/babel" data-ds-deferred="true">
+const ns = window.WishboneGolfDesignSystem_4d0e77 || {};
+const CDN='https://cdn.shopify.com/s/files/1/0911/6631/0724/files/';
+const IMG={ONE:CDN+'WBONE-charcoallime.jpg?width=900',TWO:CDN+'DSCF2333.jpg?width=900',THREE:CDN+'DSCF2323_cc4afde5-1a45-4eb5-9b88-3d961cc1d6cc.jpg?width=900',EON:CDN+'EON_Charcoal_Black_1.jpg?width=900',EON2:CDN+'EON_Charcoal_Black_3.jpg?width=900',TWO2:CDN+'DSCF2339.jpg?width=900',BAG:CDN+'NEO_Baghalterung_4.jpg?width=600',PLUG:CDN+'WB12808_Top.jpg?width=600',CASE:CDN+'Wheelcase-open.png?width=600',UMB:CDN+'UmbrellaHolder_2.jpg?width=600',SCORE:CDN+'Magnetic_Scorecard_Holder_2.jpg?width=600',BALL:CDN+'BallTeeHolder.jpg?width=600'};
+const MODELS=[{id:'ONE',type:'manual',price:'229,00 €',src:IMG.ONE},{id:'TWO',type:'manual',price:'199,00 €',src:IMG.TWO},{id:'THREE',type:'manual',price:'249,00 €',src:IMG.THREE},{id:'NEO',type:'electric',price:null},{id:'EON',type:'electric',price:'799,00 €',src:IMG.EON}];
+const PARTS=[{title:'Lithium Battery 27+ Holes (NEO & EON)',fits:['NEO','EON'],price:'369,00 €'},{title:'Drive Train - Motor & Gearbox (NEO)',fits:['NEO'],price:'152,30 €'},{title:'Fast Charger (NEO & EON)',fits:['NEO','EON'],price:'99,90 €'},{title:'Frame (ONE)',fits:['ONE'],price:'89,00 €'},
+ {title:'Controller (NEO)',fits:['NEO'],price:'62,00 €'},{title:'Wishbone NEO & ONE Upper Bagholder',fits:['ONE','NEO'],price:'53,00 €',src:IMG.BAG},{title:'Thumb Throttle Kit (NEO)',fits:['NEO'],price:'44,00 €'},{title:'Front Wheel Kit - Universal fit (ONE & NEO)',fits:['ONE','NEO'],price:'37,40 €'},
+ {title:'Cruise Button Kit (NEO)',fits:['NEO'],price:'33,00 €'},{title:'Frame and Wheel Bag (ONE)',fits:['ONE'],price:'29,90 €',src:IMG.CASE},{title:'Battery Plug Set + Cable (NEO)',fits:['NEO'],price:'26,90 €',src:IMG.PLUG},{title:'Rear Wheel (NEO)',fits:['NEO'],price:'24,90 €'},
+ {title:'Rear Wheel - Left Brake Side (ONE)',fits:['ONE'],price:'24,80 €'},{title:'Rear Wheel Right (ONE)',fits:['ONE'],price:'24,20 €'},{title:'Handle Kit (NEO)',fits:['NEO'],price:'16,90 €'},{title:'Bag Straps - Set (ONE & NEO)',fits:['ONE','NEO'],price:'14,90 €'},
+ {title:'Wing Screw for Umbrella Holder (ONE, NEO & EON)',fits:['ONE','NEO','EON'],price:'7,90 €'},{title:'Brake Kit (ONE)',fits:['ONE'],price:'7,30 €'},{title:'Umbrella Holder',fits:['ALL'],price:'29,90 €',src:IMG.UMB},{title:'Magnetic Scorecard Holder',fits:['ALL'],price:'29,90 €',src:IMG.SCORE}];
+const FAQ=[{q:'Can I replace the battery myself?',a:'Yes. The Lithium Battery 27+ Holes fits the NEO and the EON and is listed as a spare part at 369 €.'},{q:'Which parts fit my trolley?',a:'Ten are listed for the ONE, fourteen for the NEO and five for the EON. Four accessories fit every model.'},{q:'How is it delivered?',a:'Folded, in one box, in 2–4 days to Austria, Germany and the UK. Shipping is calculated at checkout.'}];
+const { Header, Buy, Specs, Compare, Parts, Faq, Footer } = ns;
+ReactDOM.createRoot(document.getElementById('root')).render(<div>
+  <Header cart={2} />
+  <Buy model="EON" type="electric" price="799,00 €" colourways={['charcoal-black','charcoal-red','white-red']} images={[IMG.EON,IMG.EON2]} copy="A full powered, simple ‘no nonsense’ electric cart." parts={5} facts={[{label:'Range',value:'27+ holes'},{label:'Frame',value:'aircraft-grade aluminium'}]} />
+  <Specs rows={[{label:'Type',value:'electric'},{label:'Range',value:'27+ holes on one charge'},{label:'Battery',value:'Lithium, 27+ holes — replaceable, 369,00 €'},{label:'Frame',value:'aircraft-grade aluminium'},{label:'Bearings',value:'sealed'},{label:'Folded size',value:null},{label:'Weight',value:null},{label:'Colourways',value:'charcoal-black · charcoal-red · white-red'}]} box={[{name:'EON trolley'},{name:'Lithium battery'},{name:'Fast charger'},{name:'Bag straps',qty:'2 ×'}]} />
+  <Compare models={MODELS} highlight="EON" rows={[{label:'Type',values:{ONE:'manual',TWO:'manual',THREE:'manual',NEO:'electric',EON:'electric'}},{label:'Range',values:{NEO:'27+ holes',EON:'27+ holes'}},{label:'Folded size',values:{}},{label:'Weight',values:{}},{label:'Colourways',values:{ONE:'5',TWO:'3',THREE:'3',EON:'3'}},{label:'Spare parts listed',values:{ONE:'10',TWO:'2',THREE:'2',NEO:'14',EON:'5'}}]} />
+  <Parts items={PARTS} initial="NEO" />
+  <Faq items={FAQ} />
+  <Footer />
+</div>);
+</script></body></html>

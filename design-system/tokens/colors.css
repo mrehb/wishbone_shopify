@@ -1,16 +1,15 @@
+/* Wishbone v4 "Studio" — colour. The store photographs everything on white; the site does too. */
 :root{
-/* v3 "Instrument". One ground, one tile, one accent. Nothing else. */
---ground:#0f1014;          /* the page: warm near-black */
---tile:#111214;            /* every container */
---tile-edge:rgb(255 255 255 / 0.06);   /* 1px top-light edge — tiles are objects under a light */
---tile-line:rgb(255 255 255 / 0.10);   /* dividers inside a tile */
---lime:#a8ff4a;            /* THE accent. Hue 89°: the hardware's green, tuned for screen. */
---white:#fafafa;           /* primary values and headings */
---grey:#8e9298;            /* labels, inactive dots, secondary values */
---dim:rgb(250 250 250 / 0.22);         /* empty dots */
---light:#f2d2ab;           /* the lamp. A gradient value only; never a fill. */
-/* Semantic */
---text:var(--white);--text-2:var(--grey);--on-lime:var(--ground);
---dot-on:var(--white);--dot-off:var(--dim);--dot-hot:var(--lime);
---wash:radial-gradient(130% 80% at 0% 0%, rgb(242 210 171 / 0.20), transparent 62%);
+  --paper:#ffffff;            /* the page */
+  --mist:#f4f4f5;             /* the alternate band; the backdrop under every product photo */
+  --ink:#0f1014;              /* text on paper; the one dark band per page */
+  --ink-2:#17181d;            /* a panel on the dark band */
+  --grey:#6b7075;             /* secondary text on paper (5.0:1) */
+  --grey-ink:#9a9ea6;         /* secondary text on ink (6.5:1) */
+  --hair:#e4e4e7;             /* the hairline on paper */
+  --hair-ink:rgb(255 255 255 / .14);  /* the hairline on ink */
+  --lime:#a8ff4a;             /* the accent — the hardware's green, hue 89° */
+  --on-lime:#0f1014;          /* the only text colour that goes on lime */
+  --dot:#0f1014;              /* silhouette dots on paper */
+  --dot-ink:#fafafa;          /* silhouette dots on the dark band */
 }

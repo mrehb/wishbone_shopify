@@ -1,19 +1,28 @@
+/* Wishbone v4 — base. */
 *,*::before,*::after{box-sizing:border-box}
-html{background:var(--ground)}
-body{margin:0;background:var(--ground);background-image:var(--wash);background-attachment:fixed;
-  color:var(--text);font-family:var(--font);font-size:var(--fs-body);line-height:var(--lh-body);
-  -webkit-font-smoothing:none;-moz-osx-font-smoothing:unset}
-h1,h2,h3,h4{font-family:var(--font);font-weight:400;margin:0;line-height:var(--lh-tight);letter-spacing:var(--track-display)}
-h1{font-size:var(--fs-display)}h2{font-size:var(--fs-h)}h3{font-size:var(--fs-lead)}h4{font-size:var(--fs-body)}
-p{margin:0}
-a{color:var(--lime)}
-/* The label that heads every tile: NN NAME */
-.label{font-size:var(--fs-label);letter-spacing:var(--track-label);text-transform:var(--case-label);color:var(--text-2);line-height:var(--lh-label)}
-.label b{color:var(--white);font-weight:400}
-.readout{font-size:var(--fs-readout);line-height:1}
-.grey{color:var(--text-2)}
-.lime{color:var(--lime)}
-/* The cursor. Ends a statement. */
-.cursor::after{content:'_';color:var(--lime);animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-@media (prefers-reduced-motion:reduce){.cursor::after{animation:none}}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:var(--fs-body);font-weight:var(--w-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,p,ul,ol,dl,figure{margin:0}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+img{display:block;max-width:100%}
+/* the eyebrow — the one place DotGothic16 appears */
+.eyebrow{font-family:var(--font-dot);font-size:var(--fs-label);letter-spacing:var(--track-label);text-transform:uppercase;line-height:1;display:inline-flex;align-items:center;gap:12px;-webkit-font-smoothing:none;color:inherit}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--lime);flex:none}
+.eyebrow b{font-weight:400}
+.band--ink .eyebrow{color:var(--lime)}
+.band--ink .eyebrow::before{display:none}
+/* the label — Manrope, small caps tracked; nav, buttons, table heads, swatch names */
+.label{font-family:var(--font);font-size:var(--fs-label);font-weight:var(--w-ui);letter-spacing:var(--track-label);text-transform:uppercase;line-height:1.3}
+/* the display — light, upper case, each line a sentence ending in a full stop */
+.display{font-family:var(--font);font-weight:var(--w-display);font-size:var(--fs-display);line-height:var(--lh-display);letter-spacing:var(--track-display);text-transform:uppercase}
+.display--hero{font-size:var(--fs-hero)}
+.display--s{font-size:var(--fs-h)}
+.lead{font-size:var(--fs-lead);line-height:1.5}
+.grey{color:var(--grey)}
+.band--ink .grey{color:var(--grey-ink)}
+.hair{border:0;border-top:var(--hair-w) solid var(--hair);margin:0}
+.band--ink .hair{border-color:var(--hair-ink)}
+.num{font-variant-numeric:tabular-nums lining-nums}
+@media (max-width:900px){:root{--fs-hero:40px;--fs-display:32px;--fs-stat:36px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

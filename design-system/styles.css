@@ -1,6 +1,6 @@
-/* Wishbone Golf design system v3 "Instrument" — global entry. */
-@import url('tokens/typography.css');
-@import url('tokens/colors.css');
-@import url('tokens/geometry.css');
-@import url('tokens/layout.css');
-@import url('tokens/base.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=DotGothic16&display=swap');
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/geometry.css';
+@import './tokens/layout.css';
+@import './tokens/base.css';

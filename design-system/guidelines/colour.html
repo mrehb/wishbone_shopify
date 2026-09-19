@@ -1,11 +1,17 @@
-<!-- @dsCard group="Foundations" viewport="700x200" name="Colour" subtitle="One ground, one tile, one lime" -->
-<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"></head><body style="margin:0;padding:24px">
-<div style="display:flex;height:120px;border-radius:var(--r-tile);overflow:hidden">
-  <div style="flex:2;background:#0f1014;display:flex;flex-direction:column;justify-content:flex-end;padding:14px" class="label"><b>ground</b>#0F1014</div>
-  <div style="flex:1.4;background:#111214;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;box-shadow:inset 0 1px 0 rgb(255 255 255/.06)" class="label"><b>tile</b>#111214</div>
-  <div style="flex:1;background:#8e9298;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#0f1014" class="label" style="color:#0f1014">grey #8E9298</div>
-  <div style="flex:1;background:#fafafa;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#0f1014" class="label">white #FAFAFA</div>
-  <div style="flex:1.4;background:#a8ff4a;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#0f1014" class="label"><b style="color:#0f1014">lime</b>#A8FF4A</div>
+<!-- @dsCard group="Foundations" viewport="960x560" name="Colour" subtitle="Paper, mist, ink, grey, hairline, lime" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{padding:32px}.sw{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.sw div{height:96px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font-size:12px;border:1px solid var(--hair)}.sw .v{font-family:var(--font-dot);letter-spacing:.1em}table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:10px 0;border-bottom:1px solid var(--hair);vertical-align:top}th{font-weight:500}.k{display:grid;gap:24px}</style></head><body>
+<div class="k"><div class="eyebrow"><b>01</b>Colour</div>
+<div class="sw">
+ <div style="background:#fff"><span class="label">paper</span><span class="v">#FFFFFF</span></div>
+ <div style="background:#f4f4f5"><span class="label">mist</span><span class="v">#F4F4F5</span></div>
+ <div style="background:#0f1014;color:#fafafa;border-color:#0f1014"><span class="label">ink</span><span class="v">#0F1014</span></div>
+ <div style="background:#6b7075;color:#fff;border-color:#6b7075"><span class="label">grey</span><span class="v">#6B7075</span></div>
+ <div style="background:#e4e4e7"><span class="label">hairline</span><span class="v">#E4E4E7</span></div>
+ <div style="background:#a8ff4a;border-color:#a8ff4a"><span class="label">lime</span><span class="v">#A8FF4A</span></div>
 </div>
-<p class="grey" style="font-size:var(--fs-label);letter-spacing:.06em;margin-top:14px">Lime is hue 89° — the hardware's green, not the yellow-green of the old theme. Lime on ground 15.5:1 · ground on lime 15.5:1 · white on lime 1.18:1 (never). No red anywhere: attention is lime.</p>
+<table><tr><th>pair</th><th>ratio</th><th>use</th></tr>
+<tr><td>ink on paper</td><td>18.6</td><td>all text</td></tr><tr><td>grey on paper</td><td>5.0</td><td>secondary text, labels</td></tr>
+<tr><td>ink on lime</td><td>15.5</td><td>text on the lime button and tag</td></tr><tr><td>lime on ink</td><td>15.5</td><td>the eyebrow and button on the dark band</td></tr>
+<tr><td><b>lime on paper</b></td><td><b>1.2</b></td><td><b>never as text</b> — on paper lime is a surface: the button, the tag, a 2px rule</td></tr></table>
+<p class="grey" style="font-size:14px;max-width:70ch">The store photographs every product on white, so the site is white. One dark band per page at most, for the thing with the most technology in it. Lime is the hardware's own green (hue 89°); it appears once per view as the purchase, and as small marks — the eyebrow rule, the active slide, the selected tag. There is no red: an error is a lime line and a sentence.</p></div>
 </body></html>

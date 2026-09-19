@@ -1,12 +1,3 @@
 # Dots
 
-The only way anything graphic is drawn. Charts, gauges, silhouettes, progress, icons — all a grid
-of 6px dots on a 3px gap. White for the signal, grey-dim for the empty grid, **lime for the one
-value that matters**. There are no SVG icons, no images-as-graphics, no illustrations.
-
-Generators cover the recurring cases: `bars` for quantities, `ring` for a percentage, `line` for
-a trend, `steps` for progress, `wave` for a hero pulse. Product silhouettes are a grid sampled
-from the real photograph's luminance — never hand-drawn.
-
-Never scale the pitch to fit: if a grid does not fit, use fewer columns. Never use dots as a
-background pattern — a dot grid always means *this is data*.
+What is left of the dot device: a canvas that draws a grid of 5px dots on a 2px pitch, and is used for exactly one thing — a product silhouette standing in for a photograph that does not exist yet. Ink dots on paper, paper dots on the ink band, the hardware's green in lime. No charts, no gauges, no dividers, no texture, no dots behind text. When the part is photographed the silhouette goes away.

@@ -1,0 +1,10 @@
+<!-- @dsCard group="Foundations" viewport="960x360" name="Motion" subtitle="Colour changes, content fades; nothing lifts, nothing loops" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{padding:32px}.sw{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.sw div{height:96px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;gap:2px;font-size:12px;border:1px solid var(--hair)}.sw .v{font-family:var(--font-dot);letter-spacing:.1em}table{width:100%;border-collapse:collapse;font-size:14px}td,th{text-align:left;padding:10px 0;border-bottom:1px solid var(--hair);vertical-align:top}th{font-weight:500}.k{display:grid;gap:24px}</style></head><body>
+<div class="k"><div class="eyebrow"><b>08</b>Motion</div>
+<table><tr><th>token</th><th>value</th><th>use</th></tr>
+<tr><td>fast</td><td>160ms</td><td>hover and focus colour on buttons, links, tags</td></tr>
+<tr><td>base</td><td>320ms</td><td>a band's content fading in on first view, accordion open</td></tr>
+<tr><td>slow</td><td>640ms</td><td>the hero photograph settling, once</td></tr>
+<tr><td>ease</td><td>cubic-bezier(.2,.8,.2,1)</td><td>everything</td></tr></table>
+<p class="grey" style="font-size:14px;max-width:64ch">Allowed: opacity, colour, a 6px rise on entry. Forbidden: hover lift or scale, glow, parallax, carousels that move by themselves, marquees, bounce. Everything is off under prefers-reduced-motion.</p></div>
+</body></html>

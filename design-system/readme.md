@@ -1,4 +1,4 @@
-# Wishbone Golf — Design System v3 "Instrument"
+# Wishbone Golf — Design System v4 "Studio"
 
 British golf trolleys. **"Birthed in Britain, Wishbone Golf merges exquisite design with unwavering
 quality."** *A full powered, simple 'no nonsense' cart.* — the brand's own words, unchanged.
@@ -7,73 +7,61 @@ quality."** *A full powered, simple 'no nonsense' cart.* — the brand's own wor
 Manual **ONE / TWO / THREE**, electric **NEO / EON**, and a spare-parts catalogue that is most of
 what the store sells (22 of 27 products, named `Component (MODEL)`).
 
-## Why v3 replaced v2
+## Why v4 replaced v3
 
-v2 hedged. Three typefaces, five radii, a dot device bolted onto an otherwise generic dark UI, and
-"the green" quietly meaning two different hues. It was not consistent enough to be a brand.
+v3 took the dot-matrix reference literally: dark ground, dot type everywhere, dot charts in every
+tile. The owner's verdict — too many dots, too dark, the dot font should not be in every aspect —
+and a new reference: a white, airy, product-led page with a light geometric sans, one dark band,
+hairlines, and a lime button used exactly once.
 
-v3 goes back to the two references — the DeerFlow dashboard the owner chose, and the Wishbone
-product itself — and takes exactly one of everything:
+One fact settles the direction: **the store photographs every product on pure white.** A dark site
+fights every photograph; a white one lets them sit. v4 is built on that.
 
-| | one of |
+| | v4 |
 |---|---|
-| Typeface | **DotGothic16** — a 16px dot-matrix bitmap face. Labels, values, headings, copy. |
-| Container | **the Tile** — 24px radius, 24px padding, numbered label, 1px top-light edge |
-| Layout | **the Board** — a strict 3 / 2 / 1-column grid of tiles, 16px gap. Every page. |
-| Graphic device | **Dots** — 6px on a 3px pitch. Charts, gauges, silhouettes, progress. Nothing else. |
-| Rounded element | **the Pill** — buttons, tags, status, selectors, fields. One shape. |
-| Ground | **#0F1014** under one warm lamp, top-left (`#F2D2AB` wash) |
-| Accent | **Lime #A8FF4A** — hue 89°, the hardware's actual green |
-| Light | the lamp. No shadows, no gradients on tiles, no glow. |
-
-Two radii in the whole system (tile 24, pill 999). Two text colours (white, grey). One accent.
-**No red** — attention is lime, and an error is a lime-marked instruction.
-
-### The green, settled
-
-The theme's volt `#E3FC02` and the logo's olive `#C8D645` are both hue 66° — yellow-greens. The
-trolleys' hardware photographs at hue 90° — green. Two colours had been called "the green".
-The product cannot be repainted, so the brand green is the product's: `#A8FF4A`, contrast 15.5:1
-on the ground. The monogram is recut with its quarter-circle in lime (`assets/wishbone-monogram-lime.png`).
+| Ground | **paper `#FFFFFF`**, alternating with **mist `#F4F4F5`**; **ink `#0F1014`** at most once per page |
+| Type | **Manrope** 300 / 400 / 500 / 600 for everything |
+| The dot accent | **DotGothic16 for the eyebrow only** (`01  THE LINEUP`), and dot **silhouettes** for parts with no photo. Nothing else |
+| Accent | **Lime `#A8FF4A`** — the hardware's green. A surface on paper (button, tag, 2px rule), text only on ink |
+| Line | the **hairline** `#E4E4E7` — tables, stats, fields, footer |
+| Geometry | **radius 0.** No shadows. Depth is a band change |
+| Layout | full-bleed **bands** on a 1200px, 12-column container; two-half bands split 5 : 7 |
+| Photography | white studio, multiplied onto mist |
 
 ## CONTENT FUNDAMENTALS
 
-- **Report the value, then stop.** *Range · 27+ holes.* *799 €.* One idea per sentence.
-- **Numbers are addresses.** Every tile is numbered `01…n` in reading order.
-- **Unknown prints `—`** with *not yet measured*. Never a guess. Fold size and weight are unknown
-  for every model today; the tiles say so.
-- **Statements may end with the cursor** `_` — sparingly: the hero, the footer line.
+- **Headlines are statements**, one per line, each with a full stop: *LIGHT. SIMPLE. BRITISH.*
+- **Report the value, then stop.** *27+ holes.* *799,00 €.* One idea per sentence.
+- **Unknown prints `—`** with *not yet measured*. Fold size and weight are unknown for every model.
 - Models in caps: **Wishbone ONE**, **Wishbone EON**. Parts keep `Component (MODEL)` in full.
 - British spelling. No superlatives, exclamation marks or emoji.
 
 ## VISUAL FOUNDATIONS
 
-- **Type:** DotGothic16 at 12 / 16 / 20 / 32 / 48 / 64 / 96 — multiples of its 16px grid so the
-  dots stay crisp. Labels 12px tracked 0.14em uppercase. Font smoothing off.
-- **Colour:** ground `#0F1014`, tile `#111214`, white `#FAFAFA`, grey `#8E9298`, lime `#A8FF4A`.
-  Lime always carries ground-coloured text. One lime element per tile; the page's lime button is
-  the purchase.
-- **Geometry:** tile 24px, pill 999px. Nothing else is rounded, nothing else is square.
-- **Dots:** 6px / 3px. `bars`, `ring`, `line`, `steps`, `wave`, and photo-sampled silhouettes.
-- **Light:** one warm lamp top-left in the page wash and in every photograph. Tiles catch it as
-  a 1px top edge.
-- **Motion:** dots draw in, readouts count, the cursor blinks. 160 / 320 / 640ms. Nothing lifts.
+- **Type:** hero 56 / display 40 / s 28 at weight 300, upper case, 2% tracking. Body 15/1.6.
+  Label 12 caps 0.16em at 500. Price at 600. Eyebrow 12 in DotGothic16, smoothing off.
+- **Colour:** ink on paper 18.6:1, grey `#6B7075` 5.0:1, ink on lime 15.5:1. Lime is never text on
+  paper. No red — an error is a lime line and a sentence.
+- **Bands:** 96px padding (56 mobile, 40 for strips). Paper/mist alternate; consecutive paper bands
+  get a hairline; ink once, for the technology feature. One lime button per view: the purchase.
+- **Photo:** the store's white-background shot in a mist frame, `mix-blend-mode: multiply`; the
+  model's dot silhouette where there is no shot.
+- **Motion:** colour and opacity only. 160 / 320 / 640ms. Nothing lifts, nothing loops.
 
 ## Index
 
 - `styles.css` · `tokens/` — colors, typography, geometry, layout, base
-- `assets/` — wordmark, monogram (v1), **monogram-lime** (current)
-- `guidelines/` — colour, type, tile, dots, board, marks, light, voice
-- `components/primitives/` — **Tile + Board**, **Dots** (+ generators), **Pill**, **Field**,
-  **Readout**, **Silhouettes** (EON sampled from its photograph)
-- `components/tiles/` — HeroTile, RangeTile, CompatTile, BuyTile, SpecTile, CompareTile,
-  ProductTile, PartTile, FaqTile, BoxTile, TrustTile
-- `components/chrome/` — TopBar, FootBar
+- `assets/` — wordmark + **wordmark-ink**, monogram-lime + **monogram-ink** (positive, for paper)
+- `guidelines/` — colour, type, band, photo, dots, marks, voice, motion
+- `components/primitives/` — Eyebrow, Display, Button, Stat + StatRow, Field, Tag, Price, Dots,
+  Silhouette + **Photo**
+- `components/sections/` — Hero, Stats, Lineup, Feature, Trust, Inquiry, Buy, Specs, Compare,
+  Parts, Faq
+- `components/chrome/` — Header, Footer
 - `uploads/` — BRAND_KIT.md, tokens, marks · `SKILL.md` — agent entry point
 - `tools/` — generators for the brand book and the library page
 
 ## Not done
 
-The Shopify theme still runs v1. This system is the target; nothing reaches customers until a
-draft theme is built from it and published by hand. Fold size and weight are still unmeasured.
-Positive and SVG versions of the marks are still to commission.
+The Shopify theme still runs v1. Fold size and weight are still unmeasured. Fifteen parts and the
+NEO have no photograph. SVG masters of the marks are still to commission.
