@@ -1,9 +1,10 @@
 :root{
-/* v2 inverts v1: the brand was square, it is now soft. Cards read as objects. */
---radius-card:20px;--radius-control:10px;--radius-media:16px;--radius-pill:999px;--radius-chip:8px;
---border-width:1px;
-/* Still no drop shadows. Depth comes from the warm wash and surface steps. */
---shadow:none;
---dot-size:5px;--dot-gap:3px;   /* the signature device */
---motion-fast:180ms;--motion:320ms;--motion-slow:600ms;--ease:cubic-bezier(.16,.84,.44,1);
+/* Two radii in the whole system. The tile, and the pill. */
+--r-tile:24px;--r-pill:999px;
+/* One dot. */
+--dot:6px;--gap:3px;
+/* One padding, one grid gap. */
+--pad:24px;--grid-gap:16px;
+--shadow:none;   /* still none. Depth = the lamp + the tile edge. */
+--t-fast:160ms;--t:320ms;--t-slow:640ms;--ease:cubic-bezier(.2,.8,.2,1);
 }

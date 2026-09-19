@@ -1,6 +1,130 @@
 # Wishbone Golf — Brand Kit
 
-**Version 2.0 "Telemetry" — 19 September 2026.** Supersedes v1.0 of the same day.
+**Version 3.0 "Instrument" — 19 September 2026.** Supersedes v2.0 and v1.0 of the same day.
+
+The owner reviewed v2 and rejected it as not consistent enough. v3 is a from-scratch rebuild from
+the two references — the DeerFlow dashboard the owner chose as the direction, and the Wishbone
+product itself — with the one constraint that the accent stays green.
+
+---
+
+## 0. The principle: one of everything
+
+| | v3 has exactly one |
+|---|---|
+| Typeface | **DotGothic16** — a 16px dot-matrix bitmap face, at every size, for every string |
+| Container | **the Tile** — 24px radius, 24px padding, numbered label, 1px top-light edge |
+| Layout | **the Board** — 3 / 2 / 1 columns, 16px gap; every page is a board of tiles |
+| Graphic device | **Dots** — 6px on a 3px pitch; charts, gauges, progress, photo-sampled silhouettes |
+| Rounded element | **the Pill** — button, ghost, tag, status, select, field |
+| Ground | `#0F1014` under **one lamp**, top-left, `#F2D2AB` |
+| Accent | **Lime `#A8FF4A`** |
+
+Two radii (24 / 999). Two text colours (white `#FAFAFA` / grey `#8E9298`). One accent. No red —
+attention is lime and an error is a lime-marked instruction. No shadows, no gradients on surfaces,
+no icons, no second typeface, no other box.
+
+## 1. Why v2 failed
+
+v2 kept three typefaces (Space Grotesk, Figtree, Share Tech Mono), five radii (20 / 16 / 10 / 8 /
+999), an error red, a "card / raised" grey ladder, and used the dot matrix as a garnish on
+components that were otherwise a generic dark e-commerce UI. The reference is coherent because it
+has one type voice, one tile, and one way of drawing anything. v2 had several of each.
+
+It also called two different colours "the green": volt `#E3FC02` and the logo's `#C8D645` are both
+**hue 66° — yellow-greens** — while the trolleys' hardware photographs at **hue 90°, green**.
+
+## 2. The green, settled
+
+The product cannot be repainted, so the brand green is the product's. **Lime `#A8FF4A`** (h89 s100
+l65): contrast 15.45:1 on the ground, 15.45:1 for ground-coloured text on lime, 1.18:1 for white on
+lime — so lime always carries ground text, never white. The monogram is recut with its
+quarter-circle in lime (`assets/wishbone-monogram-lime.png`); v1's olive cut and v2's volt cut are
+retired. `charcoal-lime`, the colourway, is now literally the accent colour.
+
+## 3. Type
+
+**DotGothic16** (Fontworks, SIL OFL, Google Fonts). One weight. Sizes are multiples of its 16px
+grid so the dots stay crisp: **12** label · **16** body · **20** lead · **32** h · **48** readout ·
+**64** display · **96** hero. Labels 12px, tracked 0.14em, uppercase. Font smoothing off.
+
+Rule: the brand writes short. Product copy, labels, values, headings — all DotGothic16. Long legal
+text (policies, checkout) is Shopify-controlled and falls back to the system mono; that is the only
+place a second face appears, and it is not a brand surface.
+
+Fallback stack: `'DotGothic16', 'VT323', ui-monospace, monospace`.
+
+## 4. The Tile and the Board
+
+Every page — home, product, collection, cart, account — is a **Board**: a grid of 3 columns above
+900px, 2 above 600, 1 below, with a 16px gap on a 1200px page. Everything on it is a **Tile**: `#111214`
+surface, 24px radius, 24px padding, a `NN LABEL` header top-left, a 1px `rgb(255 255 255 / .06)`
+inset top edge so it reads as an object under the lamp. Tiles span 1, 2 or 3 columns. Tiles whose
+data is live carry a lime dot in the label row.
+
+There is no other container. No cards inside tiles, no bands, no full-bleed hero, no bordered
+sections.
+
+## 5. Dots
+
+6px dots on a 3px gap. White for the signal (`#FAFAFA`), dim (`rgb(250 250 250 / .22)`) for the
+empty grid, lime for the one value that matters. Generators: `bars`, `ring`, `line`, `steps`,
+`wave`. Product silhouettes are sampled from the real photograph's luminance — the EON's is; the
+other four models use a procedural outline **only until they are photographed**, then are sampled
+the same way. Never hand-draw a product; never use dots as a background.
+
+## 6. Pill and Field
+
+The single rounded element. **button** (lime fill, ground text — the purchase), **ghost**
+(outline), **tag** (grey chip), **status** (chip with a dot: grey idle / lime live), **select**
+(radio for models and colourways: white fill when on). **Field** is a pill-shaped input; its error
+state is a lime border and a `▸` instruction line — there is no red.
+
+## 7. Light and photography
+
+One warm lamp, high and to the left, in the page wash (`radial-gradient(130% 80% at 0% 0%,
+rgb(242 210 171 / .2), transparent 62%)`) and in every photograph. Matte black product, low
+three-quarter angle, concrete / graphite / dusk, the hardware green the only colour in frame.
+The lamp is the only atmosphere: no shadows, no gradients on tiles, no glow behind the lime.
+
+## 8. Voice — unchanged
+
+Report the value, then stop. Numbers are addresses (`01 … n`, reading order). Unknown prints `—`
+with *not yet measured*. Statements may end with the cursor `_` — hero and footer only. Models in
+caps; parts keep `Component (MODEL)` in full. British spelling; no superlatives, exclamation marks
+or emoji.
+
+## 9. Components (19)
+
+**Primitives** — Tile + Board, Dots (+ bars, ring, line, steps, wave), Pill, Field, Readout,
+Silhouettes.
+**Tiles** — HeroTile, RangeTile, CompatTile, BuyTile, SpecTile, CompareTile, ProductTile,
+PartTile, FaqTile, BoxTile, TrustTile.
+**Chrome** — TopBar, FootBar.
+
+Every tile is the same Tile. Every graphic is Dots. Every pressable thing is a Pill.
+
+## 10. Where it lives
+
+`design-system/tokens/*.css` (source of truth) · `docs/brand/tokens.css` + `tokens.json`
+(portable) · `design-system/components/{primitives,tiles,chrome}` · `design-system/guidelines/`
+(8 specimen cards) · `design-system/assets/` (wordmark, monogram-lime) · Claude Design project
+*Wishbone Golf Design System* · generator `tools/build-v3.py`.
+
+## 11. Open
+
+1. Fold size and weight — unmeasured; readouts print `—`.
+2. Photograph ONE, TWO, THREE, NEO to §7 so their silhouettes can be sampled.
+3. Positive + SVG marks.
+4. The Shopify theme still runs v1.
+5. The brand book (`tools/build-brandbook.py`) still describes v2 and must be regenerated for v3.
+6. "aluminum" → "aluminium"; one product under vendor *My Store*.
+
+---
+
+## Appendix — v2.0 and v1.0, as recorded
+
+
 
 v1.0 documented the brand as it was found on the live store. v2.0 is a **rebrand**, commissioned by
 the owner with one constraint: *keep the green as the accent, change everything else.* What follows

@@ -1,99 +1,79 @@
-# Wishbone Golf — Design System v2 "Telemetry"
+# Wishbone Golf — Design System v3 "Instrument"
 
 British golf trolleys. **"Birthed in Britain, Wishbone Golf merges exquisite design with unwavering
-quality."** The brand's own operating line: *a full powered, simple 'no nonsense' cart.*
+quality."** *A full powered, simple 'no nonsense' cart.* — the brand's own words, unchanged.
 
-**What this represents:** the Shopify storefront [wishbone.golf](https://wishbone.golf)
-(`k500sw-e1.myshopify.com`). Manual trolleys **ONE / TWO / THREE**, electric **NEO / EON**, plus
-accessories and a deep spare-parts catalogue (27 products live).
+**What this represents:** [wishbone.golf](https://wishbone.golf) (`k500sw-e1.myshopify.com`).
+Manual **ONE / TWO / THREE**, electric **NEO / EON**, and a spare-parts catalogue that is most of
+what the store sells (22 of 27 products, named `Component (MODEL)`).
 
-## v2 — what changed, and why
+## Why v3 replaced v2
 
-v1 documented the store as it was: square everything, Oswald caps, cold ink ground. v2 is a
-deliberate rebrand toward **instrumentation** — the products are measured objects, so the brand
-reports values instead of announcing them. The owner's direction: keep the green, change anything
-else.
+v2 hedged. Three typefaces, five radii, a dot device bolted onto an otherwise generic dark UI, and
+"the green" quietly meaning two different hues. It was not consistent enough to be a brand.
 
-| | v1 (as-found) | v2 (this system) |
-|---|---|---|
-| Ground | `#1F1F21` cold ink | **`#0F1014` carbon**, warm near-black, with a warm wash |
-| Accent | volt `#E3FC02` + cyan | **volt only** — cyan retired, monogram olive resolved to volt |
-| Geometry | radius 0, pills the exception | **soft: 20px cards / 10px controls**, pills consistent |
-| Display type | Oswald 500 uppercase | **Space Grotesk 500**, sentence case, tight tracking |
-| Body | Figtree 500 | Figtree 400/500 — unchanged |
-| Readouts | none | **Share Tech Mono** for every label, numeral and value |
-| Signature device | — | **the dot matrix**: data, charts and product silhouettes drawn as dots |
-| Volt share | 10 % | **4 %** — one volt element per screen |
-| Page | 1600 / 52 / 40 | 1440 / 72 / 20 — tighter clusters, wider sections |
-| Shadows | none | **still none** |
+v3 goes back to the two references — the DeerFlow dashboard the owner chose, and the Wishbone
+product itself — and takes exactly one of everything:
 
-The one thing that did not move is the accent. Volt stays because the hardware is physically
-green: a website can be repainted, a fleet of trolleys cannot.
+| | one of |
+|---|---|
+| Typeface | **DotGothic16** — a 16px dot-matrix bitmap face. Labels, values, headings, copy. |
+| Container | **the Tile** — 24px radius, 24px padding, numbered label, 1px top-light edge |
+| Layout | **the Board** — a strict 3 / 2 / 1-column grid of tiles, 16px gap. Every page. |
+| Graphic device | **Dots** — 6px on a 3px pitch. Charts, gauges, silhouettes, progress. Nothing else. |
+| Rounded element | **the Pill** — buttons, tags, status, selectors, fields. One shape. |
+| Ground | **#0F1014** under one warm lamp, top-left (`#F2D2AB` wash) |
+| Accent | **Lime #A8FF4A** — hue 89°, the hardware's actual green |
+| Light | the lamp. No shadows, no gradients on tiles, no glow. |
+
+Two radii in the whole system (tile 24, pill 999). Two text colours (white, grey). One accent.
+**No red** — attention is lime, and an error is a lime-marked instruction.
+
+### The green, settled
+
+The theme's volt `#E3FC02` and the logo's olive `#C8D645` are both hue 66° — yellow-greens. The
+trolleys' hardware photographs at hue 90° — green. Two colours had been called "the green".
+The product cannot be repainted, so the brand green is the product's: `#A8FF4A`, contrast 15.5:1
+on the ground. The monogram is recut with its quarter-circle in lime (`assets/wishbone-monogram-lime.png`).
 
 ## CONTENT FUNDAMENTALS
 
-- **Tone:** engineered, understated, British. An instrument panel, not a sales page.
-- **Rhythm:** report the value, then stop. *"Range · 27+ holes."* *"799 €."*
-- **Sentences:** short, one idea each. Concrete nouns. **No superlatives, no exclamation marks,
-  no emoji.**
-- **Numbers:** every panel carries a number (`01`, `02`, `03`) in reading order — addresses, not
-  decoration. **If a value is unknown, print `—`.** Never invent a spec.
-- **Casing:** display type is sentence case (the caps went with Oswald); labels and readouts are
-  mono uppercase, tracked 0.18em.
-- **Naming:** **Wishbone ONE**, **Wishbone EON** — brand first, model in caps. The company is
-  **Wishbone Golf**; the family is **Wishbone**. Spare parts keep `Component (MODEL)` in full.
-- **Spelling:** British. The homepage still says "aluminum" — a known fix.
+- **Report the value, then stop.** *Range · 27+ holes.* *799 €.* One idea per sentence.
+- **Numbers are addresses.** Every tile is numbered `01…n` in reading order.
+- **Unknown prints `—`** with *not yet measured*. Never a guess. Fold size and weight are unknown
+  for every model today; the tiles say so.
+- **Statements may end with the cursor** `_` — sparingly: the hero, the footer line.
+- Models in caps: **Wishbone ONE**, **Wishbone EON**. Parts keep `Component (MODEL)` in full.
+- British spelling. No superlatives, exclamation marks or emoji.
 
 ## VISUAL FOUNDATIONS
 
-- **Colour:** carbon `#0f1014` page, `#16171b` cards, `#1e2026` raised. White `#fafafa` type,
-  muted `#8e9298`. Volt `#e3fc02` is the only chromatic signal — roughly 78 / 18 / 4.
-- **The colour rule:** volt carries **carbon** type, always. White on volt is 1.15:1 and
-  unreadable. Volt never appears as type on white.
-- **Type:** three faces, one job each. **Space Grotesk** says what a thing is, **Figtree** explains
-  it, **Share Tech Mono** reports a value. A number set in body type is a missed opportunity.
-- **Geometry:** soft and layered — 20px cards, 10px controls, 16px media, full pills. Depth comes
-  from surface steps and the warm wash; **there are still no drop shadows, no gradients as fills**.
-- **The dot matrix** is the signature device. Quantities, charts, progress and product silhouettes
-  are drawn as dot grids (white body, volt for what matters). Silhouettes are generated by sampling
-  a real product photo, so the dotted EON is the actual EON. Never used as texture.
-- **Light:** one warm source `#f2d2ab` raking from the top-left, falling to black — in photography
-  and as the page's fixed background wash.
-- **Photography:** matte black product, low three-quarter angle, concrete/graphite/dusk, the green
-  hardware the only colour in frame. Never white sweeps, midday grass, cool grading or stock golfers.
-- **Motion:** reveal on scroll; 180/320/600ms with a soft ease. No hover lift, no parallax.
-
-## MARKS
-
-- `assets/wishbone-wordmark.png` — 800 × 64, white on transparent. Header 180px; min 120px screen,
-  30 mm print. Clear space = the height of the W.
-- `assets/wishbone-monogram-volt.png` — **reissued in v2.** The `b` bowl was olive `#C8D645`
-  against a volt storefront; it now carries volt. `wishbone-monogram.png` is kept as the v1 original.
-- **Still missing: a positive (ink-on-light) version and an SVG of each.** Worth commissioning now
-  that the colour is settled. FLAGGED.
+- **Type:** DotGothic16 at 12 / 16 / 20 / 32 / 48 / 64 / 96 — multiples of its 16px grid so the
+  dots stay crisp. Labels 12px tracked 0.14em uppercase. Font smoothing off.
+- **Colour:** ground `#0F1014`, tile `#111214`, white `#FAFAFA`, grey `#8E9298`, lime `#A8FF4A`.
+  Lime always carries ground-coloured text. One lime element per tile; the page's lime button is
+  the purchase.
+- **Geometry:** tile 24px, pill 999px. Nothing else is rounded, nothing else is square.
+- **Dots:** 6px / 3px. `bars`, `ring`, `line`, `steps`, `wave`, and photo-sampled silhouettes.
+- **Light:** one warm lamp top-left in the page wash and in every photograph. Tiles catch it as
+  a 1px top edge.
+- **Motion:** dots draw in, readouts count, the cursor blinks. 160 / 320 / 640ms. Nothing lifts.
 
 ## Index
 
-- `styles.css` — global entry · `tokens/` — colors, typography, geometry, layout, base
-- `guidelines/` — 12 specimen cards including `dot-matrix` and `light`
-- `components/core/` — Button, Input, Badge, VariantPill, **DotMatrix/DotBars**, **Stat**
-- `components/commerce/` — ProductCard, SpecPanel, **CompatibilityFinder**, **PartCard**,
-  **ColorwaySelector**, **BuyBox**, **ModelCompare**
-- `components/content/` — **Hero**, **RangeStrip**, **Accordion**, **TrustRow**, **InTheBox**
-- `components/chrome/` — SiteHeader, NewsletterBand, SiteFooter
+- `styles.css` · `tokens/` — colors, typography, geometry, layout, base
+- `assets/` — wordmark, monogram (v1), **monogram-lime** (current)
+- `guidelines/` — colour, type, tile, dots, board, marks, light, voice
+- `components/primitives/` — **Tile + Board**, **Dots** (+ generators), **Pill**, **Field**,
+  **Readout**, **Silhouettes** (EON sampled from its photograph)
+- `components/tiles/` — HeroTile, RangeTile, CompatTile, BuyTile, SpecTile, CompareTile,
+  ProductTile, PartTile, FaqTile, BoxTile, TrustTile
+- `components/chrome/` — TopBar, FootBar
+- `uploads/` — BRAND_KIT.md, tokens, marks · `SKILL.md` — agent entry point
+- `tools/` — generators for the brand book and the library page
 
-The commerce and content groups are built against the real catalogue: 27 products of which 22 are
-spare parts named `Component (MODEL)`, five models in three or four colourways, per-model spare-part
-collections that already exist in the theme, and 15 parts with no photograph — which is why
-`PartCard` falls back to a dot-matrix plate.
-- `uploads/` — BRAND_KIT.md and the raw extraction · `SKILL.md` — agent entry point
-- `tools/build-brandbook.py` — generates the **full brand book** (12 chapters: brand, voice, marks,
-  colour, typography with licensing, layout, dot matrix, icons, photography, motion, applications,
-  governance). Generated from these files, so the book cannot drift from the system.
+## Not done
 
-## Not yet done
-
-The **Shopify theme still runs v1** — this system is the target, not the live storefront. Nothing
-reaches customers until a draft theme is built from it and published by hand. Two catalogue gaps
-are worth closing first: **fold size and weight** are missing, and they are exactly the proof a
-telemetry brand is built on.
+The Shopify theme still runs v1. This system is the target; nothing reaches customers until a
+draft theme is built from it and published by hand. Fold size and weight are still unmeasured.
+Positive and SVG versions of the marks are still to commission.

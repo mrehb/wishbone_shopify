@@ -1,0 +1,24 @@
+<!-- @dsCard group="Primitives" viewport="720x420" name="Primitives" subtitle="Tile, Dots, Pill, Field, Readout" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+</head><body style="margin:0;background:var(--ground);background-image:var(--wash)">
+<div id="root"></div>
+<script>window.__dsReady = new Promise(function(res){var t0=Date.now();(function poll(){if(window.WishboneGolfDesignSystem_4d0e77){res(true)}else if(Date.now()-t0>8000){document.getElementById('root').innerHTML='<div style="padding:24px;font-family:monospace;font-size:13px;color:#fff">Design-system bundle not loaded yet (_ds_bundle.js). Reload the page.</div>';res(false)}else{setTimeout(poll,100)}})()});</script>
+<script type="text/babel" data-ds-deferred="true">
+const ns = window.WishboneGolfDesignSystem_4d0e77 || {};
+const { Board, Tile, Dots, bars, ring, line, steps, Pill, Field, Readout } = ns;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{padding:24}}><Board>
+    <Tile n="01" label="pill"><div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+      <Pill kind="button">Add to cart</Pill><Pill kind="ghost">Compare</Pill><Pill kind="tag">NEO</Pill><Pill kind="status" hot>live</Pill><Pill kind="select" on>EON</Pill><Pill kind="button" disabled>Sold out</Pill></div></Tile>
+    <Tile n="02" label="readout" hot><Readout value="27+" unit="holes" note="one charge" /><Dots {...bars([1,.9,.8,.65,.5,.4,.3,.2],7,.95)} /></Tile>
+    <Tile n="03" label="dots"><div style={{display:'flex',gap:18,alignItems:'flex-end',flexWrap:'wrap'}}><Dots {...ring(.66)} /><Dots {...line([.2,.4,.3,.6,.8,1,.7,.6],8)} /><Dots {...steps(4,2)} /></div></Tile>
+    <Tile n="04" label="field" span={2}><div style={{display:'flex',gap:12,alignItems:'flex-end',flexWrap:'wrap'}}>
+      <Field label="email address" placeholder="you@example.com" style={{flex:'1 1 200px'}} />
+      <Field label="email address" value="you@" error="Add the part after the @ — for example you@example.com." style={{flex:'1 1 260px'}} /></div></Tile>
+    <Tile n="05" label="unknown"><Readout value="—" note="fold size" /></Tile>
+  </Board></div>);
+</script></body></html>

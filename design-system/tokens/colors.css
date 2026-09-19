@@ -1,22 +1,16 @@
 :root{
-/* --- Ground. Warm near-black, not neutral grey. The brand lives here. --- */
---color-carbon:#0f1014;      /* page */
---color-card:#16171b;        /* panels, cards */
---color-raised:#1e2026;      /* inputs, wells, hover surfaces */
-/* --- Accent. One colour. Volt is the brand's only chromatic signal. --- */
---color-volt:#e3fc02;
-/* --- Type --- */
---color-white:#fafafa;--color-muted:#8e9298;
-/* --- Light. A lighting value for photography and washes — never a UI fill. --- */
---color-light-warm:#f2d2ab;
-/* --- Signal. Errors only. Never decorative, never a second accent. --- */
---color-error:#ff6b6b;
-/* --- Semantic aliases --- */
---text-body:var(--color-white);--text-inverse:var(--color-carbon);--text-muted:var(--color-muted);
---surface-page:var(--color-carbon);--surface-card:var(--color-card);--surface-raised:var(--color-raised);
---accent:var(--color-volt);--accent-ink:var(--color-carbon);
---color-border:rgb(255 255 255 / 0.08);      /* cards, dividers */
---color-border-strong:rgb(255 255 255 / 0.24); /* inputs, selectable things */
---dot-on:rgb(250 250 250 / 0.92);--dot-off:rgb(250 250 250 / 0.16);
---wash-warm:radial-gradient(120% 80% at 12% 0%, rgb(242 210 171 / 0.16), transparent 60%);
+/* v3 "Instrument". One ground, one tile, one accent. Nothing else. */
+--ground:#0f1014;          /* the page: warm near-black */
+--tile:#111214;            /* every container */
+--tile-edge:rgb(255 255 255 / 0.06);   /* 1px top-light edge — tiles are objects under a light */
+--tile-line:rgb(255 255 255 / 0.10);   /* dividers inside a tile */
+--lime:#a8ff4a;            /* THE accent. Hue 89°: the hardware's green, tuned for screen. */
+--white:#fafafa;           /* primary values and headings */
+--grey:#8e9298;            /* labels, inactive dots, secondary values */
+--dim:rgb(250 250 250 / 0.22);         /* empty dots */
+--light:#f2d2ab;           /* the lamp. A gradient value only; never a fill. */
+/* Semantic */
+--text:var(--white);--text-2:var(--grey);--on-lime:var(--ground);
+--dot-on:var(--white);--dot-off:var(--dim);--dot-hot:var(--lime);
+--wash:radial-gradient(130% 80% at 0% 0%, rgb(242 210 171 / 0.20), transparent 62%);
 }

@@ -1,6 +1,7 @@
 :root{
---page-width:1440px;--page-gutter:24px;
---space-section:72px;--grid-gap:20px;
---space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:28px;--space-7:40px;--space-8:56px;
---bp-sm:480px;--bp-md:750px;--bp-lg:990px;--bp-xl:1400px;
+/* The page is a dashboard: a grid of equal tiles. */
+--page:1200px;--gutter:20px;
+--cols:3;               /* desktop */
+--tile-min:300px;
+--bp-2col:900px;--bp-1col:600px;
 }
