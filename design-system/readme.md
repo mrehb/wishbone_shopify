@@ -77,8 +77,15 @@ green: a website can be repainted, a fleet of trolleys cannot.
 - `styles.css` — global entry · `tokens/` — colors, typography, geometry, layout, base
 - `guidelines/` — 12 specimen cards including `dot-matrix` and `light`
 - `components/core/` — Button, Input, Badge, VariantPill, **DotMatrix/DotBars**, **Stat**
-- `components/commerce/` — ProductCard, **SpecPanel**
+- `components/commerce/` — ProductCard, SpecPanel, **CompatibilityFinder**, **PartCard**,
+  **ColorwaySelector**, **BuyBox**, **ModelCompare**
+- `components/content/` — **Hero**, **RangeStrip**, **Accordion**, **TrustRow**, **InTheBox**
 - `components/chrome/` — SiteHeader, NewsletterBand, SiteFooter
+
+The commerce and content groups are built against the real catalogue: 27 products of which 22 are
+spare parts named `Component (MODEL)`, five models in three or four colourways, per-model spare-part
+collections that already exist in the theme, and 15 parts with no photograph — which is why
+`PartCard` falls back to a dot-matrix plate.
 - `uploads/` — BRAND_KIT.md and the raw extraction · `SKILL.md` — agent entry point
 - `tools/build-brandbook.py` — generates the **full brand book** (12 chapters: brand, voice, marks,
   colour, typography with licensing, layout, dot matrix, icons, photography, motion, applications,
