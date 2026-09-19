@@ -80,6 +80,9 @@ green: a website can be repainted, a fleet of trolleys cannot.
 - `components/commerce/` — ProductCard, **SpecPanel**
 - `components/chrome/` — SiteHeader, NewsletterBand, SiteFooter
 - `uploads/` — BRAND_KIT.md and the raw extraction · `SKILL.md` — agent entry point
+- `tools/build-brandbook.py` — generates the **full brand book** (12 chapters: brand, voice, marks,
+  colour, typography with licensing, layout, dot matrix, icons, photography, motion, applications,
+  governance). Generated from these files, so the book cannot drift from the system.
 
 ## Not yet done
 
