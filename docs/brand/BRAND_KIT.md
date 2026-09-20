@@ -65,7 +65,12 @@ mist / ink), Trust, Inquiry, Buy, Specs, Compare, Parts, Faq. Chrome: Header, Fo
 
 ## 6. Open
 
-Fold size and weight unmeasured; photographs for fifteen parts and the NEO; SVG masters; ™ vs ®;
+Fold size and weight are **known** for the CUBE two (6.9 kg, 35.5 × 53 × 45 cm) and CUBE three
+(7.65 kg, 37.5 × 57 × 46 cm) — they are in Product Bay and have never reached the storefront; the ONE,
+NEO and EON are still unmeasured. Open: the two greens (the three's hardware lime is hue 72°, the EON's
+is hue 89°, the brand lime is 89°); red `#E03828` exists in the CUBE mark and the White / Red colourway;
+the CUBE sub-brand is on the product and not on the website; photographs for fifteen parts and the NEO;
+SVG masters; ™ vs ®;
 "aluminum" → "aluminium"; vendor "My Store"; the theme still runs v1.
 
 ---
