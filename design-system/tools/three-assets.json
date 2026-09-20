@@ -1,0 +1,130 @@
+{
+  "product": {
+    "name": "Wishbone THREE",
+    "productBayId": 9054916,
+    "shopifyHandle": "wishbone-three",
+    "rrp": "249,00 €",
+    "netWeight": "7.65 kg",
+    "foldedDimensions": "37.5 × 57 × 46 cm",
+    "foldingMechanism": "CubeFold",
+    "frame": "Aluminium, dual-tube",
+    "brake": "Footbrake",
+    "frontWheel": "24 cm",
+    "rearWheel": "29 cm",
+    "quickLokBases": 4
+  },
+  "variants": [
+    {
+      "colourway": "Black / Lime",
+      "sku": "WB12218",
+      "ean": "9008356027277",
+      "swatch": [
+        "#111214",
+        "#8cac1c"
+      ]
+    },
+    {
+      "colourway": "Black / White",
+      "sku": "WB12217",
+      "ean": "9008356027284",
+      "swatch": [
+        "#111214",
+        "#e9e9e9"
+      ]
+    },
+    {
+      "colourway": "White / Red",
+      "sku": "WB12219",
+      "ean": "9008356027307",
+      "swatch": [
+        "#e9e9e9",
+        "#e03828"
+      ]
+    }
+  ],
+  "brand": {
+    "version": "4.1 Studio",
+    "lime": "#CBE832",
+    "limeHue": 70,
+    "ink": "#0F1014",
+    "paper": "#FFFFFF",
+    "mist": "#F4F4F5",
+    "hairline": "#E4E4E7",
+    "hardwareLime": "#8CAC1C",
+    "hardwareRed": "#E03828",
+    "typeface": "Manrope",
+    "eyebrowTypeface": "DotGothic16",
+    "radius": 0,
+    "rule": "Product colours appear in swatches and photographs only, never in the interface."
+  },
+  "sourceAssets": {
+    "studio": {
+      "black-lime": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2323-1775727943854.png",
+      "black-white": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2323-1775727881706.png",
+      "white-red": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2323-1775727971305.png",
+      "note": "2048px transparent PNG, white studio, three-quarter front-left. Use as the geometry and colour reference for every generation."
+    },
+    "course": [
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2245-1785769277605.jpg",
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2246-1785769277606.jpg",
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2249-1785769277606.jpg",
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2302-1785769657546.jpg",
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2307-1785769657546.jpg",
+      "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2310-1785769657546.jpg"
+    ],
+    "courseNote": "Real photography, White / Red colourway only, parkland course, overcast-bright. Match this grade.",
+    "video": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/Wishbone-Three-Product-Tour-1785832151099.mp4",
+    "manual": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/WISHBONE-CUBE-THREE-manual-1764687432657.pdf"
+  },
+  "shotList": [
+    {
+      "n": 1,
+      "title": "The fold, as a sequence",
+      "brief": "Five frames, same camera, same light: unfolded → front wheel folding in → frame closing → locked cube → cube carried one-handed. Reference the studio PNG for geometry and colour.",
+      "aspect": "5 × 1:1"
+    },
+    {
+      "n": 2,
+      "title": "The folded cube, hero",
+      "brief": "The locked cube on a plain light ground, three-quarter, raking light from the top left, shot to show it is a cube. This is the one image the page most needs and does not have.",
+      "aspect": "1:1"
+    },
+    {
+      "n": 3,
+      "title": "Boot shot",
+      "brief": "The folded cube in the boot of an estate car with a bag beside it, daylight, no people.",
+      "aspect": "16:9"
+    },
+    {
+      "n": 4,
+      "title": "Smart Organizer, top-down macro",
+      "brief": "Directly above the console with a scorecard, pencil, three tees and a ball in place. Fills the frame.",
+      "aspect": "4:5"
+    },
+    {
+      "n": 5,
+      "title": "Wheel off",
+      "brief": "A hand pulling a rear wheel clear of the axle, mid-movement, shallow depth of field.",
+      "aspect": "4:5"
+    },
+    {
+      "n": 6,
+      "title": "Footbrake",
+      "brief": "A shoe pressing the brake pedal, low angle, grass.",
+      "aspect": "16:9"
+    },
+    {
+      "n": 7,
+      "title": "Black / Lime and Black / White on the course",
+      "brief": "The two colourways that have no lifestyle photography at all — only White / Red was shot. Same location and light as 014A2245.",
+      "aspect": "3:2"
+    },
+    {
+      "n": 8,
+      "title": "Bag compatibility",
+      "brief": "The same trolley with a stand bag and with a cart bag, identical framing, so the two can be crossfaded.",
+      "aspect": "2 × 4:5"
+    }
+  ],
+  "howToUse": "Generate each shot, save to design-system/assets/generated/, add its filename to tools/three-generated.json keyed by shot slug, then run tools/build-three-page.py and publish with ~/.claude/bin/artifact."
+}

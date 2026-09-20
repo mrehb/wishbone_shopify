@@ -11,7 +11,11 @@ uri  = lambda p: "data:image/png;base64," + base64.b64encode((ROOT/p).read_bytes
 WORD = uri('assets/wishbone-wordmark-ink.png')
 WORDN= uri('assets/wishbone-wordmark.png')
 MONO = uri('assets/wishbone-monogram-ink.png')
-DET  = {k: "data:image/jpeg;base64," + v for k, v in json.load(open(PB/'details_b64.json')).items()}
+# detail crops live in the repo so this runs on a fresh container; /tmp is a scratch fallback
+_det = ROOT/'tools'/'three-details.b64.json'
+if not _det.exists(): _det = PB/'details_b64.json'
+DET  = {k: "data:image/jpeg;base64," + v for k, v in json.load(open(_det)).items()}
+GEN  = json.loads((ROOT/'tools'/'three-generated.json').read_text()) if (ROOT/'tools'/'three-generated.json').exists() else {}
 
 C = 'https://cdn.productbay.ai/insecure/resize:fit:1600:1600/plain/2/'
 IMG = {
