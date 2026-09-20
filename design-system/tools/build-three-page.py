@@ -15,7 +15,24 @@ MONO = uri('assets/wishbone-monogram-ink.png')
 _det = ROOT/'tools'/'three-details.b64.json'
 if not _det.exists(): _det = PB/'details_b64.json'
 DET  = {k: "data:image/jpeg;base64," + v for k, v in json.load(open(_det)).items()}
-GEN  = json.loads((ROOT/'tools'/'three-generated.json').read_text()) if (ROOT/'tools'/'three-generated.json').exists() else {}
+_gen_path = ROOT/'tools'/'three-generated.json'
+GEN  = json.loads(_gen_path.read_text()) if _gen_path.exists() else {}
+GENDIR = ROOT/'assets'/'generated'
+
+def gimg(fname):
+    """Data URI for a generated frame, or '' if it has not been generated yet."""
+    f = GENDIR/fname
+    if not fname or not f.exists(): return ''
+    return "data:image/jpeg;base64," + base64.b64encode(f.read_bytes()).decode()
+
+def gshot(slug):
+    return (GEN.get('shots') or {}).get(slug, {})
+
+def gfile(slug):
+    """Data URI for a single-frame shot."""
+    return gimg(gshot(slug).get('file', ''))
+
+HAS_GEN = bool(gfile('cube-hero'))
 
 C = 'https://cdn.productbay.ai/insecure/resize:fit:1600:1600/plain/2/'
 IMG = {
@@ -99,7 +116,8 @@ FAQ = [
 ]
 
 NOTES = [
- ('Higgsfield was not reachable in this session','The MCP connector is not attached to this run, so no image was generated. Everything visual on this page is either a real Wishbone photograph or a diagram drawn from the measured numbers. The shot list below is ready to fire the moment the connector is live.'),
+ ('All eight shots are generated, and none of them is a photograph','The Higgsfield connector was attached on 20 September and the whole shot list ran on <b>GPT Image 2.5</b>. Every frame was conditioned on the real studio PNG, so the frame geometry, the three-wheel layout and the colourway come from the photograph rather than from the model. Each one is labelled <b>Generated</b> where it appears, and every prompt, model and job id is recorded in <code>tools/three-generated.json</code>. <b>None of it is approved.</b> The store is live; this needs the owner\u2019s sign-off before it goes anywhere customer-facing.'),
+ ('The drawn fold diagram has been retired','Section 03 used to carry an SVG of the folded block drawn to scale beside a 55 \u00d7 40 cabin bag. The real folded cube now sits there instead, with the five-frame fold sequence below it. The diagram is still in the generator as the fallback when the frames are missing \u2014 and the cabin-bag comparison it made is the one thing the photographs do not say.'),
  ('Decided: the product is the Wishbone THREE','The manual and the frame carry a <b>CUBE</b> sub-brand that the website has never used. The owner\u2019s ruling on 20 September: the product is the <b>Wishbone THREE</b>, and <b>CubeFold</b> stays as the name of the folding mechanism only. This page follows that.'),
  ('The specs that were "not yet measured" exist','Weight 7.65 kg and 37.5 × 57 × 46 cm are in Product Bay and have never reached the storefront. The brand book still says these are unknown — that entry can now be closed.'),
  ('The lime is not the brand lime','Sampled from the photograph, the THREE’s lime is hue 72° (about #8CAC1C) — the same yellow-green family as the logo. The v4 brand accent is #CBE832, hue 89°, sampled from the EON. Two different greens are in play across the range and one of them should move.'),
@@ -110,14 +128,14 @@ NOTES = [
 ]
 
 SHOTLIST = [
- ('The fold, as a sequence','Five frames, same camera, same light: unfolded → front wheel folding in → frame closing → locked cube → cube carried one-handed. Reference the studio PNG for geometry and colour.','5 × 1:1'),
- ('The folded cube, hero','The locked cube on a plain light ground, three-quarter, raking light from the top left, shot to show it is a cube. This is the one image the page most needs and does not have.','1:1'),
- ('Boot shot','The folded cube in the boot of an estate car with a bag beside it, daylight, no people.','16:9'),
- ('Smart Organizer, top-down macro','Directly above the console with a scorecard, pencil, three tees and a ball in place. Fills the frame.','4:5'),
- ('Wheel off','A hand pulling a rear wheel clear of the axle, mid-movement, shallow depth of field.','4:5'),
- ('Footbrake','A shoe pressing the brake pedal, low angle, grass.','16:9'),
- ('Black / Lime and Black / White on the course','The two colourways that have no lifestyle photography at all — only White / Red was shot. Same location and light as 014A2245.','3:2'),
- ('Bag compatibility','The same trolley with a stand bag and with a cart bag, identical framing, so the two can be crossfaded.','2 × 4:5'),
+ ('fold-sequence','The fold, as a sequence','Five frames, same camera, same light: unfolded → front wheel folding in → frame closing → locked cube → cube carried one-handed. Reference the studio PNG for geometry and colour.','5 × 1:1'),
+ ('cube-hero','The folded cube, hero','The locked cube on a plain light ground, three-quarter, raking light from the top left, shot to show it is a cube. This is the one image the page most needs and does not have.','1:1'),
+ ('boot','Boot shot','The folded cube in the boot of an estate car with a bag beside it, daylight, no people.','16:9'),
+ ('organizer','Smart Organizer, top-down macro','Directly above the console with a scorecard, pencil, three tees and a ball in place. Fills the frame.','4:5'),
+ ('wheel-off','Wheel off','A hand pulling a rear wheel clear of the axle, mid-movement, shallow depth of field.','4:5'),
+ ('footbrake','Footbrake','A shoe pressing the brake pedal, low angle, grass.','16:9'),
+ ('colourways-course','Black / Lime and Black / White on the course','The two colourways that have no lifestyle photography at all — only White / Red was shot. Same location and light as 014A2245.','3:2'),
+ ('bag-compatibility','Bag compatibility','The same trolley with a stand bag and with a cart bag, identical framing, so the two can be crossfaded.','2 × 4:5'),
 ]
 
 # ---------------------------------------------------------------- page CSS
@@ -197,6 +215,30 @@ header.site nav a:hover::after{right:0}
 .featlist .n{font-family:var(--font-dot);font-size:12px;letter-spacing:.1em;color:var(--grey);-webkit-font-smoothing:none}
 .featlist button[aria-pressed="true"] .n{color:var(--ink)}
 
+/* generated imagery — always labelled, never mistaken for a photograph */
+.gen{position:relative;display:block}
+.gen>.tag{position:absolute;left:10px;top:10px;z-index:2;font-family:var(--font);font-size:10px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--grey-ink);background:rgb(255 255 255 / .92);
+  border:1px solid var(--hair);padding:5px 7px}
+.gen--ink>.tag{color:#9a9ea6;background:rgb(15 16 20 / .72);border-color:rgb(250 250 250 / .18)}
+/* the fold, in five frames */
+.seq{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
+.seq figure{margin:0}
+.seq img{width:100%;background:var(--mist)}
+.seq figcaption{display:flex;gap:8px;align-items:baseline;margin-top:12px}
+.seq .n{font-family:var(--font-dot),monospace;font-size:11px;color:var(--lime);-webkit-font-smoothing:none}
+.seq .t{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-ink)}
+/* bag crossfade */
+.bags{display:grid;grid-template-columns:1fr;gap:0;position:relative}
+.bags .fade{position:relative;aspect-ratio:4/5;background:var(--mist)}
+.bags .fade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 320ms}
+.bags .fade img.on{opacity:1}
+.bagsw{display:flex;gap:0;margin-top:18px;border:1px solid var(--hair)}
+.bagsw button{flex:1;background:none;border:0;cursor:pointer;font-family:var(--font);font-size:12px;
+  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-ink);padding:14px 10px;
+  transition:background 160ms,color 160ms}
+.bagsw button+button{border-left:1px solid var(--hair)}
+.bagsw button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
 /* fold diagram */
 .fold{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .fold svg{width:100%;height:auto}
@@ -267,6 +309,7 @@ details.faq p{padding:0 0 22px;max-width:62ch;color:var(--grey)}
   .stats{grid-template-columns:repeat(2,1fr)}
   .stats>div{border-left:0;border-top:1px solid var(--hair);text-align:left}
   .fold,.notes .grid2{grid-template-columns:1fr;gap:32px}
+  .seq{grid-template-columns:repeat(2,1fr);gap:18px}
   .acc,.cw{grid-template-columns:repeat(2,1fr)}
   .gal .w8,.gal .w4,.gal .w6{grid-column:span 12}
   header.site nav{display:none}
@@ -310,6 +353,105 @@ def fold_svg():
   <text x="{bx+bw/2:.0f}" y="{by+24:.0f}" text-anchor="middle" fill="#9a9ea6"
         font-family="'Manrope',sans-serif" font-size="11" letter-spacing="1.4">CABIN BAG 55 × 40, FOR SCALE</text>
 </svg>"""
+
+# ---------------------------------------------------------------- generated imagery
+# Every generated frame is labelled on the page. The rule in assets/generated/README.md is
+# that a generated frame is never mistaken for a photograph, and a caption is how that holds.
+def figure(src, alt, ink=False, tag='Generated', style=''):
+    if not src: return ''
+    cls = 'gen gen--ink' if ink else 'gen'
+    st  = f' style="{style}"' if style else ''
+    return (f'<figure class="{cls}"{st}><span class="tag">{tag}</span>'
+            f'<img src="{src}" alt="{alt}" loading="lazy"></figure>')
+
+def fold_hero():
+    """The folded cube — the one image the page did not have. Falls back to the
+    scale diagram when the frames have not been generated."""
+    src = gfile('cube-hero')
+    if not src: return fold_svg()
+    return figure(src, 'The Wishbone THREE folded and locked into a 37.5 by 57 by 46 centimetre block',
+                  ink=True)
+
+def seq_band():
+    """The fold, as five frames, and the boot shot. Replaces the drawn diagram."""
+    if not HAS_GEN: return ''
+    sq = gshot('fold-sequence')
+    frames = ""
+    for i, f in enumerate(sq.get('frames', [])):
+        src = gimg(f['file'])
+        if not src: continue
+        frames += (f'<figure><img src="{src}" alt="Fold step {i+1}: {f["caption"]}" loading="lazy">'
+                   f'<figcaption><span class="n">{str(i+1).zfill(2)}</span>'
+                   f'<span class="t">{f["caption"]}</span></figcaption></figure>')
+    boot = gfile('boot')
+    bootblock = ''
+    if boot:
+        bootblock = f'''<div class="grid" style="margin-top:72px;align-items:center">
+    <div style="grid-column:span 7">{figure(boot, "The folded Wishbone THREE upright in the boot of an estate car beside a golf bag")}</div>
+    <div style="grid-column:9 / span 4;display:grid;gap:18px">
+      <h3 class="display display--s"><span style="display:block">Then it goes</span><span style="display:block">in the boot.</span></h3>
+      <p class="grey" style="font-size:14px">37.5 × 57 × 46 cm, standing up, with the bag beside it rather than on top of it.</p>
+    </div>
+  </div>'''
+    return f'''
+<!-- 03b the fold, as it actually happens -->
+<section class="band"><div class="wrap">
+  <div class="grid" style="align-items:end;margin-bottom:36px">
+    <div style="grid-column:span 7">
+      <h2 class="display display--s"><span style="display:block">Five frames.</span><span style="display:block">One movement.</span></h2>
+    </div>
+    <div style="grid-column:9 / span 4">
+      <p class="grey" style="font-size:14px">Generated imagery, not photography — the frames below were made from the
+      studio photograph of the real trolley, and they are labelled wherever they appear.</p>
+    </div>
+  </div>
+  <div class="seq">{frames}</div>
+  {bootblock}
+</div></section>'''
+
+def gen_org():
+    src = gfile('organizer')
+    return figure(src, 'The Smart Organizer from directly above, with a scorecard, a pencil, three tees and a ball in place')
+
+def gen_wheels():
+    w, b = gfile('wheel-off'), gfile('footbrake')
+    if not (w or b): return ''
+    cells = ""
+    if w: cells += f'<div style="flex:1">{figure(w, "A hand pulling a rear wheel clear of the axle")}</div>'
+    if b: cells += f'<div style="flex:1">{figure(b, "A shoe pressing the footbrake at the rear axle")}</div>'
+    return (f'<div style="display:flex;gap:16px;margin-top:56px">{cells}</div>'
+            f'<p class="label grey" style="margin-top:16px">Both wheels pull off without tools · the footbrake sits at the axle</p>')
+
+def gen_course():
+    """The two colourways nobody photographed, and the bag pair as a crossfade."""
+    cw = gfile('colourways-course')
+    out = ""
+    if cw:
+        out += f'''<div style="margin-top:32px">
+    {figure(cw, "The Black / Lime and Black / White colourways side by side on a parkland fairway")}
+    <p class="label grey" style="margin-top:16px">Black / Lime and Black / White — the two colourways that were never photographed</p>
+  </div>'''
+    bags = gshot('bag-compatibility').get('frames', [])
+    srcs = [(f['caption'], gimg(f['file'])) for f in bags]
+    srcs = [(c, u) for c, u in srcs if u]
+    if len(srcs) == 2:
+        imgs = "".join(f'<img src="{u}" alt="The Wishbone THREE carrying a {c.lower()}" '
+                       f'class="{"on" if i==0 else ""}" data-bag="{i}" loading="lazy">'
+                       for i, (c, u) in enumerate(srcs))
+        btns = "".join(f'<button data-bag="{i}" aria-pressed="{"true" if i==0 else "false"}">{c}</button>'
+                       for i, (c, _) in enumerate(srcs))
+        out += f'''<div class="grid" style="margin-top:72px;align-items:center">
+    <div style="grid-column:span 5">
+      <div class="bags"><div class="fade gen"><span class="tag">Generated</span>{imgs}</div></div>
+      <div class="bagsw" id="bagsw">{btns}</div>
+    </div>
+    <div style="grid-column:7 / span 5;display:grid;gap:18px">
+      <h3 class="display display--s"><span style="display:block">Stand bag</span><span style="display:block">or cart bag.</span></h3>
+      <p class="grey" style="max-width:34ch">Both brackets adjust and strap. The lower cradle carries the weight; the upper
+      bracket only steadies it. Switch between the two above — same trolley, same spot, same light.</p>
+    </div>
+  </div>'''
+    return out
 
 # ---------------------------------------------------------------- markup helpers
 eyebrow = lambda n, t: f'<div class="eyebrow"><b>{n}</b>{t}</div>'
@@ -362,11 +504,19 @@ def build():
     faqs  = "".join(f'<details class="faq"{" open" if i==0 else ""}><summary>{q}</summary><p>{a}</p></details>'
                     for i, (q, a) in enumerate(FAQ))
     notes = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in NOTES)
-    shots = "".join(f'<tr><th>{t}</th><td style="color:var(--grey-ink)">{d}</td><td class="ar">{r}</td></tr>'
-                    for t, d, r in SHOTLIST)
+    def delivered(slug):
+        sh = gshot(slug)
+        files = [sh['file']] if sh.get('file') else [f['file'] for f in sh.get('frames', [])]
+        files = [f for f in files if (GENDIR/f).exists()]
+        if not files: return '<span class="grey">not run</span>'
+        label = files[0] if len(files) == 1 else f'{len(files)} frames'
+        return f'<span style="color:var(--lime)">✓</span> {label}'
+    shots = "".join(f'<tr><th>{t}</th><td style="color:var(--grey-ink)">{d}</td><td class="ar">{r}</td>'
+                    f'<td class="ar">{delivered(slug)}</td></tr>'
+                    for slug, t, d, r in SHOTLIST)
     return dict(cw_buttons=cw_buttons, cw_slots=cw_slots, idx=idx, spots=spots, featlist=featlist,
                 stats=stats, cws=cws, head=head, rows=rows, accs=accs, specs=specs, faqs=faqs,
-                notes=notes, shots=shots, fold=fold_svg())
+                notes=notes, shots=shots)
 
 # ---------------------------------------------------------------- the page
 HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -438,9 +588,10 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
       <p class="grey" style="margin-top:22px;font-size:13px">Both rear wheels pull off without tools if you need it smaller still.</p>
       <div style="margin-top:28px"><a class="btn btn--lime" href="#buy">Add to cart · 249,00 € <span aria-hidden="true">→</span></a></div>
     </div>
-    <div>__FOLD_SVG__</div>
+    <div>__FOLD_HERO__</div>
   </div>
 </div></section>
+__SEQ_BAND__
 
 <!-- 04 organiser -->
 <section class="band band--mist"><div class="wrap grid" style="align-items:center">
@@ -456,7 +607,10 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
       <li style="border-top:1px solid var(--hair);padding-top:12px">Integrated bottle holder</li>
     </ul>
   </div>
-  <div style="grid-column:7 / span 6"><img src="__DET_ORG__" alt="The Smart Organizer console"></div>
+  <div style="grid-column:7 / span 6;display:grid;gap:16px">
+    <img src="__DET_ORG__" alt="The Smart Organizer console">
+    __GEN_ORG__
+  </div>
 </div></section>
 
 <!-- 05 wheels -->
@@ -467,6 +621,8 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
     <h2 class="display"><span style="display:block">29 at the back.</span><span style="display:block">24 at the front.</span></h2>
     <p class="grey" style="max-width:36ch">Large rear wheels carry the load and roll over wet ground rather than cutting into it. The front wheel is fixed, not swivelled — it tracks straight across a slope instead of wandering. Press the footbrake at the axle to park.</p>
     <div style="display:flex;gap:12px"><img src="__DET_FRONT__" alt="The front wheel" style="width:48%;background:var(--mist)"><img src="__DET_FRAME__" alt="The dual-tube frame" style="width:48%;background:var(--mist)"></div>
+  </div>
+  <div style="grid-column:1 / -1">__GEN_WHEELS__
   </div>
 </div></section>
 
@@ -481,6 +637,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
     <figure class="w6 h2"><img src="__L6__" alt="A golfer taking a club from the bag"></figure>
     <figure class="w12 h3"><img src="__L4__" alt="A golfer pushing the Wishbone THREE along the fairway"></figure>
   </div>
+  __GEN_COURSE__
 </div></section>
 
 <!-- 07 colourways -->
@@ -554,7 +711,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
   <h2 class="display" style="margin-top:16px"><span style="display:block">What building this</span><span style="display:block">turned up.</span></h2>
   <div class="grid2">__NOTES__</div>
   <h3 class="label" style="margin:56px 0 0">Higgsfield shot list — ready to run</h3>
-  <p class="grey" style="font-size:14px;margin-top:10px;max-width:70ch">Eight generations that would finish this page, in priority order. Each one references the studio PNG (2048 px, transparent) so the geometry and the colourway stay true.</p>
+  <p class="grey" style="font-size:14px;margin-top:10px;max-width:70ch">All eight ran on 20 September, in priority order, on GPT Image 2.5 through the Higgsfield connector. Each one references the studio PNG (2048 px, transparent) so the geometry and the colourway stay true. Fifteen frames in <code>design-system/assets/generated/</code>; prompts and job ids in <code>tools/three-generated.json</code>.</p>
   <table>__SHOTS__</table>
 </div></section>
 
@@ -586,6 +743,17 @@ document.querySelectorAll('.spot, #featlist button').forEach(function(b){
   b.addEventListener('mouseenter', function(){ if(b.classList.contains('spot')) setSpot(+b.dataset.i) });
 });
 setSpot(0);
+
+var bagsw = document.getElementById('bagsw');
+if(bagsw){
+  bagsw.querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click', function(){
+      var i = b.dataset.bag;
+      bagsw.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', String(x.dataset.bag===i)) });
+      document.querySelectorAll('.bags .fade img').forEach(function(im){ im.classList.toggle('on', im.dataset.bag===i) });
+    });
+  });
+}
 </script>
 </body></html>"""
 
@@ -608,7 +776,10 @@ def main():
       .replace('__EYE_FAQ__', eyebrow('11','Questions'))
       .replace('__CW_BUTTONS__', B['cw_buttons']).replace('__CW_SLOTS__', B['cw_slots']).replace('__IDX__', B['idx'])
       .replace('__STATS__', B['stats']).replace('__SPOTS__', B['spots']).replace('__FEATLIST__', B['featlist'])
-      .replace('__FOLD_SVG__', B['fold']).replace('__CWS__', B['cws'])
+      .replace('__FOLD_HERO__', fold_hero()).replace('__SEQ_BAND__', seq_band())
+      .replace('__GEN_ORG__', gen_org()).replace('__GEN_WHEELS__', gen_wheels())
+      .replace('__GEN_COURSE__', gen_course())
+      .replace('__CWS__', B['cws'])
       .replace('__HEAD__', B['head']).replace('__ROWS__', B['rows']).replace('__ACCS__', B['accs'])
       .replace('__SPECS__', B['specs']).replace('__FAQS__', B['faqs'])
       .replace('__NOTES__', B['notes']).replace('__SHOTS__', B['shots'])
@@ -622,7 +793,9 @@ def main():
       .replace('__DET_JSON__', json.dumps(DET)))
     dest = pathlib.Path('/tmp/wb/kit/wishbone-cube-three.html'); dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(out)
-    print('wrote', dest, round(len(out)/1024), 'KB ·', len(HOTSPOTS), 'hotspots ·', len(SHOTLIST), 'shots queued')
+    n = len(list(GENDIR.glob('three-*.jpg'))) if GENDIR.exists() else 0
+    print('wrote', dest, round(len(out)/1024), 'KB ·', len(HOTSPOTS), 'hotspots ·',
+          f'{n} generated frames' if n else 'no generated frames — fold diagram used')
 
 if __name__ == '__main__':
     main()

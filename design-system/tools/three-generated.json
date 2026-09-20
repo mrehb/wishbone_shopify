@@ -1,0 +1,202 @@
+{
+  "_readme": "Provenance for every AI-generated frame in ../assets/generated/. Written by the session that generated them; see that directory's README.md for the rules. Every generation was conditioned on the real studio PNG so the frame geometry, the three-wheel layout and the colourway come from the photograph, not from the model.",
+  "generatedAt": "2026-09-20",
+  "model": "gpt_image_2_5",
+  "settings": {
+    "variant": "flare",
+    "quality": "high",
+    "resolution": "2k",
+    "provider": "OpenAI GPT Image 2.5, via the Higgsfield MCP connector"
+  },
+  "signOff": "NOT APPROVED. Generated imagery needs the owner's sign-off before it goes anywhere customer-facing. The Shopify store is live; nothing here has been published to it.",
+  "specsHeldTrue": {
+    "netWeight": "7.65 kg",
+    "foldedDimensions": "37.5 x 57 x 46 cm",
+    "frontWheel": "24 cm",
+    "rearWheel": "29 cm",
+    "hardwareLime": "#8CAC1C - the hardware colour, never the brand accent #CBE832"
+  },
+  "colourCheck": "Lime sampled from each generated frame falls at hue 64-71 deg, value 0.56-0.65 - the same band as the real studio PNG (hue 72, value 0.58) and the real course photography. The brand accent #CBE832 sits at value 0.91 and appears on none of the hardware.",
+  "sourceReferences": {
+    "studio-black-lime": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2323-1775727943854.png",
+    "studio-black-white": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2323-1775727881706.png",
+    "course-014A2245": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2245-1785769277605.jpg",
+    "course-014A2302": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2302-1785769657546.jpg",
+    "cube-hero-job": "381992ab-e89e-4e27-9d13-11eefbb0f35c (the shot-2 hero, reused as a reference so the folded state stays consistent)"
+  },
+  "shots": {
+    "fold-sequence": {
+      "shot": 1,
+      "title": "The fold, as a sequence",
+      "aspect": "5 x 1:1",
+      "note": "Five frames, one camera, one light. Frames 4 and 5 also reference the shot-2 hero so the folded block matches.",
+      "frames": [
+        {
+          "file": "three-fold-01.jpg",
+          "caption": "Unfolded, ready",
+          "jobId": "3a79b586-8c40-42b4-abf8-f6b099b171ce",
+          "references": [
+            "studio-black-lime"
+          ],
+          "prompt": "FRAME 1 OF A 5-FRAME FOLD SEQUENCE. Studio product photograph of the golf push trolley in the attached reference photograph, fully UNFOLDED and standing ready.\n\nReproduce the attached real product exactly: matte black anodised dual-tube aluminium frame; three wheels total, one smaller front wheel leading and two larger rear wheels on a wide axle behind; wheel rims in an olive yellow-green lime (hex 8CAC1C, never a pale neon); black knobbly tyres; a lime sleeve on the upright tube printed with the lowercase wordmark 'three'; small 'WISHBONE' lettering on the lower frame tube; a black moulded organizer console across the handle; the lower bag cradle low at the front, the upper bag bracket below the handle. No golf bag fitted.\n\nSEQUENCE RULES, identical in all five frames: three-quarter view from the front left, camera at mid-frame height, 85 mm lens, subject centred with even margin, plain very light neutral grey seamless studio ground hex F4F4F5, soft raking key light from the top left, soft contact shadow beneath, neutral white balance, no hard speculars.\n\nNo people, no props, no text, no watermark."
+        },
+        {
+          "file": "three-fold-02.jpg",
+          "caption": "Front wheel folds in",
+          "jobId": "6a6bb925-885b-437f-8af6-88364bb6efe1",
+          "references": [
+            "studio-black-lime"
+          ],
+          "prompt": "FRAME 2 OF A 5-FRAME FOLD SEQUENCE. The golf push trolley from the attached reference photograph, caught at the FIRST stage of folding: the single smaller front wheel and its front leg have begun to swing inward and upward toward the frame, roughly a third of the way in. The rest of the trolley is still open and standing on its two large rear wheels, the handle still up.\n\nReproduce the attached real product exactly: matte black anodised dual-tube aluminium frame; olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon); black knobbly tyres; a lime sleeve on the upright tube printed with the lowercase wordmark 'three'; small 'WISHBONE' lettering on the lower frame tube; black moulded organizer console on the handle. No golf bag fitted.\n\nSEQUENCE RULES, identical in all five frames: three-quarter view from the front left, camera at mid-frame height, 85 mm lens, subject centred with even margin, plain very light neutral grey seamless studio ground hex F4F4F5, soft raking key light from the top left, soft contact shadow beneath, neutral white balance, no hard speculars.\n\nNo people, no props, no text, no watermark, no motion blur."
+        },
+        {
+          "file": "three-fold-03.jpg",
+          "caption": "The frame closes",
+          "jobId": "863b5ca8-9a35-4c47-b905-2da50858f6a1",
+          "references": [
+            "studio-black-lime"
+          ],
+          "prompt": "FRAME 3 OF A 5-FRAME FOLD SEQUENCE. The golf push trolley from the attached reference photograph, caught MID-FOLD and roughly two thirds closed: the front wheel has swung right in against the frame, the upright tube carrying the lime 'three' sleeve has rotated down and forward toward the lower frame, and the handle with its black console has folded down toward the body. The two large rear wheels are still on the ground and still hold the trolley up. The shape is clearly collapsing inward but is not yet the finished block.\n\nReproduce the attached real product exactly: matte black anodised dual-tube aluminium frame; olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon); black knobbly tyres; the lime sleeve printed with the lowercase wordmark 'three'; small 'WISHBONE' lettering on the lower frame tube. No golf bag fitted.\n\nSEQUENCE RULES, identical in all five frames: three-quarter view from the front left, camera at mid-frame height, 85 mm lens, subject centred with even margin, plain very light neutral grey seamless studio ground hex F4F4F5, soft raking key light from the top left, soft contact shadow beneath, neutral white balance, no hard speculars.\n\nNo people, no props, no text, no watermark, no motion blur."
+        },
+        {
+          "file": "three-fold-04.jpg",
+          "caption": "Locked",
+          "jobId": "4d4328a0-ad5c-4f3e-b228-3df8810859c2",
+          "references": [
+            "studio-black-lime",
+            "cube-hero-job"
+          ],
+          "prompt": "FRAME 4 OF A 5-FRAME FOLD SEQUENCE. The golf push trolley FULLY FOLDED and locked shut, standing on the studio floor.\n\nTwo references are attached. The first is the real product unfolded - take the hardware facts from it: matte black anodised dual-tube aluminium frame, olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon), black knobbly tyres, a lime sleeve printed with the lowercase wordmark 'three', small 'WISHBONE' lettering on the lower tube, black moulded organizer console. The second attached image is the same trolley already folded - match that folded configuration closely: the two large rear wheels stay on and form the outer side faces of a dense block, the smaller front wheel nests inside the closed frame between them, and the handle with its console lies folded across the top.\n\nThe folded block is 57 cm long, 46 cm high and 37.5 cm deep - a tight, self-contained near-cube with nothing sticking out.\n\nSEQUENCE RULES, identical in all five frames: three-quarter view from the front left, camera at mid-frame height, 85 mm lens, subject centred with even margin, plain very light neutral grey seamless studio ground hex F4F4F5, soft raking key light from the top left, soft contact shadow beneath, neutral white balance, no hard speculars.\n\nNo people, no props, no text, no watermark."
+        },
+        {
+          "file": "three-fold-05.jpg",
+          "caption": "Carried, one hand",
+          "jobId": "e29e69cd-3421-40f7-8bda-45bb05758418",
+          "references": [
+            "cube-hero-job",
+            "studio-black-lime"
+          ],
+          "prompt": "FRAME 5 OF A 5-FRAME FOLD SEQUENCE. The folded golf trolley from the attached reference images, now LIFTED AND CARRIED ONE-HANDED, clear of the floor.\n\nA single adult hand and forearm enter the frame from the upper right and grip the folded trolley by the black moulded handle that lies across the top of the block. The arm is bare to just below the elbow, plain, no watch, no jewellery, no sleeve branding. No face, no head, no body - only the hand and forearm. The folded block hangs level and looks compact and manageable, the way a 7.65 kg object hangs.\n\nThe product, folded: matte black anodised dual-tube aluminium frame, the two large rear wheels forming the outer side faces, the smaller front wheel nested inside, olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon), black knobbly tyres, a lime sleeve printed with the lowercase wordmark 'three', small 'WISHBONE' lettering on the lower tube.\n\nSEQUENCE RULES, identical in all five frames: three-quarter view from the front left, 85 mm lens, subject centred with even margin, plain very light neutral grey seamless studio ground hex F4F4F5, soft raking key light from the top left, neutral white balance, no hard speculars. A soft shadow falls on the floor below the lifted block.\n\nNo text, no watermark, no branding other than the product's own."
+        }
+      ]
+    },
+    "cube-hero": {
+      "shot": 2,
+      "title": "The folded cube, hero",
+      "aspect": "1:1",
+      "note": "The one image the page did not have. Three takes were generated; three-cube-hero.jpg was chosen for the clearest cubic read. The other two are kept as alternates.",
+      "file": "three-cube-hero.jpg",
+      "jobId": "381992ab-e89e-4e27-9d13-11eefbb0f35c",
+      "references": [
+        "studio-black-lime"
+      ],
+      "prompt": "Photograph the trolley in the attached reference image in its folded state, as a hero product shot.\n\nThe attached image is the real Wishbone push trolley, unfolded. Keep every hardware fact from it: black anodised dual-tube aluminium frame, lime-green three-spoke wheel rims in an olive yellow-green (hex 8CAC1C), black knobbly tyres, lime sleeve on the upright tube carrying the lowercase word 'three', black organizer console moulded into the handle.\n\nNow show it folded: frame closed in on itself, the two large rear wheels still fitted and forming the left and right outer faces of a compact block, the smaller front wheel swung in and nested inside the closed frame, handle folded down flush. Overall 57 x 46 x 37.5 cm - a tight, locked, cube-shaped package with clean edges and no loose parts.\n\nTight three-quarter front-left view, camera at block height, 100 mm lens, the block filling most of the square frame with generous even margin.\n\nPlain light grey studio sweep hex F4F4F5, raking soft light from the top left picking out the top edges of the frame tubes, soft grounded shadow, neutral white balance, crisp commercial finish.\n\nNo people, no props, no captions, no watermark, no extra branding.",
+      "alternates": [
+        {
+          "file": "three-cube-alt-01.jpg",
+          "jobId": "328a0e22-5063-4ea7-9313-e2ca09a2cd4b",
+          "references": [
+            "studio-black-lime"
+          ],
+          "prompt": "Commercial product photograph of the golf push trolley from the attached reference photograph, shown FOLDED and locked shut.\n\nThe attached photograph is the real product. Its geometry, hardware and colourway are facts to reproduce exactly: matte black anodised dual-tube aluminium frame, three wheels total with lime-green rims (a yellow-green olive lime, hex 8CAC1C, NOT a bright neon yellow-green) and black knobbly tyres, a lime sleeve on the upright tube printed with the lowercase wordmark 'three', small 'WISHBONE' lettering on the lower frame tube, and a black moulded organizer console on the handle.\n\nFOLDED STATE: the frame has collapsed in on itself into one compact rectangular block. The two large rear wheels remain attached and form the two outer faces of the block, lying parallel and close together. The single smaller front wheel has swung inward and is tucked against the closed frame between them. The handle has folded down flat along the frame. The block is 57 cm long, 46 cm high, 37.5 cm deep - slightly longer than it is tall, and clearly reads as a cube-like block rather than a flat bundle. Nothing sticks out.\n\nCamera: three-quarter view from the front left, lens height level with the middle of the block, 85 mm, slight perspective so two faces and the top of the block are all visible and the cubic proportion is unmistakable.\n\nLight and ground: plain very light neutral grey seamless studio background, hex F4F4F5. Soft raking light from the top left, gentle falloff, a soft contact shadow directly under the block. No hard speculars, no rim light, neutral white balance, clean and sharp throughout.\n\nNo people, no props, no added text, no watermarks, no logos other than those already on the product."
+        },
+        {
+          "file": "three-cube-alt-02.jpg",
+          "jobId": "a3a775e0-3293-4e3d-a661-d037d9550db2",
+          "references": [
+            "studio-black-lime"
+          ],
+          "prompt": "Studio product photograph: the golf push trolley in the attached reference photograph, collapsed into its folded, locked transport position and standing on a plain pale grey floor.\n\nReproduce the real product exactly as attached: matte black dual-tube aluminium frame, lime-green wheel rims in a yellow-green olive lime (hex 8CAC1C, not neon), black tread tyres, a lime band on the upright printed with lowercase 'three', black moulded handle console.\n\nWhen folded, the trolley becomes one dense block: the two big rear wheels stay on and sit as the outer side faces, the smaller front wheel has folded inward and nests against the frame between them, and the handle lies folded down along the top. Proportions 57 cm long by 46 cm high by 37.5 cm deep - a compact near-cube. The whole thing looks self-contained and closed, as if it could be lifted with one hand.\n\nCamera slightly above the block, three-quarter from the front left, so the top face and both visible sides read clearly and the viewer immediately understands it is a cube. 85 mm lens, deep focus.\n\nVery light grey seamless studio ground hex F4F4F5, soft directional key from the upper left, soft shadow pooling under the block, no harsh highlights, neutral colour, sharp detail on the frame tubes and tyre tread.\n\nNo people, no props, no text, no watermark."
+        }
+      ]
+    },
+    "boot": {
+      "shot": 3,
+      "title": "Boot shot",
+      "aspect": "16:9",
+      "file": "three-boot.jpg",
+      "jobId": "ab7df022-2d20-405d-9651-2f3ee62baf2d",
+      "references": [
+        "cube-hero-job",
+        "studio-black-lime"
+      ],
+      "prompt": "The folded golf trolley from the attached reference images, sitting in the open boot of an estate car, with a golf bag lying beside it.\n\nThe folded trolley is exactly as attached: a compact locked block, matte black anodised dual-tube aluminium frame, the two large rear wheels forming its outer side faces, the smaller front wheel nested inside, olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon), black knobbly tyres, a lime sleeve printed with the lowercase wordmark 'three', the black moulded handle console folded across the top. It stands upright in the boot and takes up well under half the load space, which is the point of the picture.\n\nBeside it, lying on its side, a plain matte black golf cart bag with clubs in it, unbranded. Grey boot carpet, grey plastic boot trim, the tailgate raised out of frame.\n\nCamera outside the car looking in, slightly above the boot lip, wide enough to read the whole load space, 35 mm lens. Natural daylight from outside the open tailgate, soft and diffuse as on a bright overcast day, gentle falloff into the back of the boot, neutral white balance, no flash, no hard sun.\n\nNo people, no visible car badges or number plates, no text, no watermark."
+    },
+    "organizer": {
+      "shot": 4,
+      "title": "Smart Organizer, top-down macro",
+      "aspect": "4:5",
+      "file": "three-organizer.jpg",
+      "jobId": "1056ad72-edd4-4efb-ba06-1a1ede09a8bc",
+      "references": [
+        "studio-black-lime",
+        "course-014A2302"
+      ],
+      "prompt": "Top-down macro photograph, shot directly from above, of the black moulded Smart Organizer console that sits across the handle of the golf push trolley in the attached reference photographs.\n\nThe console fills the frame edge to edge. It is textured matte black injection-moulded plastic with recessed compartments, exactly as in the attached product photograph: a flat card recess, a narrow pencil slot, small round tee holes, and two shallow round ball recesses. In place, in their proper recesses: a plain pale scorecard with a faint printed grid and no legible words, a plain wooden pencil, three plain white golf tees, and one plain white golf ball with no branding or markings.\n\nThe curved black handle tube runs across the frame behind the console. Blurred green mown grass far below and out of focus at the edges of the frame.\n\nCamera perfectly perpendicular, directly overhead, 60 mm macro, moderate depth of field so the whole console is sharp. Soft bright diffuse daylight as on a bright overcast day, no hard sun, no harsh shadows, neutral white balance, crisp texture in the moulded plastic.\n\nNo hands, no people, no text, no watermark, no brand logos."
+    },
+    "wheel-off": {
+      "shot": 5,
+      "title": "Wheel off",
+      "aspect": "4:5",
+      "file": "three-wheel-off.jpg",
+      "jobId": "38af9128-7b63-4dcf-a020-dcece8caa7ce",
+      "references": [
+        "studio-black-lime"
+      ],
+      "prompt": "Close product photograph: an adult hand pulling one large rear wheel clear of its axle on the golf push trolley in the attached reference photograph.\n\nThe wheel is off the axle by a hand's width, held by its rim, mid-movement, the bare axle stub and its black hub clearly visible on the frame behind. The wheel is exactly as attached: a black knobbly tyre on a three-spoke rim in olive yellow-green lime (hex 8CAC1C, never a pale neon), with a plain black centre cap. Behind it the matte black anodised dual-tube aluminium frame and the footbrake at the axle, softly out of focus.\n\nOnly a hand and part of a forearm are in frame - no face, no body, plain skin, no watch, no jewellery, no sleeve branding.\n\nCamera low and close at wheel height, 85 mm lens, shallow depth of field so the wheel rim and the axle stub are sharp and the frame behind falls away. Soft bright diffuse daylight as on a bright overcast day, out-of-focus mown green grass in the background, neutral white balance, no hard sun, no motion blur.\n\nNo text, no watermark, no brand logos beyond the product's own."
+    },
+    "footbrake": {
+      "shot": 6,
+      "title": "Footbrake",
+      "aspect": "16:9",
+      "file": "three-footbrake.jpg",
+      "jobId": "50308a8c-9ac8-43a4-b84c-0753b76d0afa",
+      "references": [
+        "studio-black-lime",
+        "course-014A2245"
+      ],
+      "prompt": "Low-angle photograph on a golf course: a plain white golf shoe pressing down on the black footbrake pedal at the rear axle of the golf push trolley in the attached reference photographs.\n\nThe camera is very low, almost at grass level, looking slightly up, so the mown fairway fills the bottom of the frame and the brake pedal, the rear axle and the base of the matte black dual-tube aluminium frame dominate. One large rear wheel is beside the pedal: black knobbly tyre, three-spoke rim in olive yellow-green lime (hex 8CAC1C, never a pale neon). The shoe is plain white with no visible brand marks; only the shoe and the lower leg in plain dark trousers are in frame - no face, no upper body.\n\nBackground: an out-of-focus parkland golf course exactly matching the second attached photograph - striped mown fairway, mature trees along the far side, soft hazy bright daylight on a bright overcast day, no hard sun and no harsh shadows, a pale sky just visible at the top of the frame.\n\n35 mm lens, shallow depth of field beyond the pedal, neutral white balance, sharp on the pedal and tyre.\n\nNo text, no watermark, no brand logos beyond the product's own."
+    },
+    "colourways-course": {
+      "shot": 7,
+      "title": "Black / Lime and Black / White on the course",
+      "aspect": "3:2",
+      "file": "three-colourways-course.jpg",
+      "jobId": "04d6dc06-5f89-4209-bf8f-8345dd028537",
+      "references": [
+        "studio-black-lime",
+        "studio-black-white",
+        "course-014A2245"
+      ],
+      "prompt": "Two golf push trolleys standing side by side on a parkland golf course, unfolded and empty, no bags fitted.\n\nThe two trolleys are the two colourways in the first and second attached photographs, and must match them exactly:\nLEFT - BLACK / LIME: matte black anodised dual-tube aluminium frame, wheel rims in an olive yellow-green lime (hex 8CAC1C, never a pale neon), a lime sleeve on the upright tube printed with the lowercase wordmark 'three'.\nRIGHT - BLACK / WHITE: the identical frame in matte black, but with off-white wheel rims and an off-white sleeve on the upright tube printed with the lowercase wordmark 'three'. No lime anywhere on this one.\n\nBoth are the same model: three wheels, one smaller front wheel leading and two larger rear wheels on a wide axle behind, black knobbly tyres, small 'WISHBONE' lettering on the lower frame tube, a black moulded organizer console across the handle, the lower bag cradle low at the front. They stand parallel, both facing left, a short distance apart, level with each other.\n\nLocation and light must match the third attached photograph exactly: a striped mown parkland fairway, a low mown bank behind, mature deciduous and conifer trees across the background, soft hazy bright summer daylight on a bright overcast day - no hard sun, no harsh shadows, only soft grounded shade beneath the wheels - pale sky with soft cloud above the treeline. Same grade, same colour, same softness.\n\nCamera at knee height, side-on and slightly three-quarter from the front left, 50 mm lens, both trolleys fully in frame and sharp, background falling gently out of focus.\n\nNo people, no text, no watermark."
+    },
+    "bag-compatibility": {
+      "shot": 8,
+      "title": "Bag compatibility",
+      "aspect": "2 x 4:5",
+      "note": "A pair, shot to the same brief so the page can crossfade between them. The cart-bag frame sits fractionally closer than the stand-bag frame; the crossfade still reads.",
+      "frames": [
+        {
+          "file": "three-bag-stand.jpg",
+          "caption": "Stand bag",
+          "jobId": "f9d8b2c7-f49a-4667-aa86-f023ad6fd8db",
+          "references": [
+            "studio-black-lime",
+            "course-014A2245"
+          ],
+          "prompt": "PAIR IMAGE A OF 2 - IDENTICAL FRAMING REQUIRED. The golf push trolley from the first attached photograph, standing on a golf course, carrying a STAND BAG.\n\nThe trolley is the Black / Lime colourway exactly as attached: matte black anodised dual-tube aluminium frame, three wheels - one smaller front wheel leading and two larger rear wheels on a wide axle behind - olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon), black knobbly tyres, a lime sleeve on the upright tube printed with the lowercase wordmark 'three', small 'WISHBONE' lettering on the lower frame tube, a black moulded organizer console across the handle.\n\nFitted to it: a slim plain matte black STAND BAG with its retractable legs folded flat against the body, a narrow profile, a single shoulder strap, a few clubs in the top. Completely unbranded. Its base sits in the lower cradle at the front and its upper body is strapped into the upper bracket below the handle, leaning back along the frame.\n\nFRAMING, to be identical in both images of this pair: trolley side-on facing left, dead centre of the frame, camera at waist height on a tripod, 50 mm lens, the whole trolley and bag inside the frame with equal margin left and right and a hand's width of grass below the wheels.\n\nLocation and light match the second attached photograph: striped mown parkland fairway, mature trees across the background, soft hazy bright daylight on a bright overcast day, no hard sun, no harsh shadows, pale soft sky. Background gently out of focus.\n\nNo people, no text, no watermark, no brand logos on the bag."
+        },
+        {
+          "file": "three-bag-cart.jpg",
+          "caption": "Cart bag",
+          "jobId": "46e308a2-2467-4de3-85d2-142519a696d1",
+          "references": [
+            "studio-black-lime",
+            "course-014A2245"
+          ],
+          "prompt": "PAIR IMAGE B OF 2 - IDENTICAL FRAMING REQUIRED. The golf push trolley from the first attached photograph, standing on a golf course, carrying a CART BAG.\n\nThe trolley is the Black / Lime colourway exactly as attached: matte black anodised dual-tube aluminium frame, three wheels - one smaller front wheel leading and two larger rear wheels on a wide axle behind - olive yellow-green lime wheel rims (hex 8CAC1C, never a pale neon), black knobbly tyres, a lime sleeve on the upright tube printed with the lowercase wordmark 'three', small 'WISHBONE' lettering on the lower frame tube, a black moulded organizer console across the handle.\n\nFitted to it: a bulky plain matte black CART BAG - noticeably wider and deeper than a stand bag, no stand legs at all, a full set of clubs in a divided top, several zipped side pockets. Completely unbranded. Its base sits in the lower cradle at the front and its upper body is strapped into the upper bracket below the handle, leaning back along the frame.\n\nFRAMING, to be identical in both images of this pair: trolley side-on facing left, dead centre of the frame, camera at waist height on a tripod, 50 mm lens, the whole trolley and bag inside the frame with equal margin left and right and a hand's width of grass below the wheels.\n\nLocation and light match the second attached photograph: striped mown parkland fairway, mature trees across the background, soft hazy bright daylight on a bright overcast day, no hard sun, no harsh shadows, pale soft sky. Background gently out of focus.\n\nNo people, no text, no watermark, no brand logos on the bag."
+        }
+      ]
+    }
+  }
+}
