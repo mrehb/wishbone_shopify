@@ -1,6 +1,21 @@
 # Wishbone Golf — Brand Kit
 
-**Version 4.0 "Studio" — 19 September 2026.** Supersedes v3.0, v2.0 and v1.0 of the same day.
+**Version 4.1 "Studio" — 20 September 2026.** Supersedes v4.0 (19 September) and, through it, v3, v2 and v1.
+
+**What 4.1 changed, and why.** Building the Wishbone THREE product page meant sampling the real
+photographs. Two v4.0 assumptions turned out to be wrong.
+
+1. **The green.** v4.0 took the accent from the EON, at hue 89°. But the logo olive is hue 66° and
+   the ONE, TWO and THREE all photograph at hue 72–73° — the EON is the outlier, not the rule. The
+   brand lime is now **`#CBE832`, hue 70°**: four degrees from the mark, four from the hardware,
+   13.7:1 against ink in both directions. The monogram is recut in it.
+2. **Red.** v4.0 said the brand has no red. `#E03828` is on the CUBE mark and on a White / Red
+   colourway of every model. It is now in the system as a **product colour** — swatches and hardware
+   only. The *interface* still has no red: a button is lime, an error is a lime rule and a sentence.
+
+Naming: the manual brands the trolleys **CUBE two** and **CUBE three**. The owner’s ruling is that
+the products are the **Wishbone TWO** and **Wishbone THREE**, and **CubeFold** is the name of the
+folding mechanism only.
 
 The owner reviewed v3 and asked for a change of direction against a new reference — a white,
 product-led page with a light geometric sans, hairlines, one dark band and a lime button used
@@ -18,7 +33,7 @@ photograph; a white one lets them sit. v4 is white.
 | Ground | paper `#FFFFFF` alternating with mist `#F4F4F5`; ink `#0F1014` at most once per page |
 | Type | **Manrope** — 300 caps for headlines, 400 body, 500 labels, 600 for the price |
 | The dot accent | **DotGothic16 for the numbered eyebrow only**; dot silhouettes for parts without a photo |
-| Accent | **Lime `#A8FF4A`** — a surface on paper (one button per view, tag, 2px rule); text only on ink |
+| Accent | **Lime `#CBE832`** — a surface on paper (one button per view, tag, 2px rule); text only on ink |
 | Line | the hairline `#E4E4E7` |
 | Geometry | radius 0, no shadows; depth is a band change |
 | Layout | full-bleed bands on a 1200px / 12-column container, two-half bands split 5 : 7 |
@@ -32,9 +47,9 @@ photograph; a white one lets them sit. v4 is white.
 | ink | `#0F1014` | text; the one dark band |
 | grey | `#6B7075` | secondary text (5.0:1) |
 | hairline | `#E4E4E7` | tables, stats, fields, footer |
-| lime | `#A8FF4A` | the accent — hue 89°, the hardware's green (settled in v3) |
+| lime | `#CBE832` | the accent — hue 70°, between the logo olive (66°) and the hardware lime (73°) |
 
-Ink on paper 18.6:1 · ink on lime 15.5:1 · lime on ink 15.5:1 · **lime on paper 1.2:1 — never as
+Ink on paper 18.6:1 · ink on lime 13.7:1 · lime on ink 13.7:1 · **lime on paper 1.4:1 — never as
 text.** No red: an error is a 2px lime line under the field and a plain sentence.
 
 ## 2. Type
@@ -65,7 +80,12 @@ mist / ink), Trust, Inquiry, Buy, Specs, Compare, Parts, Faq. Chrome: Header, Fo
 
 ## 6. Open
 
-Fold size and weight unmeasured; photographs for fifteen parts and the NEO; SVG masters; ™ vs ®;
+Fold size and weight are **known** for the CUBE two (6.9 kg, 35.5 × 53 × 45 cm) and CUBE three
+(7.65 kg, 37.5 × 57 × 46 cm) — they are in Product Bay and have never reached the storefront; the ONE,
+NEO and EON are still unmeasured. Open: the two greens (the three's hardware lime is hue 72°, the EON's
+is hue 89°, the brand lime is 89°); red `#E03828` exists in the CUBE mark and the White / Red colourway;
+the CUBE sub-brand is on the product and not on the website; photographs for fifteen parts and the NEO;
+SVG masters; ™ vs ®;
 "aluminum" → "aluminium"; vendor "My Store"; the theme still runs v1.
 
 ---

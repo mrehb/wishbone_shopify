@@ -85,7 +85,7 @@ footer.doc{border-top:1px solid var(--hair);margin-top:64px;padding-top:20px;pad
   <div style="border:1px solid var(--hair);padding:48px;display:flex;align-items:center;justify-content:center"><img src="__WORDINK__" style="width:78%"></div>
   <div style="border:1px solid var(--hair);padding:32px;display:flex;align-items:center;justify-content:center"><img src="__MONOINK__" style="width:60%"></div>
   <div style="background:var(--ink);padding:32px;display:flex;align-items:center;justify-content:center"><img src="__MONO__" style="width:60%"></div></div>
-<p class="grey" style="font-size:13px;margin-top:12px">positive marks cut for paper; the quarter-circle stays lime #A8FF4A on both. SVG masters still to commission.</p></div>
+<p class="grey" style="font-size:13px;margin-top:12px">positive marks cut for paper; the quarter-circle is recut in the v4.1 lime #CBE832 on both. SVG masters still to commission.</p></div>
 
 <div class="doc sec"><div class="eyebrow"><b>06</b>Still open</div>
 <table><tr><td>01</td><td>fold size and weight — unmeasured for every model; every table that needs them prints —</td></tr>

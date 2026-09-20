@@ -9,7 +9,7 @@ export function Dots({ grid, cols, rows, hot = [], size, gap, tone = 'ink', styl
     const css = getComputedStyle(document.documentElement);
     const S = size || parseFloat(css.getPropertyValue('--dot-size')) || 5;
     const G = gap != null ? gap : (parseFloat(css.getPropertyValue('--dot-gap')) || 2);
-    const lime = css.getPropertyValue('--lime').trim() || '#a8ff4a';
+    const lime = css.getPropertyValue('--lime').trim() || '#cbe832';
     const rgb = tone === 'paper' ? '250,250,250' : '15,16,20';
     const step = S + G, w = cols * step - G, h = rows * step - G, dpr = window.devicePixelRatio || 1;
     c.width = w * dpr; c.height = h * dpr; c.style.width = w + 'px'; c.style.height = h + 'px';

@@ -7,7 +7,7 @@ import { Photo } from '../primitives/Silhouette.jsx';
 
 // The product page opener: gallery on mist left, the buy column right. Colourways are the
 // store's real option values, drawn as split squares; the lime button is the purchase.
-const SW = { 'charcoal-black': ['#2b2b2e', '#0f1014'], 'charcoal-lime': ['#2b2b2e', '#a8ff4a'], 'charcoal-red': ['#2b2b2e', '#b3342a'], 'charcoal-blue': ['#2b2b2e', '#2f5aa8'], 'white-red': ['#e9e9e9', '#b3342a'] };
+const SW = { 'charcoal-black': ['#2b2b2e', '#0f1014'], 'charcoal-lime': ['#2b2b2e', '#8cac1c'], 'charcoal-red': ['#2b2b2e', '#b3342a'], 'charcoal-blue': ['#2b2b2e', '#2f5aa8'], 'white-red': ['#e9e9e9', '#b3342a'] };
 export function Buy({ model = 'EON', type = 'electric', price, colourways = [], images = [], copy, delivery = '2–4 days · AT DE UK', parts, soldOut = false, facts = [] }) {
   const [cw, setCw] = useState(colourways[0]);
   const [img, setImg] = useState(0);

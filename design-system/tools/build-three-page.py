@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Wishbone CUBE three — one complete product landing page, built on the v4 "Studio" system
+"""Wishbone THREE — one complete product landing page, built on the v4 "Studio" system
 and the real Product Bay record (id 9054916). Regenerate after any token or data change."""
 import base64, json, pathlib, re
 
@@ -45,7 +45,7 @@ HOTSPOTS = [
 ]
 
 SPECS = [
- ('Model','Wishbone CUBE three'),('Type','Manual push trolley, three wheels'),
+ ('Model','Wishbone THREE'),('Type','Manual push trolley, three wheels'),
  ('Frame','Aluminium, dual-tube'),('Folding mechanism','CubeFold'),
  ('Folded dimensions','37.5 × 57 × 46 cm'),('Net weight','7.65 kg'),
  ('Locks when folded and unfolded','Yes'),('Front wheel','24 cm, folds with the frame'),
@@ -61,8 +61,8 @@ SPECS = [
 COMPARE = {
  'models':[
   {'id':'ONE','name':'ONE','price':'229,00 €','img':IMG['one']},
-  {'id':'TWO','name':'CUBE two','price':'199,00 €','img':IMG['two']},
-  {'id':'THREE','name':'CUBE three','price':'249,00 €','img':IMG['bl']},
+  {'id':'TWO','name':'TWO','price':'199,00 €','img':IMG['two']},
+  {'id':'THREE','name':'THREE','price':'249,00 €','img':IMG['bl']},
  ],
  'rows':[
   ('Frame',{'ONE':'Aluminium','TWO':'Aluminium, single tube','THREE':'Aluminium, dual tube'}),
@@ -90,16 +90,16 @@ FAQ = [
  ('How small does it actually fold?','Into a cube of 37.5 × 57 × 46 cm, and it locks there — it will not spring open when you lift it. Pull the two rear wheels off and it loses another hand’s width each side.'),
  ('Will it take my bag?','Both brackets adjust and strap, so a stand bag and a cart bag both sit properly. The lower cradle carries the weight; the upper bracket only steadies it.'),
  ('Does the front wheel swivel?','No. It is fixed and tracks straight, which is what keeps the trolley going where you point it across a slope. It folds in with the frame rather than coming off.'),
- ('What is the difference between the two and the three?','The three has the dual-tube frame, a scorecard and pencil holder, and locks in both the folded and unfolded position. It is 750 g heavier and 50 € more.'),
+ ('What is the difference between the TWO and the THREE?','The THREE has the dual-tube frame, a scorecard and pencil holder, and locks in both the folded and unfolded position. It is 750 g heavier and 50 € more.'),
  ('Can I get spare parts?','Yes. Wishbone lists parts by model, and the wheels, brackets and holders are all replaceable rather than moulded in.'),
 ]
 
 NOTES = [
  ('Higgsfield was not reachable in this session','The MCP connector is not attached to this run, so no image was generated. Everything visual on this page is either a real Wishbone photograph or a diagram drawn from the measured numbers. The shot list below is ready to fire the moment the connector is live.'),
- ('The product has a sub-brand the website does not use','The manual and the frame both say <b>CUBE three</b>. Shopify calls it <em>Wishbone THREE</em>. This page uses CUBE three; if that is wrong, it is a one-line change.'),
+ ('Decided: the product is the Wishbone THREE','The manual and the frame carry a <b>CUBE</b> sub-brand that the website has never used. The owner\u2019s ruling on 20 September: the product is the <b>Wishbone THREE</b>, and <b>CubeFold</b> stays as the name of the folding mechanism only. This page follows that.'),
  ('The specs that were "not yet measured" exist','Weight 7.65 kg and 37.5 × 57 × 46 cm are in Product Bay and have never reached the storefront. The brand book still says these are unknown — that entry can now be closed.'),
- ('The lime is not the brand lime','Sampled from the photograph, the three’s lime is hue 72° (about #8CAC1C) — the same yellow-green family as the logo. The v4 brand accent is #A8FF4A, hue 89°, sampled from the EON. Two different greens are in play across the range and one of them should move.'),
- ('There is red in the brand','The White / Red colourway and the CUBE logo both use #E03828. The v4 system says there is no red. That needs a ruling.'),
+ ('The lime is not the brand lime','Sampled from the photograph, the THREE’s lime is hue 72° (about #8CAC1C) — the same yellow-green family as the logo. The v4 brand accent is #CBE832, hue 89°, sampled from the EON. Two different greens are in play across the range and one of them should move.'),
+ ('Decided: red is a product colour only','#E03828 is real \u2014 it is on the CUBE mark and on a whole colourway. It now lives in the system as a <b>product colour</b>: swatches and hardware only. The interface keeps no red at all; a button is lime and an error is a lime rule and a sentence.'),
  ('Six course photographs are sitting unused','014A2245 through 014A2310 are in Product Bay and on no page of the website. They are the best assets the brand owns.'),
  ('A product tour video exists','<em>Wishbone Three Product Tour.mp4</em>, 211 MB, in Product Bay. It belongs on this page; it needs hosting and a poster frame.'),
  ('Packing size and gross weight are zero','Both are filled in as 0 in Product Bay, which is not a measurement. The spec table prints an em dash instead.'),
@@ -139,7 +139,7 @@ header.site nav a:hover::after{right:0}
   letter-spacing:var(--track-label);text-transform:uppercase;line-height:1;
   transition:background var(--t-fast) var(--ease),color var(--t-fast) var(--ease),border-color var(--t-fast) var(--ease)}
 .btn--lime{background:var(--lime);color:var(--on-lime);border-color:var(--lime)}
-.btn--lime:hover{background:#97ef33}
+.btn--lime:hover{background:#bedd1e}
 .btn--ink{background:var(--ink);color:#fafafa;border-color:var(--ink)}
 .btn--out{background:transparent;color:inherit;border-color:currentColor}
 .btn--out:hover{background:var(--ink);color:#fafafa;border-color:var(--ink)}
@@ -218,7 +218,7 @@ table.cmp{width:100%;border-collapse:collapse;font-size:14px}
 table.cmp th,table.cmp td{text-align:left;padding:14px 14px 14px 0;border-bottom:1px solid var(--hair);vertical-align:middle}
 table.cmp thead th{border-bottom:1px solid var(--ink);vertical-align:bottom;font-weight:400}
 table.cmp thead img{width:100%;max-width:150px;background:var(--mist);margin-bottom:12px}
-table.cmp .hi{background:rgb(168 255 74 / .10)}
+table.cmp .hi{background:rgb(203 232 50 / .10)}
 table.cmp td.na{color:var(--grey)}
 
 /* accessories */
@@ -286,15 +286,15 @@ def fold_svg():
     bx, by = ox+w+dx+64, oy
     return f"""<svg viewBox="0 0 760 300" role="img" aria-label="The folded trolley, 37.5 by 57 by 46 centimetres, drawn to scale beside a 55 by 40 centimetre cabin bag">
   <g fill="none" stroke="#fafafa" stroke-width="1.6" stroke-linejoin="round">
-    <polygon points="{front}" fill="rgb(168 255 74 / .10)"/>
+    <polygon points="{front}" fill="rgb(203 232 50 / .10)"/>
     <polygon points="{top}"/><polygon points="{side}"/>
   </g>
-  <g stroke="#a8ff4a" stroke-width="1.4">
+  <g stroke="#cbe832" stroke-width="1.4">
     <line x1="{ox}" y1="{oy+18}" x2="{ox+w}" y2="{oy+18}"/>
     <line x1="{ox-18}" y1="{oy}" x2="{ox-18}" y2="{oy-h}"/>
     <line x1="{ox+w+6}" y1="{oy+12}" x2="{ox+w+dx+6}" y2="{oy+dy+12}"/>
   </g>
-  <g fill="#a8ff4a" font-family="'Manrope',sans-serif" font-size="12" font-weight="500" letter-spacing="1.4">
+  <g fill="#cbe832" font-family="'Manrope',sans-serif" font-size="12" font-weight="500" letter-spacing="1.4">
     <text x="{ox+w/2:.0f}" y="{oy+36:.0f}" text-anchor="middle">57 CM</text>
     <text x="{ox-26:.0f}" y="{oy-h/2:.0f}" text-anchor="end" dominant-baseline="middle">46 CM</text>
     <text x="{ox+w+dx/2+22:.0f}" y="{oy+dy+30:.0f}">37.5 CM</text>
@@ -317,7 +317,7 @@ def build():
         f'<button data-cw="{c["id"]}" aria-label="{c["name"]}" aria-pressed="{"true" if i==0 else "false"}" '
         f'style="background:linear-gradient(135deg,{c["a"]} 0 50%,{c["b"]} 50% 100%)"></button>' for i, c in enumerate(COLOURWAYS))
     cw_slots = "".join(f'<div class="slot{" on" if i==0 else ""}" data-cw="{c["id"]}">'
-                       f'<img src="{c["img"]}" alt="Wishbone CUBE three in {c["name"]}" '
+                       f'<img src="{c["img"]}" alt="Wishbone THREE in {c["name"]}" '
                        f'{"" if i==0 else "loading=lazy"}></div>' for i, c in enumerate(COLOURWAYS))
     idx = "".join(f'<li data-cw="{c["id"]}" class="{"on" if i==0 else ""}">{str(i+1).zfill(2)}</li>'
                   for i, c in enumerate(COLOURWAYS))
@@ -334,7 +334,7 @@ def build():
                                     ('4','','Quick Lok bases'),('3','','colourways'),('249','€','RRP')])
 
     cws = "".join(f'''<figure>
-      <img src="{c['img']}" alt="Wishbone CUBE three in {c['name']}" loading="lazy">
+      <img src="{c['img']}" alt="Wishbone THREE in {c['name']}" loading="lazy">
       <figcaption style="margin-top:18px">
         <div class="label"><span class="chip" style="background:linear-gradient(135deg,{c['a']} 0 50%,{c['b']} 50% 100%)"></span>{c['name']}</div>
         <div class="grey" style="font-size:13px;margin-top:10px;font-variant-numeric:tabular-nums">SKU {c['sku']}<br>EAN {c['ean']}</div>
@@ -367,8 +367,8 @@ def build():
 # ---------------------------------------------------------------- the page
 HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Wishbone CUBE three — push trolley</title>
-<meta name="description" content="The Wishbone CUBE three folds to 37.5 × 57 × 46 cm and locks there. Dual-tube aluminium frame, 7.65 kg, four Quick Lok bases, Smart Organizer. 249 €.">
+<title>Wishbone THREE — push trolley</title>
+<meta name="description" content="The Wishbone THREE folds to 37.5 × 57 × 46 cm and locks there. Dual-tube aluminium frame, 7.65 kg, four Quick Lok bases, Smart Organizer. 249 €.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=DotGothic16&display=swap" rel="stylesheet">
 <style>__TOKENS__ __CSS__</style></head><body>
@@ -377,7 +377,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
   <a href="/" aria-label="Wishbone Golf"><img src="__WORD__" alt="Wishbone Golf" style="height:13px;width:auto"></a>
   <nav class="label"><a href="#features">Trolleys</a><a href="#parts">Spare parts</a><a href="#accessories">Accessories</a><a href="#compare">Compare</a><a href="#faq">Support</a></nav>
   <a href="/cart" class="label">Cart (0)</a>
-  <a class="btn btn--lime btn--sm" href="#buy">Buy the three <span aria-hidden="true">→</span></a>
+  <a class="btn btn--lime btn--sm" href="#buy">Buy the THREE <span aria-hidden="true">→</span></a>
 </div></header>
 
 <!-- 01 hero -->
@@ -385,7 +385,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
   <div class="copy">
     __EYE_HERO__
     <h1 class="display display--hero"><span style="display:block">Three wheels.</span><span style="display:block">One cube.</span><span style="display:block">7.65 kg.</span></h1>
-    <p class="lead grey" style="max-width:38ch">The CUBE three folds into 37.5 × 57 × 46 cm and locks there. A dual-tube aluminium frame, four Quick Lok bases and a Smart Organizer where your hands already are.</p>
+    <p class="lead grey" style="max-width:38ch">The THREE folds into 37.5 × 57 × 46 cm and locks there. A dual-tube aluminium frame, four Quick Lok bases and a Smart Organizer where your hands already are.</p>
     <div style="display:flex;align-items:baseline;gap:16px"><span class="price">249,00 €</span><span class="label grey">incl. VAT · 2–4 days</span></div>
     <div><div class="label grey" style="margin-bottom:10px">Colourway <span id="cwname" style="color:var(--ink)">Black / Lime</span></div>
       <div class="sw" id="sw">__CW_BUTTONS__</div></div>
@@ -406,7 +406,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
   __D_FEAT__
   <p class="grey" style="max-width:46ch;margin-top:16px">Eight things worth knowing, in the order you meet them. Pick a number.</p>
   <div class="map">
-    <div class="plate"><img src="__HERO_BL__" alt="Wishbone CUBE three, feature map">__SPOTS__</div>
+    <div class="plate"><img src="__HERO_BL__" alt="Wishbone THREE, feature map">__SPOTS__</div>
     <div>
       <div class="det" id="det">
         <img id="detimg" src="" alt="">
@@ -471,11 +471,11 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
   __EYE_COURSE__
   <h2 class="display" style="margin:18px 0 32px"><span style="display:block">On the course,</span><span style="display:block">where it is judged.</span></h2>
   <div class="gal">
-    <figure class="w8 h1"><img src="__L2__" alt="The CUBE three on the fairway"></figure>
-    <figure class="w4 h1"><img src="__L1__" alt="The CUBE three, three-quarter view on grass"></figure>
-    <figure class="w6 h2"><img src="__L3__" alt="The CUBE three loaded with a cart bag"></figure>
+    <figure class="w8 h1"><img src="__L2__" alt="The Wishbone THREE on the fairway"></figure>
+    <figure class="w4 h1"><img src="__L1__" alt="The Wishbone THREE, three-quarter view on grass"></figure>
+    <figure class="w6 h2"><img src="__L3__" alt="The Wishbone THREE loaded with a cart bag"></figure>
     <figure class="w6 h2"><img src="__L6__" alt="A golfer taking a club from the bag"></figure>
-    <figure class="w12 h3"><img src="__L4__" alt="A golfer pushing the CUBE three along the fairway"></figure>
+    <figure class="w12 h3"><img src="__L4__" alt="A golfer pushing the Wishbone THREE along the fairway"></figure>
   </div>
 </div></section>
 
@@ -523,9 +523,9 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
     <div style="grid-column:span 4"><img src="__MONO__" alt="Wishbone" style="width:92px">
       <p class="grey" style="font-size:13px;margin-top:16px;max-width:28ch">Birthed in Britain. Ultra-light aluminium golf trolleys and every part to keep them rolling.</p></div>
     <div style="grid-column:span 2"><div class="label" style="margin-bottom:14px">Trolleys</div>
-      <ul class="grey" style="list-style:none;padding:0;display:grid;gap:8px;font-size:13px"><li>Wishbone ONE</li><li>CUBE two</li><li>CUBE three</li><li>NEO</li><li>EON</li></ul></div>
+      <ul class="grey" style="list-style:none;padding:0;display:grid;gap:8px;font-size:13px"><li>Wishbone ONE</li><li>Wishbone TWO</li><li>Wishbone THREE</li><li>NEO</li><li>EON</li></ul></div>
     <div style="grid-column:span 2"><div class="label" style="margin-bottom:14px">Spare parts</div>
-      <ul class="grey" style="list-style:none;padding:0;display:grid;gap:8px;font-size:13px"><li>Parts for the three</li><li>Wheels</li><li>Brackets</li><li>Brake kit</li></ul></div>
+      <ul class="grey" style="list-style:none;padding:0;display:grid;gap:8px;font-size:13px"><li>Parts for the THREE</li><li>Wheels</li><li>Brackets</li><li>Brake kit</li></ul></div>
     <div style="grid-column:span 2"><div class="label" style="margin-bottom:14px">Accessories</div>
       <ul class="grey" style="list-style:none;padding:0;display:grid;gap:8px;font-size:13px"><li>Umbrella holder</li><li>Drink holder</li><li>Scorecard holder</li><li>Carry bag set</li></ul></div>
     <div style="grid-column:span 2"><div class="label" style="margin-bottom:14px">Company</div>
@@ -538,7 +538,7 @@ HTML = """<!doctype html><html lang="en"><head><meta charset="utf-8">
 
 <div class="buybar"><div class="wrap in">
   <img src="__HERO_BL__" alt="" style="width:44px;height:44px;object-fit:contain">
-  <div><div class="label">Wishbone CUBE three</div><div class="grey" style="font-size:13px" id="barcw">Black / Lime · 7.65 kg</div></div>
+  <div><div class="label">Wishbone THREE</div><div class="grey" style="font-size:13px" id="barcw">Black / Lime · 7.65 kg</div></div>
   <div style="margin-left:auto;display:flex;align-items:center;gap:18px">
     <span class="price" style="font-size:20px">249,00 €</span>
     <a class="btn btn--lime" href="#">Add to cart <span aria-hidden="true">→</span></a></div>
@@ -590,7 +590,7 @@ def main():
     out = (HTML
       .replace('__TOKENS__', tokens).replace('__CSS__', CSS)
       .replace('__WORD__', WORD).replace('__MONO__', MONO)
-      .replace('__EYE_HERO__', eyebrow('01','Wishbone CUBE three'))
+      .replace('__EYE_HERO__', eyebrow('01','Wishbone THREE'))
       .replace('__EYE_FEAT__', eyebrow('02','Every feature'))
       .replace('__D_FEAT__', display(['Eight reasons it is','fifty euros more.']))
       .replace('__EYE_FOLD__', eyebrow('03','CubeFold'))

@@ -9,10 +9,11 @@ Read `readme.md` in this skill first, then explore the other files.
 Wishbone v4 is a **white, product-led** system: paper and mist bands on a 1200px twelve-column
 container, at most one ink band per page; **Manrope** for all type (light upper-case statement
 headlines, one full stop per line); **DotGothic16 only for the numbered eyebrow**; the hairline
-`#e4e4e7` as the only line; radius 0, no shadows; **lime `#a8ff4a`** as the single accent — the
+`#e4e4e7` as the only line; radius 0, no shadows; **lime `#cbe832`** (hue 70°, the logo's own family) as the single accent — the
 purchase button once per view, small marks otherwise, never text on paper. Product photographs are
 the store's white-studio shots multiplied onto mist; a missing photo becomes a dot silhouette.
-Unknown values print `—`.
+Unknown values print `—`. Product colours (`#8cac1c` hardware lime, `#e03828` red) belong in
+colourway swatches and photographs only — never in the interface.
 
 If creating visual artifacts, copy assets out and produce static HTML. If working on production
 code, that is the Shopify theme at `github.com/mrehb/wishbone_shopify`; the store is live, so

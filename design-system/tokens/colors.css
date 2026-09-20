@@ -8,8 +8,15 @@
   --grey-ink:#9a9ea6;         /* secondary text on ink (6.5:1) */
   --hair:#e4e4e7;             /* the hairline on paper */
   --hair-ink:rgb(255 255 255 / .14);  /* the hairline on ink */
-  --lime:#a8ff4a;             /* the accent — the hardware's green, hue 89° */
+  --lime:#cbe832;             /* THE accent — hue 70°, between the logo olive and the hardware lime */
   --on-lime:#0f1014;          /* the only text colour that goes on lime */
   --dot:#0f1014;              /* silhouette dots on paper */
   --dot-ink:#fafafa;          /* silhouette dots on the dark band */
+
+  /* product colours — sampled from the photographs. Swatches and hardware only.
+     These never appear in the interface: a button is --lime, an error is --lime. */
+  --hw-lime:#8cac1c;          /* the trolleys' lime, hue 73° */
+  --hw-red:#e03828;           /* the White / Red colourway and the CUBE mark, hue 4° */
+  --hw-charcoal:#2b2b2e;
+  --hw-white:#e9e9e9;
 }
