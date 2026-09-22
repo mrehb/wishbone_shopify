@@ -73,8 +73,27 @@
       "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/014A2310-1785769657546.jpg"
     ],
     "courseNote": "Real photography, White / Red colourway only, parkland course, overcast-bright. Match this grade.",
-    "video": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/Wishbone-Three-Product-Tour-1785832151099.mp4",
-    "manual": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/WISHBONE-CUBE-THREE-manual-1764687432657.pdf"
+    "video": "https://cdn.productbay.ai/insecure/raw:1/plain/2/Wishbone-Three-Product-Tour-1785832151099.mp4",
+    "manual": "https://cdn.productbay.ai/insecure/raw:1/plain/2/WISHBONE-CUBE-THREE-manual-1764687432657.pdf",
+    "studioAngles": {
+      "note": "Six transparent studio PNGs per colourway. DSCF2332 is the trolley FOLDED; DSCF2329 and DSCF2331 carry a bag. Use the angle that shows the state you need — never ask a model to imagine a state that is photographed here.",
+      "files": {
+        "DSCF2323": "three-quarter front-left, unfolded",
+        "DSCF2326": "straight front, unfolded",
+        "DSCF2327": "three-quarter rear, unfolded",
+        "DSCF2329": "with a cart bag",
+        "DSCF2331": "top-down onto the organizer and bag",
+        "DSCF2332": "FOLDED, side-on"
+      },
+      "suffix": {
+        "black-lime": "-1775727943854.png",
+        "black-white": "-1775727914973.png",
+        "white-red": "-1775727971305.png"
+      },
+      "example": "https://cdn.productbay.ai/insecure/resize:fit:2048:2048/plain/2/DSCF2332-1775727943854.png"
+    },
+    "videoNote": "4K, 81.6 s, White / Red on the course. 0:00–0:15 unfold · 0:26–0:46 organizer, lid opens at 0:40 · 0:48–0:54 rear wheel off and on · 0:56–0:58 footbrake · 1:04–1:18 bag fitted and pushed. The resize proxy rejects video — the raw:1 path passes it through.",
+    "manualNote": "13 pages, DE then EN. Section 5 (p.11) is the fold: handle down, upper bag holder pressed past the lower one, lock, front wheel pressed under the frame, lift by the handle only. The resize proxy renders only page 1 as a PNG; raw:1 returns the PDF."
   },
   "shotList": [
     {
@@ -126,5 +145,5 @@
       "aspect": "2 × 4:5"
     }
   ],
-  "howToUse": "Generate each shot, save to design-system/assets/generated/, add its filename to tools/three-generated.json keyed by shot slug, then run tools/build-three-page.py and publish with ~/.claude/bin/artifact."
+  "howToUse": "Use a real source wherever one exists (studioAngles, video, manual). Generate only what none shows, conditioned on the photograph of that exact state, check it side by side against that photograph, and record it in tools/three-generated.json. Then run tools/build-three-page.py and publish with ~/.claude/bin/artifact."
 }

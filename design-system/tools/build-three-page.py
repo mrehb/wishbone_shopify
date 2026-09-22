@@ -17,22 +17,22 @@ if not _det.exists(): _det = PB/'details_b64.json'
 DET  = {k: "data:image/jpeg;base64," + v for k, v in json.load(open(_det)).items()}
 _gen_path = ROOT/'tools'/'three-generated.json'
 GEN  = json.loads(_gen_path.read_text()) if _gen_path.exists() else {}
-GENDIR = ROOT/'assets'/'generated'
+ASSETS = ROOT/'assets'
 
-def gimg(fname):
-    """Data URI for a generated frame, or '' if it has not been generated yet."""
-    f = GENDIR/fname
-    if not fname or not f.exists(): return ''
+def aimg(rel):
+    """Data URI for a frame under assets/ (e.g. 'three/…' or 'generated/…'), or '' if absent."""
+    f = ASSETS/rel if rel else None
+    if not f or not f.exists(): return ''
     return "data:image/jpeg;base64," + base64.b64encode(f.read_bytes()).decode()
 
 def gshot(slug):
     return (GEN.get('shots') or {}).get(slug, {})
 
-def gfile(slug):
-    """Data URI for a single-frame shot."""
-    return gimg(gshot(slug).get('file', ''))
+def src_of(item):
+    """A shot or frame is either a CDN url (studio photograph) or a file under assets/."""
+    return item.get('url') or aimg(item.get('file', ''))
 
-HAS_GEN = bool(gfile('cube-hero'))
+HAS_GEN = bool(gshot('fold-sequence').get('frames'))
 
 C = 'https://cdn.productbay.ai/insecure/resize:fit:1600:1600/plain/2/'
 IMG = {
@@ -116,8 +116,8 @@ FAQ = [
 ]
 
 NOTES = [
- ('All eight shots are generated, and none of them is a photograph','The Higgsfield connector was attached on 20 September and the whole shot list ran on <b>GPT Image 2.5</b>. Every frame was conditioned on the real studio PNG, so the frame geometry, the three-wheel layout and the colourway come from the photograph rather than from the model. Each one is labelled <b>Generated</b> where it appears, and every prompt, model and job id is recorded in <code>tools/three-generated.json</code>. <b>None of it is approved.</b> The store is live; this needs the owner\u2019s sign-off before it goes anywhere customer-facing.'),
- ('The drawn fold diagram has been retired','Section 03 used to carry an SVG of the folded block drawn to scale beside a 55 \u00d7 40 cabin bag. The real folded cube now sits there instead, with the five-frame fold sequence below it. The diagram is still in the generator as the fallback when the frames are missing \u2014 and the cabin-bag comparison it made is the one thing the photographs do not say.'),
+ ('The first generated set was withdrawn','On 20 September all eight shots were generated from one studio photograph, and the model had to invent the fold. It got it wrong: an upright box with the wheels as its sides, and the front wheel folding first. The real trolley folds handle-first, front wheel last, and leans over when it is closed. That set is deleted.'),
+ ('Most of this page now uses real footage, not generated images','Product Bay holds <b>six studio angles per colourway</b>, one of them the trolley folded (DSCF2332) and one carrying a bag (DSCF2329), plus a 4K product film. The folded hero, the unfold sequence, the organiser, the wheel coming off and the footbrake are all real. Only three images are generated \u2014 the boot, the two dark colourways on a course, and the stand-bag version \u2014 each made from the real photograph of that state, checked side by side against it, and labelled <b>Generated</b>. None of it is approved; the store is live.'),
  ('Decided: the product is the Wishbone THREE','The manual and the frame carry a <b>CUBE</b> sub-brand that the website has never used. The owner\u2019s ruling on 20 September: the product is the <b>Wishbone THREE</b>, and <b>CubeFold</b> stays as the name of the folding mechanism only. This page follows that.'),
  ('The specs that were "not yet measured" exist','Weight 7.65 kg and 37.5 × 57 × 46 cm are in Product Bay and have never reached the storefront. The brand book still says these are unknown — that entry can now be closed.'),
  ('The lime is not the brand lime','Sampled from the photograph, the THREE’s lime is hue 72° (about #8CAC1C) — the same yellow-green family as the logo. The v4 brand accent is #CBE832, hue 89°, sampled from the EON. Two different greens are in play across the range and one of them should move.'),
@@ -129,7 +129,7 @@ NOTES = [
 
 SHOTLIST = [
  ('fold-sequence','The fold, as a sequence','Five frames, same camera, same light: unfolded → front wheel folding in → frame closing → locked cube → cube carried one-handed. Reference the studio PNG for geometry and colour.','5 × 1:1'),
- ('cube-hero','The folded cube, hero','The locked cube on a plain light ground, three-quarter, raking light from the top left, shot to show it is a cube. This is the one image the page most needs and does not have.','1:1'),
+ ('folded','The folded cube, hero','The locked cube on a plain light ground, three-quarter, raking light from the top left, shot to show it is a cube. This is the one image the page most needs and does not have.','1:1'),
  ('boot','Boot shot','The folded cube in the boot of an estate car with a bag beside it, daylight, no people.','16:9'),
  ('organizer','Smart Organizer, top-down macro','Directly above the console with a scorecard, pencil, three tees and a ball in place. Fills the frame.','4:5'),
  ('wheel-off','Wheel off','A hand pulling a rear wheel clear of the axle, mid-movement, shallow depth of field.','4:5'),
@@ -224,21 +224,11 @@ header.site nav a:hover::after{right:0}
 /* the fold, in five frames */
 .seq{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:8px}
 .seq figure{margin:0}
-.seq img{width:100%;background:var(--mist)}
+.seq img{width:100%;aspect-ratio:5/4;object-fit:cover;background:var(--mist)}
 .seq figcaption{display:flex;gap:8px;align-items:baseline;margin-top:12px}
 .seq .n{font-family:var(--font-dot),monospace;font-size:11px;color:var(--lime);-webkit-font-smoothing:none}
 .seq .t{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey-ink)}
-/* bag crossfade */
-.bags{display:grid;grid-template-columns:1fr;gap:0;position:relative}
-.bags .fade{position:relative;aspect-ratio:4/5;background:var(--mist)}
-.bags .fade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 320ms}
-.bags .fade img.on{opacity:1}
-.bagsw{display:flex;gap:0;margin-top:18px;border:1px solid var(--hair)}
-.bagsw button{flex:1;background:none;border:0;cursor:pointer;font-family:var(--font);font-size:12px;
-  font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-ink);padding:14px 10px;
-  transition:background 160ms,color 160ms}
-.bagsw button+button{border-left:1px solid var(--hair)}
-.bagsw button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.studio{background:var(--mist)}
 /* fold diagram */
 .fold{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .fold svg{width:100%;height:auto}
@@ -354,55 +344,56 @@ def fold_svg():
         font-family="'Manrope',sans-serif" font-size="11" letter-spacing="1.4">CABIN BAG 55 × 40, FOR SCALE</text>
 </svg>"""
 
-# ---------------------------------------------------------------- generated imagery
-# Every generated frame is labelled on the page. The rule in assets/generated/README.md is
-# that a generated frame is never mistaken for a photograph, and a caption is how that holds.
-def figure(src, alt, ink=False, tag='Generated', style=''):
+# ---------------------------------------------------------------- imagery beyond the studio set
+# Real first: Product Bay holds six studio angles per colourway (one of them folded) and a 4K
+# product film. Generation fills only what neither shows, and every generated frame carries a
+# "Generated" label so it is never mistaken for a photograph.
+def figure(src, alt, tag='', cls='', style=''):
     if not src: return ''
-    cls = 'gen gen--ink' if ink else 'gen'
-    st  = f' style="{style}"' if style else ''
-    return (f'<figure class="{cls}"{st}><span class="tag">{tag}</span>'
-            f'<img src="{src}" alt="{alt}" loading="lazy"></figure>')
+    t  = f'<span class="tag">{tag}</span>' if tag else ''
+    c  = ('gen ' if tag else '') + cls
+    st = f' style="{style}"' if style else ''
+    return f'<figure class="{c.strip()}"{st}>{t}<img src="{src}" alt="{alt}" loading="lazy"></figure>'
+
+def shot_fig(slug, alt, **kw):
+    sh = gshot(slug)
+    return figure(src_of(sh), alt, tag='Generated' if sh.get('source') == 'generated' else '', **kw)
 
 def fold_hero():
-    """The folded cube — the one image the page did not have. Falls back to the
-    scale diagram when the frames have not been generated."""
-    src = gfile('cube-hero')
-    if not src: return fold_svg()
-    return figure(src, 'The Wishbone THREE folded and locked into a 37.5 by 57 by 46 centimetre block',
-                  ink=True)
+    """The folded trolley, photographed. Falls back to the scale diagram without a record."""
+    sh = gshot('folded')
+    if not src_of(sh): return fold_svg()
+    return figure(src_of(sh), 'The Wishbone THREE folded, photographed side-on in the studio', cls='studio')
 
 def seq_band():
-    """The fold, as five frames, and the boot shot. Replaces the drawn diagram."""
+    """The unfold, as five frames of Wishbone's own product film, and the boot shot."""
     if not HAS_GEN: return ''
-    sq = gshot('fold-sequence')
     frames = ""
-    for i, f in enumerate(sq.get('frames', [])):
-        src = gimg(f['file'])
+    for i, f in enumerate(gshot('fold-sequence').get('frames', [])):
+        src = src_of(f)
         if not src: continue
-        frames += (f'<figure><img src="{src}" alt="Fold step {i+1}: {f["caption"]}" loading="lazy">'
+        frames += (f'<figure><img src="{src}" alt="Unfolding, step {i+1}: {f["caption"]}" loading="lazy">'
                    f'<figcaption><span class="n">{str(i+1).zfill(2)}</span>'
                    f'<span class="t">{f["caption"]}</span></figcaption></figure>')
-    boot = gfile('boot')
-    bootblock = ''
-    if boot:
-        bootblock = f'''<div class="grid" style="margin-top:72px;align-items:center">
-    <div style="grid-column:span 7">{figure(boot, "The folded Wishbone THREE upright in the boot of an estate car beside a golf bag")}</div>
+    boot = shot_fig('boot', 'The folded Wishbone THREE upright in the boot of an estate car beside a golf bag')
+    bootblock = f'''<div class="grid" style="margin-top:72px;align-items:center">
+    <div style="grid-column:span 7">{boot}</div>
     <div style="grid-column:9 / span 4;display:grid;gap:18px">
       <h3 class="display display--s"><span style="display:block">Then it goes</span><span style="display:block">in the boot.</span></h3>
-      <p class="grey" style="font-size:14px">37.5 × 57 × 46 cm, standing up, with the bag beside it rather than on top of it.</p>
+      <p class="grey" style="font-size:14px">37.5 × 57 × 46 cm folded. Lift it by the handle — the manual is clear that
+      lifting it by anything else can let the frame open.</p>
     </div>
-  </div>'''
+  </div>''' if boot else ''
     return f'''
-<!-- 03b the fold, as it actually happens -->
+<!-- 03b the unfold, filmed -->
 <section class="band"><div class="wrap">
   <div class="grid" style="align-items:end;margin-bottom:36px">
     <div style="grid-column:span 7">
       <h2 class="display display--s"><span style="display:block">Five frames.</span><span style="display:block">One movement.</span></h2>
     </div>
     <div style="grid-column:9 / span 4">
-      <p class="grey" style="font-size:14px">Generated imagery, not photography — the frames below were made from the
-      studio photograph of the real trolley, and they are labelled wherever they appear.</p>
+      <p class="grey" style="font-size:14px">From Wishbone’s own product film. Folding is the same in reverse: handle down,
+      upper bag holder pressed past the lower one, lock, then the front wheel under the frame.</p>
     </div>
   </div>
   <div class="seq">{frames}</div>
@@ -410,45 +401,42 @@ def seq_band():
 </div></section>'''
 
 def gen_org():
-    src = gfile('organizer')
-    return figure(src, 'The Smart Organizer from directly above, with a scorecard, a pencil, three tees and a ball in place')
+    frames = gshot('organizer').get('frames', [])
+    opened = next((f for f in frames if f.get('state') == 'open'), None)
+    return figure(src_of(opened), 'The Smart Organizer with its lid lifted, on the course') if opened else ''
 
 def gen_wheels():
-    w, b = gfile('wheel-off'), gfile('footbrake')
+    w = shot_fig('wheel-off', 'A rear wheel off the axle, in hand, on the course')
+    b = shot_fig('footbrake', 'A shoe pressing the footbrake at the rear axle')
     if not (w or b): return ''
-    cells = ""
-    if w: cells += f'<div style="flex:1">{figure(w, "A hand pulling a rear wheel clear of the axle")}</div>'
-    if b: cells += f'<div style="flex:1">{figure(b, "A shoe pressing the footbrake at the rear axle")}</div>'
-    return (f'<div style="display:flex;gap:16px;margin-top:56px">{cells}</div>'
-            f'<p class="label grey" style="margin-top:16px">Both wheels pull off without tools · the footbrake sits at the axle</p>')
+    cells = "".join(f'<div style="flex:1">{x}</div>' for x in (w, b) if x)
+    return (f'<div style="display:flex;gap:16px;margin-top:56px;align-items:flex-start">{cells}</div>'
+            f'<p class="label grey" style="margin-top:16px">Press the release button and the wheel comes off · press the pedal at the axle to park</p>')
 
 def gen_course():
-    """The two colourways nobody photographed, and the bag pair as a crossfade."""
-    cw = gfile('colourways-course')
+    """The two colourways nobody photographed on a course, and the two kinds of bag."""
     out = ""
+    cw = shot_fig('colourways-course', 'The Black / Lime and Black / White colourways side by side on a parkland fairway')
     if cw:
         out += f'''<div style="margin-top:32px">
-    {figure(cw, "The Black / Lime and Black / White colourways side by side on a parkland fairway")}
-    <p class="label grey" style="margin-top:16px">Black / Lime and Black / White — the two colourways that were never photographed</p>
+    {cw}
+    <p class="label grey" style="margin-top:16px">Black / Lime and Black / White — the two colourways never photographed outdoors</p>
   </div>'''
-    bags = gshot('bag-compatibility').get('frames', [])
-    srcs = [(f['caption'], gimg(f['file'])) for f in bags]
-    srcs = [(c, u) for c, u in srcs if u]
-    if len(srcs) == 2:
-        imgs = "".join(f'<img src="{u}" alt="The Wishbone THREE carrying a {c.lower()}" '
-                       f'class="{"on" if i==0 else ""}" data-bag="{i}" loading="lazy">'
-                       for i, (c, u) in enumerate(srcs))
-        btns = "".join(f'<button data-bag="{i}" aria-pressed="{"true" if i==0 else "false"}">{c}</button>'
-                       for i, (c, _) in enumerate(srcs))
+    pair = gshot('bag-compatibility').get('frames', [])
+    cells = ""
+    for f in pair:
+        src = src_of(f)
+        if not src: continue
+        tag = 'Generated' if f.get('source') == 'generated' else ''
+        cells += (f'<div>{figure(src, "The Wishbone THREE carrying a " + f["caption"].lower(), tag=tag, cls="studio")}'
+                  f'<div class="label grey" style="margin-top:12px">{f["caption"]}</div></div>')
+    if cells:
         out += f'''<div class="grid" style="margin-top:72px;align-items:center">
-    <div style="grid-column:span 5">
-      <div class="bags"><div class="fade gen"><span class="tag">Generated</span>{imgs}</div></div>
-      <div class="bagsw" id="bagsw">{btns}</div>
-    </div>
-    <div style="grid-column:7 / span 5;display:grid;gap:18px">
-      <h3 class="display display--s"><span style="display:block">Stand bag</span><span style="display:block">or cart bag.</span></h3>
+    <div style="grid-column:span 7;display:grid;grid-template-columns:1fr 1fr;gap:16px">{cells}</div>
+    <div style="grid-column:9 / span 4;display:grid;gap:18px">
+      <h3 class="display display--s"><span style="display:block">Cart bag</span><span style="display:block">or stand bag.</span></h3>
       <p class="grey" style="max-width:34ch">Both brackets adjust and strap. The lower cradle carries the weight; the upper
-      bracket only steadies it. Switch between the two above — same trolley, same spot, same light.</p>
+      bracket only steadies it.</p>
     </div>
   </div>'''
     return out
@@ -505,12 +493,8 @@ def build():
                     for i, (q, a) in enumerate(FAQ))
     notes = "".join(f'<div class="card"><h3>{t}</h3><p>{d}</p></div>' for t, d in NOTES)
     def delivered(slug):
-        sh = gshot(slug)
-        files = [sh['file']] if sh.get('file') else [f['file'] for f in sh.get('frames', [])]
-        files = [f for f in files if (GENDIR/f).exists()]
-        if not files: return '<span class="grey">not run</span>'
-        label = files[0] if len(files) == 1 else f'{len(files)} frames'
-        return f'<span style="color:var(--lime)">✓</span> {label}'
+        d = gshot(slug).get('delivered')
+        return d or '<span class="grey">not run</span>'
     shots = "".join(f'<tr><th>{t}</th><td style="color:var(--grey-ink)">{d}</td><td class="ar">{r}</td>'
                     f'<td class="ar">{delivered(slug)}</td></tr>'
                     for slug, t, d, r in SHOTLIST)
@@ -710,8 +694,8 @@ __SEQ_BAND__
   <div class="eyebrow" style="color:var(--lime)"><b>★</b>Not part of the page — notes for the owner</div>
   <h2 class="display" style="margin-top:16px"><span style="display:block">What building this</span><span style="display:block">turned up.</span></h2>
   <div class="grid2">__NOTES__</div>
-  <h3 class="label" style="margin:56px 0 0">Higgsfield shot list — ready to run</h3>
-  <p class="grey" style="font-size:14px;margin-top:10px;max-width:70ch">All eight ran on 20 September, in priority order, on GPT Image 2.5 through the Higgsfield connector. Each one references the studio PNG (2048 px, transparent) so the geometry and the colourway stay true. Fifteen frames in <code>design-system/assets/generated/</code>; prompts and job ids in <code>tools/three-generated.json</code>.</p>
+  <h3 class="label" style="margin:56px 0 0">Shot list — where each image came from</h3>
+  <p class="grey" style="font-size:14px;margin-top:10px;max-width:70ch">Real where a real source exists, generated only where none does. Real frames live in <code>design-system/assets/three/</code>, generated ones in <code>assets/generated/</code>; sources, timestamps, prompts and job ids are in <code>tools/three-generated.json</code>.</p>
   <table>__SHOTS__</table>
 </div></section>
 
@@ -744,16 +728,6 @@ document.querySelectorAll('.spot, #featlist button').forEach(function(b){
 });
 setSpot(0);
 
-var bagsw = document.getElementById('bagsw');
-if(bagsw){
-  bagsw.querySelectorAll('button').forEach(function(b){
-    b.addEventListener('click', function(){
-      var i = b.dataset.bag;
-      bagsw.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed', String(x.dataset.bag===i)) });
-      document.querySelectorAll('.bags .fade img').forEach(function(im){ im.classList.toggle('on', im.dataset.bag===i) });
-    });
-  });
-}
 </script>
 </body></html>"""
 
@@ -793,9 +767,10 @@ def main():
       .replace('__DET_JSON__', json.dumps(DET)))
     dest = pathlib.Path('/tmp/wb/kit/wishbone-cube-three.html'); dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(out)
-    n = len(list(GENDIR.glob('three-*.jpg'))) if GENDIR.exists() else 0
+    real = len(list((ASSETS/'three').glob('three-*.jpg'))) if (ASSETS/'three').exists() else 0
+    gen  = len(list((ASSETS/'generated').glob('three-*.jpg'))) if (ASSETS/'generated').exists() else 0
     print('wrote', dest, round(len(out)/1024), 'KB ·', len(HOTSPOTS), 'hotspots ·',
-          f'{n} generated frames' if n else 'no generated frames — fold diagram used')
+          f'{real} real frames, {gen} generated' if HAS_GEN else 'no imagery record — fold diagram used')
 
 if __name__ == '__main__':
     main()

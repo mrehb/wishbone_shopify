@@ -14,22 +14,21 @@ Rules, so a generated frame is never mistaken for a photograph:
 
 ## What is here
 
-Fifteen frames, generated 2026-09-20 on **GPT Image 2.5** through the Higgsfield connector,
-every one conditioned on the real studio PNG. Prompts, job ids and references are in
-`../../tools/three-generated.json`.
+Three frames, generated 2026-09-22 on **GPT Image 2.5 (flare, max)** through the Higgsfield
+connector. Each was made from the real photograph of the state it shows and checked side by side
+against it. Prompts, job ids and references are in `../../tools/three-generated.json`.
 
-| Files | Shot |
-|---|---|
-| `three-fold-01…05.jpg` | 1 · the fold, as a sequence |
-| `three-cube-hero.jpg` (+ `three-cube-alt-01/02.jpg`) | 2 · the folded cube |
-| `three-boot.jpg` | 3 · boot |
-| `three-organizer.jpg` | 4 · Smart Organizer, top-down |
-| `three-wheel-off.jpg` | 5 · wheel off |
-| `three-footbrake.jpg` | 6 · footbrake |
-| `three-colourways-course.jpg` | 7 · Black / Lime and Black / White on the course |
-| `three-bag-stand.jpg`, `three-bag-cart.jpg` | 8 · bag compatibility, a crossfade pair |
+| File | Shot | Made from |
+|---|---|---|
+| `three-boot.jpg` | 3 · boot | DSCF2332, the folded studio shot |
+| `three-colourways-course.jpg` | 7 · Black / Lime and Black / White on the course | both DSCF2323s + course photo 014A2245 |
+| `three-bag-stand.jpg` | 8 · stand bag | DSCF2329, the cart-bag studio shot, bag swapped |
 
-The two `-alt-` cubes are the other two takes of shot 2, kept so the owner can pick a different
-hero. They are not placed on the page.
+Everything else on the page is real: studio photographs from Product Bay and frames from the
+product film in `../three/`.
+
+**Lesson from the first attempt (2026-09-20, withdrawn):** all eight shots were generated from one
+unfolded photograph, so the model had to invent the fold and invented it wrong. Check Product Bay
+for a real photograph of the state first; there are six angles per colourway and a 4K film.
 
 **None of this is approved.** The store is live and nothing here has been published to it.
