@@ -1,0 +1,391 @@
+{
+ "_about": "German (de) translations for wishbone.golf. Each field pins the English it was translated from; scripts/translate-de.mjs skips any field whose live English no longer matches, so stale German is never registered. Legal policies live in policies/*.html and are only sent with --policies.",
+ "products": {
+  "bag-straps-set-of-4-neo": {
+   "title": [
+    "Bag Straps - Set  (ONE & NEO)",
+    "Taschengurte – Set (ONE & NEO)"
+   ]
+  },
+  "ball-tee-holder": {
+   "title": [
+    "Ball & Tee Holder",
+    "Ball- & Teehalter"
+   ],
+   "body_html": [
+    "<p class=\"\">Holds spare golf ball on-hand and 3 tees. Supplied with fixings, excludes ball &amp; tees.</p>",
+    "<p class=\"\">Hält einen Ersatzball und 3 Tees griffbereit. Mit Befestigungsmaterial, ohne Ball &amp; Tees.</p>"
+   ]
+  },
+  "brake-kit-one": {
+   "title": [
+    "Brake Kit (ONE)",
+    "Bremsset (ONE)"
+   ]
+  },
+  "controller-neo": {
+   "title": [
+    "Controller (NEO)",
+    "Steuereinheit (NEO)"
+   ]
+  },
+  "cruise-button-kit": {
+   "title": [
+    "Cruise Button Kit (NEO)",
+    "Tempomat-Tasten-Set (NEO)"
+   ]
+  },
+  "drinks-holder": {
+   "title": [
+    "Drink Holder",
+    "Getränkehalter"
+   ],
+   "body_html": [
+    "<p class=\"\">Fits all NEO &amp; ONE models. </p>\n<p class=\"\">For standard cans and bottles.</p>",
+    "<p class=\"\">Passt auf alle NEO- &amp; ONE-Modelle. </p>\n<p class=\"\">Für Standard-Dosen und -Flaschen.</p>"
+   ]
+  },
+  "drivetrain-assembly-neo": {
+   "title": [
+    "Drive Train - Motor & Gearbox (NEO)",
+    "Antrieb – Motor & Getriebe (NEO)"
+   ],
+   "body_html": [
+    "<p class=\"\">A complete drivetrain that includes; a new gearbox, assembled with shaft and clutches. Makes for easy DIY repair and complete replacement adding years of service to your trolley. Unlike others, we do not overprice our spares!</p>",
+    "<p class=\"\">Eine komplette Antriebseinheit mit neuem Getriebe, fertig montiert mit Welle und Kupplungen. So lässt sich der Trolley einfach selbst reparieren, und der komplette Austausch schenkt ihm viele weitere Jahre. Anders als andere verlangen wir für unsere Ersatzteile keine überhöhten Preise!</p>"
+   ]
+  },
+  "frame-and-wheel-bag": {
+   "title": [
+    "Frame and Wheel Bag (ONE)",
+    "Rahmen- und Radtasche (ONE)"
+   ],
+   "body_html": [
+    "<p class=\"\"><span style=\"color: rgb(99, 99, 99)\">Keep your frame safe when in your car or in storage with our waterproof frame bag. The separate wheel bag keeps dirty wheels away from your car interior and is a useful carry case for other items.</span></p>",
+    "<p class=\"\"><span style=\"color: rgb(99, 99, 99)\">Schützen Sie Ihren Rahmen im Auto oder bei der Lagerung mit unserer wasserdichten Rahmentasche. Die separate Radtasche hält schmutzige Räder vom Innenraum Ihres Autos fern und ist auch eine praktische Tragetasche für andere Dinge.</span></p>"
+   ]
+  },
+  "frame-and-wheel-bag-one-copy": {
+   "title": [
+    "Frame and Wheel Bag (NEO)",
+    "Rahmen- und Radtasche (NEO)"
+   ],
+   "body_html": [
+    "<p class=\"\"><span style=\"color: rgb(99, 99, 99)\">Keep your frame safe when in your car or in storage with our waterproof frame bag. The separate wheel bag keeps dirty wheels away from your car interior and is a useful carry case for other items.</span></p>",
+    "<p class=\"\"><span style=\"color: rgb(99, 99, 99)\">Schützen Sie Ihren Rahmen im Auto oder bei der Lagerung mit unserer wasserdichten Rahmentasche. Die separate Radtasche hält schmutzige Räder vom Innenraum Ihres Autos fern und ist auch eine praktische Tragetasche für andere Dinge.</span></p>"
+   ]
+  },
+  "frame-one": {
+   "title": [
+    "Frame (ONE)",
+    "Rahmen (ONE)"
+   ]
+  },
+  "front-wheel-universal-fit-one-neo": {
+   "title": [
+    "Front Wheel Kit - Universal fit (ONE & NEO)",
+    "Vorderrad-Set – universell passend (ONE & NEO)"
+   ],
+   "body_html": [
+    "<p class=\"\">magnetic locating with upgraded quick release catch. Comes as standard in grey, but contact us if you want to colour match and we will do our best to help. </p>",
+    "<p class=\"\">Magnetische Positionierung mit verbessertem Schnellverschluss. Standardmäßig in Grau – wenn Sie eine passende Farbe wünschen, kontaktieren Sie uns, wir tun unser Bestes. </p>"
+   ]
+  },
+  "handle-kit-neo": {
+   "title": [
+    "Handle Kit (NEO)",
+    "Griffset (NEO)"
+   ],
+   "body_html": [
+    "<p>Please note: Wing screw not included.</p>",
+    "<p>Bitte beachten: Flügelschraube nicht im Lieferumfang enthalten.</p>"
+   ]
+  },
+  "lithium-battery-18-holes": {
+   "title": [
+    "Lithium Battery 27+ Holes (NEO & EON)",
+    "Lithium-Akku 27+ Löcher (NEO & EON)"
+   ],
+   "body_html": [
+    "<p>Wishbone Golf are delighted to introduce the specially designed flat battery that fits flush into the NEO &amp; EON chassis.<br>Using the very best LiFePO4 chemistry to give you the safest most reliable battery in golf.</p>\n<p>Min. 2 year guarantee and optional 5 year extended warranty.</p>",
+    "<p>Wishbone Golf stellt den speziell entwickelten Flachakku vor, der bündig in das Chassis von NEO &amp; EON passt.<br>Dank bester LiFePO4-Zellchemie ist er der sicherste und zuverlässigste Akku im Golfsport.</p>\n<p>Mindestens 2 Jahre Garantie, optional auf 5 Jahre verlängerbar.</p>"
+   ]
+  },
+  "neo-battery-plug-set-cable": {
+   "title": [
+    "Battery Plug Set + Cable (NEO)",
+    "Akku-Steckerset + Kabel (NEO)"
+   ],
+   "body_html": [
+    "<p>Wishbone spare part: Neo battery plug set + cable</p>",
+    "<p>Wishbone Ersatzteil: NEO Akku-Steckerset + Kabel</p>"
+   ]
+  },
+  "neo-fast-charger": {
+   "title": [
+    "Fast Charger (NEO & EON)",
+    "Schnellladegerät (NEO & EON)"
+   ],
+   "body_html": [
+    "<p class=\"\">Suitable for lithium battery with choice of plug</p>",
+    "<p class=\"\">Für Lithium-Akkus, mit Stecker nach Wahl</p>"
+   ]
+  },
+  "rear-wheel-neo": {
+   "title": [
+    "Rear Wheel (NEO)",
+    "Hinterrad (NEO)"
+   ],
+   "body_html": [
+    "<p class=\"\">Our rear wheel fits either side on NEO. With long life rubber tyre, quick release and free wheel groove. Comes in black as standard, call if you need to colour match and we will do our best to help. </p>",
+    "<p class=\"\">Unser Hinterrad passt beim NEO auf beide Seiten. Mit langlebigem Gummireifen, Schnellverschluss und Freilaufnut. Standardmäßig in Schwarz – wenn Sie eine passende Farbe brauchen, rufen Sie uns an, wir tun unser Bestes. </p>"
+   ]
+  },
+  "rear-wheel-one": {
+   "title": [
+    "Rear Wheel - Left Brake Side (ONE)",
+    "Hinterrad links – Bremsseite (ONE)"
+   ],
+   "body_html": [
+    "<p class=\"\">Wishbone quick release, open 3 spoke design and extra long life rubber tyre.</p>",
+    "<p class=\"\">Wishbone Schnellverschluss, offenes 3-Speichen-Design und besonders langlebiger Gummireifen.</p>"
+   ]
+  },
+  "rear-wheel-right-one": {
+   "title": [
+    "Rear Wheel Right (ONE)",
+    "Hinterrad rechts (ONE)"
+   ],
+   "body_html": [
+    "<p class=\"\">Wishbone quick release, open 3 spoke design and extra long life rubber tyre.</p>",
+    "<p class=\"\">Wishbone Schnellverschluss, offenes 3-Speichen-Design und besonders langlebiger Gummireifen.</p>"
+   ]
+  },
+  "scorecard-holder": {
+   "title": [
+    "Magnetic Scorecard Holder",
+    "Magnetischer Scorekartenhalter"
+   ],
+   "body_html": [
+    "<p class=\"\">Magnetic scorecard holder, fits in pocket and docks on cart. Simple to use, light weight and shower proof. </p>",
+    "<p class=\"\">Magnetischer Scorekartenhalter: passt in die Hosentasche und dockt am Trolley an. Einfach zu bedienen, leicht und spritzwassergeschützt. </p>"
+   ]
+  },
+  "thumb-throttle-kit-neo": {
+   "title": [
+    "Thumb Throttle Kit (NEO)",
+    "Daumengas-Set (NEO)"
+   ]
+  },
+  "umbrella-holder": {
+   "title": [
+    "Umbrella Holder",
+    "Schirmhalter"
+   ],
+   "body_html": [
+    "<p class=\"\">Fits all ONE &amp; NEO models. Attach to handle, adjust and clamp.</p>\n<p>Please note: Wing screw not included.</p>",
+    "<p class=\"\">Passt auf alle ONE- &amp; NEO-Modelle. Am Griff anbringen, ausrichten und festklemmen.</p>\n<p>Bitte beachten: Flügelschraube nicht im Lieferumfang enthalten.</p>"
+   ]
+  },
+  "wing-screw-for-umbrella-holder-neo": {
+   "title": [
+    "Wing Screw for Umbrella Holder (ONE, NEO & EON)",
+    "Flügelschraube für Schirmhalter (ONE, NEO & EON)"
+   ],
+   "body_html": [
+    "<p>Wishbone wing screw for umbrella holder mounting</p>",
+    "<p>Wishbone Flügelschraube zur Montage des Schirmhalters</p>"
+   ]
+  },
+  "wishbone-eon": {
+   "title": [
+    "Wishbone EON",
+    "Wishbone EON"
+   ],
+   "body_html": [
+    "<p class=\"\">With its impressive total weight of just 8.9 kilograms, the EON is one of the lightest fully electric golf carts on the market. The WISHBONE DNA is unmistakable - cool looks, combined with sophisticated technology, new details, with the focus on the the essentials. Including battery, charger, PU wheels, umbrella holder and scorecard holder.</p>\n<p class=\"\"><strong>Features</strong></p>\n<p class=\"\">- fully electric trolley<br>- cool design<br>- TWIST &amp; GO<br>- Range: over 27 holes</p>\n<p class=\"\"><strong>Comfort</strong></p>\n<p class=\"\">- Adjustable speed<br>- Fast Action Single Fold<br>- Battery lasts over 27 holes<br>- Cross control function &amp; freewheel mode</p>\n<p class=\"\"><strong>Material &amp; dimensions</strong></p>\n<p class=\"\">- Aluminium frame from the aerospace industry<br>- Weight: 8.9 kg<br>- Folding dimensions: (H x W x D) 102 x 94 x 57 cm</p>",
+    "<p class=\"\">Mit einem Gesamtgewicht von nur 8,9 Kilogramm ist der EON einer der leichtesten vollelektrischen Golftrolleys am Markt. Die WISHBONE-DNA ist unverkennbar: cooles Design, ausgereifte Technik und neue Details, konzentriert auf das Wesentliche. Inklusive Akku, Ladegerät, PU-Rädern, Schirmhalter und Scorekartenhalter.</p>\n<p class=\"\"><strong>Ausstattung</strong></p>\n<p class=\"\">- vollelektrischer Trolley<br>- cooles Design<br>- TWIST &amp; GO<br>- Reichweite: über 27 Löcher</p>\n<p class=\"\"><strong>Komfort</strong></p>\n<p class=\"\">- Einstellbare Geschwindigkeit<br>- Fast Action Single Fold<br>- Akku hält über 27 Löcher<br>- Cross-Control-Funktion &amp; Freilaufmodus</p>\n<p class=\"\"><strong>Material &amp; Maße</strong></p>\n<p class=\"\">- Aluminiumrahmen aus der Luft- und Raumfahrtindustrie<br>- Gewicht: 8,9 kg<br>- Faltmaß (H x B x T): 102 x 94 x 57 cm</p>"
+   ]
+  },
+  "wishbone-neo-one-upper-bagholder": {
+   "title": [
+    "Wishbone NEO & ONE Upper Bagholder",
+    "Wishbone NEO & ONE oberer Taschenhalter"
+   ]
+  },
+  "wishbone-one-best-seller": {
+   "title": [
+    "Wishbone ONE",
+    "Wishbone ONE"
+   ],
+   "body_html": [
+    "<p class=\"\"><strong>Wishbone One 3 Wheel Golf Trolley</strong><br>Megalight Frame With Simple One Step Fold<br><br>This stylish and technically advanced trolley has been designed to fulfil the need of every golfer and has all the hall marks of being a leading contender in the push cart market.</p>\n<p class=\"\">Utilising the very latest materials, design and manufacturing processes this trolley proves that stability and strength can be achieved without the expense of weight, indeed at under 4kgs this cart is considered the lightest cart in its class by far. The simple single action fold is as smooth and easy as it gets and a makes the trolley a delight to use.<br><br>The addition of magnetic fasteners remove the need for unsightly fixtures and combine with the overall features to make the Wishbone One a truly unique cart. The aluminium frame is made from the highest quality aircraft grade material and 3D formed to create a flowing yet high strength frame design.<br><br>Hard wearing high quality deep treaded rubber tyres ensure good grip and stability on wet slopes and will provide a long service life even on the harshest of surfaces. All wheels are quickly and easily removable for easy compact storage.</p>\n<p class=\"\">A range of specially designed decals and colour accents create a stunning and unique looking cart. Colour choices mean you can co-ordinate with your bag and sportswear for a complete look. The Wishbone One cart is at home even on the countries top courses. Truly an eye catching and ‘proud to own’ product.</p>",
+    "<p class=\"\"><strong>Wishbone ONE – Golftrolley mit 3 Rädern</strong><br>Megaleichter Rahmen mit einfacher Ein-Schritt-Faltung<br><br>Dieser stilvolle und technisch ausgereifte Trolley wurde für die Ansprüche jedes Golfers entwickelt und bringt alles mit, was einen führenden Push-Trolley ausmacht.</p>\n<p class=\"\">Modernste Materialien, Design- und Fertigungsverfahren beweisen: Stabilität und Festigkeit gehen auch ohne zusätzliches Gewicht – mit unter 4 kg gilt dieser Trolley als mit Abstand leichtester seiner Klasse. Die Faltung in einem einzigen Handgriff ist so leichtgängig wie nur möglich und macht den Trolley zum Vergnügen.<br><br>Magnetische Befestigungen machen unschöne Halterungen überflüssig und machen den Wishbone ONE zusammen mit seinen übrigen Eigenschaften zu einem wirklich einzigartigen Trolley. Der Aluminiumrahmen besteht aus hochwertigstem Material in Luftfahrtqualität und ist dreidimensional geformt – für ein fließendes und zugleich hochfestes Rahmendesign.<br><br>Strapazierfähige, hochwertige Gummireifen mit tiefem Profil sorgen für guten Grip und Stabilität an nassen Hängen und halten auch auf rauesten Untergründen lange. Alle Räder lassen sich schnell und einfach abnehmen, damit sich der Trolley kompakt verstauen lässt.</p>\n<p class=\"\">Eigens gestaltete Dekore und Farbakzente machen den Trolley zum echten Blickfang. Dank der Farbauswahl lässt er sich auf Ihre Tasche und Ihre Sportbekleidung abstimmen – für einen stimmigen Look. Der Wishbone ONE macht selbst auf den besten Plätzen des Landes eine gute Figur. Ein echter Hingucker, auf den man stolz sein kann.</p>"
+   ]
+  },
+  "wishbone-three": {
+   "title": [
+    "Wishbone THREE",
+    "Wishbone THREE"
+   ],
+   "body_html": [
+    "<p class=\"\"><strong>Wishbone THREE Golf Trolley</strong><br><br>The Wishbone Three Trolley introduces a new design language to the Wishbone series with its innovative dual-tube frame. Combining lightweight construction, durability, and ease of use, it offers a stable and smooth ride on any course. With a simple folding mechanism and robust wheels, the Wishbone Three delivers both style and performance in a sleek, modern package.<br></p>",
+    "<p class=\"\"><strong>Wishbone THREE Golftrolley</strong><br><br>Mit seinem innovativen Doppelrohrrahmen bringt der Wishbone THREE eine neue Designsprache in die Wishbone-Serie. Er verbindet leichte Bauweise, Langlebigkeit und einfache Handhabung und läuft auf jedem Platz stabil und ruhig. Mit einfachem Faltmechanismus und robusten Rädern bietet der Wishbone THREE Stil und Leistung in einer schlanken, modernen Form.<br></p>"
+   ]
+  },
+  "wishbone-two": {
+   "title": [
+    "Wishbone TWO",
+    "Wishbone TWO"
+   ],
+   "body_html": [
+    "<p class=\"\"><strong>Wishbone TWO Golf Trolley</strong><br><br>The Wishbone Two Trolley is the perfect entry-level cart, combining lightweight design, ease of use, and durability. Featuring a simple folding mechanism for quick setup and storage. Its sturdy frame and robust wheels ensure a smooth ride on any course, making it an ideal choice for golfers looking for reliability and convenience.<br></p>",
+    "<p class=\"\"><strong>Wishbone TWO Golftrolley</strong><br><br>Der Wishbone TWO ist der ideale Einstiegstrolley: leicht, einfach zu bedienen und langlebig. Dank des einfachen Faltmechanismus ist er schnell aufgebaut und verstaut. Der stabile Rahmen und die robusten Räder sorgen auf jedem Platz für ruhigen Lauf – die richtige Wahl für Golfer, die Wert auf Zuverlässigkeit und Komfort legen.<br></p>"
+   ]
+  }
+ },
+ "option_names": {
+  "Color": "Farbe"
+ },
+ "option_values": {
+  "charcoal-black": "Anthrazit-Schwarz",
+  "charcoal-lime": "Anthrazit-Limette",
+  "charcoal-red": "Anthrazit-Rot",
+  "charcoal-blue": "Anthrazit-Blau",
+  "white-red": "Weiß-Rot",
+  "white-black": "Weiß-Schwarz",
+  "white-lime": "Weiß-Limette",
+  "white-blue": "Weiß-Blau",
+  "charcoal-red-black": "Anthrazit-Rot-Schwarz",
+  "charcoal-lime-black": "Anthrazit-Limette-Schwarz",
+  "charcoal-blue-black": "Anthrazit-Blau-Schwarz"
+ },
+ "collections": {
+  "frontpage": {
+   "title": [
+    "Home page",
+    "Startseite"
+   ]
+  },
+  "push-carts": {
+   "title": [
+    "Push Carts",
+    "Push-Trolleys"
+   ]
+  },
+  "spare-parts": {
+   "title": [
+    "Spare Parts",
+    "Ersatzteile"
+   ],
+   "body_html": [
+    "<p><span>We stand for sustainability and quality. With this in mind, repairing is more important than replacing. In our spare parts shop you will find every conceivable part to repair your trolley yourself.</span></p>",
+    "<p><span>Wir stehen für Nachhaltigkeit und Qualität. Deshalb ist Reparieren wichtiger als Ersetzen. In unserem Ersatzteilshop finden Sie jedes erdenkliche Teil, um Ihren Trolley selbst zu reparieren.</span></p>"
+   ]
+  },
+  "spare-parts-neo-1": {
+   "title": [
+    "Spare Parts NEO",
+    "Ersatzteile NEO"
+   ]
+  },
+  "spare-parts-neo": {
+   "title": [
+    "Spare Parts ONE",
+    "Ersatzteile ONE"
+   ]
+  }
+ },
+ "pages": {
+  "contact": {
+   "title": [
+    "Contact",
+    "Kontakt"
+   ]
+  }
+ },
+ "links": [
+  [
+   "Home",
+   "Startseite"
+  ],
+  [
+   "Catalog",
+   "Katalog"
+  ],
+  [
+   "Spare Parts",
+   "Ersatzteile"
+  ],
+  [
+   "Contact",
+   "Kontakt"
+  ]
+ ],
+ "theme": [
+  [
+   "The Electric Wishbone EON",
+   "Der elektrische Wishbone EON"
+  ],
+  [
+   "<p>A full powered, simple ‘no nonsense’ electric cart.</p>",
+   "<p>Ein vollwertiger Elektro-Trolley – einfach und ohne Schnickschnack.</p>"
+  ],
+  [
+   "Learn More",
+   "Mehr erfahren"
+  ],
+  [
+   "WE ARE WISHBONE",
+   "WIR SIND WISHBONE"
+  ],
+  [
+   "<p>Birthed in Britain, Wishbone Golf merges exquisite design with unwavering quality. Our Wishbone Trolley — crafted from ultra-light aircraft-grade aluminum — frees you from bulk. Effortless folding, magnetic attachments, and sealed bearings keep you rolling smoothly. Focus on your game; Wishbone Golf will handle the rest.</p>",
+   "<p>In Großbritannien entstanden, verbindet Wishbone Golf erlesenes Design mit kompromissloser Qualität. Unser Wishbone Trolley – gefertigt aus ultraleichtem Aluminium in Luftfahrtqualität – befreit Sie von unnötigem Ballast. Müheloses Falten, magnetische Befestigungen und abgedichtete Lager sorgen dafür, dass alles rund läuft. Konzentrieren Sie sich auf Ihr Spiel – um den Rest kümmert sich Wishbone Golf.</p>"
+  ],
+  [
+   "The Manual Wishbone ONE",
+   "Der manuelle Wishbone ONE"
+  ],
+  [
+   "<p>Wishbone One 3 Wheel Golf Trolley</p>",
+   "<p>Wishbone ONE – Golftrolley mit 3 Rädern</p>"
+  ],
+  [
+   "Opening soon",
+   "Bald geöffnet"
+  ],
+  [
+   "<p>Be the first to know when we launch.</p>",
+   "<p>Erfahren Sie als Erstes, wann es losgeht.</p>"
+  ],
+  [
+   "YOU MAY ALSO LIKE",
+   "DAS KÖNNTE IHNEN AUCH GEFALLEN"
+  ],
+  [
+   "User manual",
+   "Bedienungsanleitung"
+  ],
+  [
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\">Download Wishbone Three Manual</a></p>",
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\">Bedienungsanleitung Wishbone THREE herunterladen</a></p>"
+  ],
+  [
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\">Download Wishbone Two Manual</a></p>",
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE-CUBE-TWO-manual-1764687463834.pdf?v=1775826525\">Bedienungsanleitung Wishbone TWO herunterladen</a></p>"
+  ],
+  [
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE_EON_manual.pdf?v=1774877621\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE_EON_manual.pdf?v=1774877621\">Download manual for Wishbone EON</a></p>",
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE_EON_manual.pdf?v=1774877621\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/WISHBONE_EON_manual.pdf?v=1774877621\">Bedienungsanleitung Wishbone EON herunterladen</a></p>"
+  ],
+  [
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/NEO_Instruction_Sheet.pdf?v=1743176299\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/NEO_Instruction_Sheet.pdf?v=1743176299\">Download manual for Wishbone NEO</a></p>",
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/NEO_Instruction_Sheet.pdf?v=1743176299\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/NEO_Instruction_Sheet.pdf?v=1743176299\">Bedienungsanleitung Wishbone NEO herunterladen</a></p>"
+  ],
+  [
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\">Download Wishbone One Manual</a></p>",
+   "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\">Bedienungsanleitung Wishbone ONE herunterladen</a></p>"
+  ]
+ ]
+}
