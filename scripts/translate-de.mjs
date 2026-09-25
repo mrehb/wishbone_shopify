@@ -143,9 +143,11 @@ const RESOURCES = {
   ...Object.fromEntries(THEME_TYPES.map((t) => [t, () => (key, value) => (themeMap.has(value) ? [value, themeMap.get(value)] : null)])),
   // no German in store.json yet — listed so `plan` shows what a shopper would still see in English
   SHOP: () => () => null,                          // shop name, homepage SEO title/description
-  DELIVERY_METHOD_DEFINITION: () => () => null,    // shipping rate names at checkout
-  FILTER: () => () => null,                        // storefront filter labels
 };
+// short labels matched by their English value: shipping rate names at checkout, storefront filters
+for (const [type, map] of Object.entries(SRC.labels || {})) {
+  RESOURCES[type] = () => (key, value) => (map[value] ? [value, map[value]] : null);
+}
 if (flag('--policies')) {
   RESOURCES.SHOP_POLICY = (content) => {
     const body = content.find((c) => c.key === 'body')?.value || '';
@@ -158,6 +160,7 @@ if (flag('--policies')) {
 
 // fields that are never translated: URL handles stay English so no link or redirect changes
 const SKIP_KEYS = new Set(['handle']);
+// single-variant products carry an option "Title" / "Default Title" that Shopify never shows
 
 async function* translatable(type) {
   let after = null;
@@ -184,7 +187,7 @@ async function plan() {
       const handle = node.translatableContent.find((c) => c.key === 'handle')?.value;
       const where = `${type} ${handle || node.resourceId.split('/').pop()}`;
       for (const c of node.translatableContent) {
-        if (!c.value || SKIP_KEYS.has(c.key)) continue;
+        if (!c.value || SKIP_KEYS.has(c.key) || c.value === 'Title' || c.value === 'Default Title') continue;
         const pair = lookup(c.key, c.value);
         if (!pair) {
           // theme resources hold every setting, most of them not text a shopper reads; only

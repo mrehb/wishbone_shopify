@@ -1,6 +1,26 @@
 {
  "_about": "German (de) translations for wishbone.golf. Each field pins the English it was translated from; scripts/translate-de.mjs skips any field whose live English no longer matches, so stale German is never registered. Legal policies live in policies/*.html and are only sent with --policies.",
  "products": {
+  "360-front-wheel": {
+   "title": [
+    "Wishone 360° front wheel",
+    "Wishbone 360°-Vorderrad"
+   ],
+   "body_html": [
+    "<p>WISHBONE carts can now be fitted with the optional 360 quick release swivel wheel. The colour co-ordinated wheel can rotate a full 360 degrees or locked in a forward straight line position with the twist of the locking cap.</p>",
+    "<p>WISHBONE-Trolleys lassen sich jetzt mit dem optionalen 360°-Schwenkrad mit Schnellverschluss ausstatten. Das farblich abgestimmte Rad dreht sich volle 360 Grad oder wird mit einer Drehung der Verriegelungskappe in Geradeausstellung fixiert.</p>"
+   ]
+  },
+  "bag-strap-replacement-fits-upper-lower": {
+   "title": [
+    "Bag Strap replacement - fits upper & lower",
+    "Ersatz-Taschengurt – passt oben & unten"
+   ],
+   "body_html": [
+    "<p class=\"\">Silicone bag strap set - left &amp; right side included. (Check version)</p>",
+    "<p class=\"\">Silikon-Taschengurt-Set – linke &amp; rechte Seite enthalten. (Version prüfen)</p>"
+   ]
+  },
   "bag-straps-set-of-4-neo": {
    "title": [
     "Bag Straps - Set  (ONE & NEO)",
@@ -17,16 +37,48 @@
     "<p class=\"\">Hält einen Ersatzball und 3 Tees griffbereit. Mit Befestigungsmaterial, ohne Ball &amp; Tees.</p>"
    ]
   },
+  "battery-tray-lower": {
+   "title": [
+    "Battery Tray - Lower (NEO)",
+    "Akkuhalterung – unten (NEO)"
+   ]
+  },
   "brake-kit-one": {
    "title": [
     "Brake Kit (ONE)",
     "Bremsset (ONE)"
    ]
   },
+  "charger-plug-adapter-neo": {
+   "title": [
+    "Charger Plug Adapter (NEO)",
+    "Ladestecker-Adapter (NEO)"
+   ],
+   "body_html": [
+    "<p class=\"\">Suitable for lithium battery with choice of plug</p>",
+    "<p class=\"\">Für Lithium-Akkus, mit Stecker nach Wahl</p>"
+   ]
+  },
   "controller-neo": {
    "title": [
     "Controller (NEO)",
     "Steuereinheit (NEO)"
+   ]
+  },
+  "controller-neo-copy": {
+   "title": [
+    "Battery Tray - Upper",
+    "Akkuhalterung – oben"
+   ]
+  },
+  "cross-brace-repair-kit": {
+   "title": [
+    "Cross brace repair kit",
+    "Reparaturset Querstrebe"
+   ],
+   "body_html": [
+    "<p class=\"\" style=\"white-space:pre-wrap;\">rear cross brace repair kit</p>",
+    "<p class=\"\" style=\"white-space:pre-wrap;\">Reparaturset für die hintere Querstrebe</p>"
    ]
   },
   "cruise-button-kit": {
@@ -75,6 +127,12 @@
     "<p class=\"\"><span style=\"color: rgb(99, 99, 99)\">Schützen Sie Ihren Rahmen im Auto oder bei der Lagerung mit unserer wasserdichten Rahmentasche. Die separate Radtasche hält schmutzige Räder vom Innenraum Ihres Autos fern und ist auch eine praktische Tragetasche für andere Dinge.</span></p>"
    ]
   },
+  "frame-neo": {
+   "title": [
+    "Frame (NEO)",
+    "Rahmen (NEO)"
+   ]
+  },
   "frame-one": {
    "title": [
     "Frame (ONE)",
@@ -91,6 +149,16 @@
     "<p class=\"\">Magnetische Positionierung mit verbessertem Schnellverschluss. Standardmäßig in Grau – wenn Sie eine passende Farbe wünschen, kontaktieren Sie uns, wir tun unser Bestes. </p>"
    ]
   },
+  "golf-practice-net-large": {
+   "title": [
+    "Golf Practice Net (LARGE)",
+    "Golf-Übungsnetz (GROSS)"
+   ],
+   "body_html": [
+    "<p class=\"\">10' HIGH AND 10' WIDE. CARRY BAG INCLUDED. 3PCS GROUND PEGS.</p>",
+    "<p class=\"\">3 M HOCH UND 3 M BREIT. MIT TRAGETASCHE. 3 BODENHERINGE.</p>"
+   ]
+  },
   "handle-kit-neo": {
    "title": [
     "Handle Kit (NEO)",
@@ -99,6 +167,12 @@
    "body_html": [
     "<p>Please note: Wing screw not included.</p>",
     "<p>Bitte beachten: Flügelschraube nicht im Lieferumfang enthalten.</p>"
+   ]
+  },
+  "hinge-kit": {
+   "title": [
+    "Hinge Kit",
+    "Scharnierset"
    ]
   },
   "lithium-battery-18-holes": {
@@ -161,6 +235,16 @@
     "<p class=\"\">Wishbone Schnellverschluss, offenes 3-Speichen-Design und besonders langlebiger Gummireifen.</p>"
    ]
   },
+  "replacement-brake": {
+   "title": [
+    "Replacement Brake",
+    "Ersatzbremse"
+   ],
+   "body_html": [
+    "<p class=\"\">Upgraded brake that fits model ONE (and ZERO). </p><p class=\"\">Requires old brake to be removed. To do this, you will need to drill out the old rivets. </p>",
+    "<p class=\"\">Verbesserte Bremse, passend für das Modell ONE (und ZERO). </p><p class=\"\">Die alte Bremse muss vorher entfernt werden. Dazu die alten Nieten ausbohren. </p>"
+   ]
+  },
   "scorecard-holder": {
    "title": [
     "Magnetic Scorecard Holder",
@@ -187,6 +271,26 @@
     "<p class=\"\">Passt auf alle ONE- &amp; NEO-Modelle. Am Griff anbringen, ausrichten und festklemmen.</p>\n<p>Bitte beachten: Flügelschraube nicht im Lieferumfang enthalten.</p>"
    ]
   },
+  "upper-bag-stay": {
+   "title": [
+    "Upper bag stay",
+    "Obere Taschenstütze"
+   ],
+   "body_html": [
+    "<p class=\"\">Replacement upper bag stay with strap holders, screws and foam cover. </p>",
+    "<p class=\"\">Ersatz für die obere Taschenstütze, mit Gurthaltern, Schrauben und Schaumstoffbezug. </p>"
+   ]
+  },
+  "valuables-bag": {
+   "title": [
+    "Valuables bag",
+    "Wertsachentasche"
+   ],
+   "body_html": [
+    "<p class=\"\">Premium storage bag to keep items on hand. Soft lining to protect phone, external dry pocket and clips on below handle. Charcoal black 18 x 12 x 6 (cm). Branded front and zip pull tab.</p>",
+    "<p class=\"\">Hochwertige Tasche, um Kleinigkeiten griffbereit zu haben. Weiches Innenfutter schützt das Handy, dazu ein trockenes Außenfach; wird unter dem Griff eingeklippt. Anthrazit-Schwarz, 18 x 12 x 6 cm. Mit Logo vorne und am Reißverschluss-Zipper.</p>"
+   ]
+  },
   "wing-screw-for-umbrella-holder-neo": {
    "title": [
     "Wing Screw for Umbrella Holder (ONE, NEO & EON)",
@@ -207,10 +311,50 @@
     "<p class=\"\">Mit einem Gesamtgewicht von nur 8,9 Kilogramm ist der EON einer der leichtesten vollelektrischen Golftrolleys am Markt. Die WISHBONE-DNA ist unverkennbar: cooles Design, ausgereifte Technik und neue Details, konzentriert auf das Wesentliche. Inklusive Akku, Ladegerät, PU-Rädern, Schirmhalter und Scorekartenhalter.</p>\n<p class=\"\"><strong>Ausstattung</strong></p>\n<p class=\"\">- vollelektrischer Trolley<br>- cooles Design<br>- TWIST &amp; GO<br>- Reichweite: über 27 Löcher</p>\n<p class=\"\"><strong>Komfort</strong></p>\n<p class=\"\">- Einstellbare Geschwindigkeit<br>- Fast Action Single Fold<br>- Akku hält über 27 Löcher<br>- Cross-Control-Funktion &amp; Freilaufmodus</p>\n<p class=\"\"><strong>Material &amp; Maße</strong></p>\n<p class=\"\">- Aluminiumrahmen aus der Luft- und Raumfahrtindustrie<br>- Gewicht: 8,9 kg<br>- Faltmaß (H x B x T): 102 x 94 x 57 cm</p>"
    ]
   },
+  "wishbone-front-wheel-360-one-neo": {
+   "title": [
+    "Wishbone Front Wheel 360, ONE & NEO",
+    "Wishbone Vorderrad 360, ONE & NEO"
+   ],
+   "body_html": [
+    "<p><meta charset=\"utf-8\">Every WISHBONE trolley can be equipped in no time with the new, color-coordinated front wheel system. The wheel is swivel-mounted, rotates 360° on its own axis, and can optionally be locked in a straight-ahead position.</p>",
+    "<p><meta charset=\"utf-8\">Jeder WISHBONE-Trolley lässt sich im Handumdrehen mit dem neuen, farblich abgestimmten Vorderradsystem ausstatten. Das Rad ist schwenkbar gelagert, dreht sich 360° um die eigene Achse und lässt sich wahlweise in Geradeausstellung arretieren.</p>"
+   ]
+  },
+  "wishbone-neo": {
+   "title": [
+    "Wishbone NEO",
+    "Wishbone NEO"
+   ],
+   "body_html": [
+    "<p class=\"\"><strong>A full powered, simple ‘no nonsense’ electric cart.</strong></p>\n<p class=\"\">Based on our successful Wishbone One and Zero cart designs NEO has a simple single action fold for easy transport and storage. If space is an issue the wheels are quick release and are easily removable.</p>\n<p class=\"\">NEO has a thumb speed controller on the handle which incorporates a ‘soft start’ function to prevent any sudden surge of power to the wheels when setting off.</p>\n<p class=\"\">NEO also incorporates a ‘Cruise Control’ feature which allows the cart to power forward unaided at any selected speed. This feature allows the player to walk alongside the cart with both hands free, especially useful for long fairway walks whilst providing a more relaxing experience.</p>\n<p class=\"\">NEO variable speed range is 0km/hr to 7km/hr providing help for the slowest and fastest of walkers.</p>\n<p class=\"\">NEO is able to climb steep gradients with ease, this manoeuvrable cart provides maximum help to any golfer with minimal distraction.</p>\n<p class=\"\">NEO has a proven power and drive train along with a high quality speed and battery controller to ensure many years of use on all terrains.</p>\n<p class=\"\">The standard 12.8v lithium battery is able to cover 18+ holes with power to spare, however in the unlikely event you should loose power for any reason the cart is able to function as a free running push cart by moving the rear wheels to a second (get me home) position on the axle.</p>",
+    "<p class=\"\"><strong>Ein vollwertiger Elektro-Trolley – einfach und ohne Schnickschnack.</strong></p>\n<p class=\"\">Der NEO basiert auf unseren erfolgreichen Modellen Wishbone ONE und ZERO und lässt sich mit einem einzigen Handgriff falten – für einfachen Transport und platzsparende Aufbewahrung. Wenn es eng wird, lassen sich die Räder per Schnellverschluss einfach abnehmen.</p>\n<p class=\"\">Am Griff sitzt ein Daumen-Geschwindigkeitsregler mit Sanftanlauf, der beim Losfahren ruckartige Kraftstöße auf die Räder verhindert.</p>\n<p class=\"\">Dazu kommt ein Tempomat, mit dem der Trolley selbstständig mit der gewählten Geschwindigkeit vorausfährt. So gehen Sie mit beiden Händen frei neben dem Trolley her – besonders angenehm auf langen Fairways.</p>\n<p class=\"\">Der Geschwindigkeitsbereich des NEO reicht von 0 bis 7 km/h – passend für langsame wie für schnelle Geher.</p>\n<p class=\"\">Auch steile Anstiege bewältigt der NEO mühelos; der wendige Trolley bietet jedem Golfer maximale Unterstützung bei minimaler Ablenkung.</p>\n<p class=\"\">Bewährter Antrieb und hochwertige Geschwindigkeits- und Akkusteuerung sorgen für viele Jahre Einsatz auf jedem Gelände.</p>\n<p class=\"\">Der serienmäßige 12,8-V-Lithium-Akku reicht für 18+ Löcher mit Reserve. Sollte der Strom dennoch einmal ausgehen, stecken Sie die Hinterräder in eine zweite Position („Heimweg-Position“) auf der Achse, und der Trolley läuft als frei rollender Schiebetrolley weiter.</p>"
+   ]
+  },
   "wishbone-neo-one-upper-bagholder": {
    "title": [
     "Wishbone NEO & ONE Upper Bagholder",
     "Wishbone NEO & ONE oberer Taschenhalter"
+   ]
+  },
+  "wishbone-one-2": {
+   "title": [
+    "Wishbone ONE 2",
+    "Wishbone ONE 2"
+   ],
+   "body_html": [
+    "<p class=\"\">minimalist 2 wheel push-pull cart - triple black</p>",
+    "<p class=\"\">Minimalistischer 2-Rad-Trolley zum Schieben und Ziehen – komplett schwarz</p>"
+   ]
+  },
+  "wishbone-one-3-reburbished": {
+   "title": [
+    "Wishbone ONE 3 (reburbished)",
+    "Wishbone ONE 3 (generalüberholt)"
+   ],
+   "body_html": [
+    "<p class=\"\">Get a bargain!!!!!!</p><p class=\"\">All product have undergone full inspection and cleaning before being added to online sales. Mixed stock from; ex-demonstrators, returns and minor repairs. All come with *12 month warranty. </p><p class=\"\"></p>",
+    "<p class=\"\">Jetzt zuschlagen!</p><p class=\"\">Alle Produkte wurden vor dem Onlineverkauf vollständig geprüft und gereinigt. Gemischter Bestand aus Vorführgeräten, Retouren und kleinen Reparaturen. Alle mit *12 Monaten Garantie. </p><p class=\"\"></p>"
    ]
   },
   "wishbone-one-best-seller": {
@@ -231,6 +375,16 @@
    "body_html": [
     "<p class=\"\"><strong>Wishbone THREE Golf Trolley</strong><br><br>The Wishbone Three Trolley introduces a new design language to the Wishbone series with its innovative dual-tube frame. Combining lightweight construction, durability, and ease of use, it offers a stable and smooth ride on any course. With a simple folding mechanism and robust wheels, the Wishbone Three delivers both style and performance in a sleek, modern package.<br></p>",
     "<p class=\"\"><strong>Wishbone THREE Golftrolley</strong><br><br>Mit seinem innovativen Doppelrohrrahmen bringt der Wishbone THREE eine neue Designsprache in die Wishbone-Serie. Er verbindet leichte Bauweise, Langlebigkeit und einfache Handhabung und läuft auf jedem Platz stabil und ruhig. Mit einfachem Faltmechanismus und robusten Rädern bietet der Wishbone THREE Stil und Leistung in einer schlanken, modernen Form.<br></p>"
+   ]
+  },
+  "wishbone-towel": {
+   "title": [
+    "Wishbone Towel",
+    "Wishbone Handtuch"
+   ],
+   "body_html": [
+    "<p class=\"\">Hardy towel with logo and hanging loop 50 x 30cm. Perfect for club cleaning. </p>",
+    "<p class=\"\">Robustes Handtuch mit Logo und Aufhängeschlaufe, 50 x 30 cm. Perfekt zum Schlägerputzen. </p>"
    ]
   },
   "wishbone-two": {
@@ -258,7 +412,9 @@
   "white-blue": "Weiß-Blau",
   "charcoal-red-black": "Anthrazit-Rot-Schwarz",
   "charcoal-lime-black": "Anthrazit-Limette-Schwarz",
-  "charcoal-blue-black": "Anthrazit-Blau-Schwarz"
+  "charcoal-blue-black": "Anthrazit-Blau-Schwarz",
+  "black": "Schwarz",
+  "white": "Weiß"
  },
  "collections": {
   "frontpage": {
@@ -320,6 +476,18 @@
   [
    "Contact",
    "Kontakt"
+  ],
+  [
+   "Search",
+   "Suche"
+  ],
+  [
+   "Orders",
+   "Bestellungen"
+  ],
+  [
+   "Profile",
+   "Profil"
   ]
  ],
  "theme": [
@@ -387,5 +555,15 @@
    "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\">Download Wishbone One Manual</a></p>",
    "<p><a href=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\" title=\"https://cdn.shopify.com/s/files/1/0911/6631/0724/files/INSTRUCTION_MANUAL_2.pdf?v=1743176063\">Bedienungsanleitung Wishbone ONE herunterladen</a></p>"
   ]
- ]
+ ],
+ "labels": {
+  "DELIVERY_METHOD_DEFINITION": {
+   "Standard": "Standardversand",
+   "Free Shipping": "Kostenloser Versand"
+  },
+  "FILTER": {
+   "Availability": "Verfügbarkeit",
+   "Price": "Preis"
+  }
+ }
 }
