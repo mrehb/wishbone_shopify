@@ -17,3 +17,5 @@ Corrections worth not repeating. Add one after any mistake or surprise.
   token is ever swapped back to client credentials, expect the 401 to return.
 - **2026-09-18 — `pkill -f "theme dev"` kills the shell running it.** The pattern matches
   the invoking command line too. Kill by PID.
+
+- 2026-09-29: Theme-text translations are stored per theme. After any theme publish, run `scripts/translate-de.mjs plan` and `apply --policies` — otherwise /de shows English template text.

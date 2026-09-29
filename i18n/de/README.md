@@ -23,6 +23,12 @@ owner publishes German in Shopify admin.
 4. Preview in admin (Settings → Languages → German → Preview), then publish there and assign
    German to the AT/DE markets as their default if wanted.
 
+## After publishing a different theme — re-run apply
+
+Shopify keeps theme-text translations per theme. Publishing another theme (e.g. a draft) leaves the
+homepage and template texts in English on /de until `node scripts/translate-de.mjs apply --policies`
+is run again against the new live theme. `plan` shows the gap (it happened on 2026-09-29: 26 fields).
+
 ## Decisions taken while translating
 
 - *Sie* throughout, Austrian legal terms (Rücktritt, FAGG, KSchG, UID-Nr., Impressum).
